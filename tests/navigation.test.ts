@@ -157,7 +157,7 @@ test('real app routes render About, both directories and all 36 category detail 
   const router = createMemoryRouter(appRoutes, { initialEntries: ['/about'] });
   try {
     await act(async () => root!.render(h(RouterProvider, { router })));
-    assert.ok(required('.provisional-notice'));
+    assert.ok(required('.about-history'));
     for (const [base, records] of [['/industries', industries], ['/practices', practices]] as const) {
       await act(async () => { await router.navigate(base); });
       assert.equal(document.querySelectorAll('.expertise-card').length, records.length);
@@ -166,7 +166,8 @@ test('real app routes render About, both directories and all 36 category detail 
       for (const record of records) {
         await act(async () => { await router.navigate(`${base}/${record.slug}`); });
         assert.equal(required('main h1').textContent, record.name);
-        assert.ok(required('.content-pending'));
+        assert.ok(required('.detail-summary'));
+        assert.equal(document.querySelectorAll('.content-pending').length, 0);
         assert.equal(document.title, `${record.name} | G.R.F. Dalley & Partners`);
         assert.equal(required(`.desktop-navigation .nav-link[href="${base}"]`).getAttribute('aria-current'), 'page');
         assert.equal(required('nav[aria-label="Breadcrumb"] [aria-current="page"]').textContent, record.name);

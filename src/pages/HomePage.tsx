@@ -1,3 +1,5 @@
+import { about } from '../data/about';
+import { isPublished } from '../lib/publication';
 import { usePresentationMode } from '../lib/presentation';
 import { getExpertiseCategories, getExpertiseDetail } from '../lib/expertise';
 import { Link } from 'react-router-dom';
@@ -15,6 +17,7 @@ import { getLeadershipPreview } from '../lib/people';
 export function HomePage() {
   const mode = usePresentationMode();
   const preview = mode === 'management-preview';
+  const showEditorial = preview || isPublished(about);
   const practiceRecords = getExpertiseCategories('practice');
   const practicePreviews = featuredPractices.flatMap(practice => {
     const record = practiceRecords.find(item => item.name === practice.name);
@@ -24,7 +27,7 @@ export function HomePage() {
     <Hero />
     <section className="home-section home-about" id="our-firm" tabIndex={-1} aria-labelledby="about-heading"><Container className="home-about__grid">
       <Reveal><p className="eyebrow">Our firm</p><h2 id="about-heading">A lasting perspective.<br /><em>A contemporary approach.</em></h2><ButtonLink to="/about" variant="outline" arrow>Discover Our Firm</ButtonLink></Reveal>
-      <Reveal className="home-about__story">{preview ? <><p className="home-lead">Rooted in Nigeria since 1962. Attuned to the business of today.</p><p>G.R.F. Dalley & Partners brings together generations of legal experience to advise businesses and individuals in increasingly complex markets.</p><p>Our practice spans corporate and commercial matters, dispute resolution, banking and finance, intellectual property and more. We combine an understanding of your sector with a practical focus on your objectives.</p><div className="home-about__signature"><span aria-hidden="true" /><p>Experience. Understanding. Perspective.</p></div></> : <><p className="home-lead">Established in Nigeria in 1962.</p><p>Explore the firm and its confirmed practice-area directory, or contact us for further information.</p></>}</Reveal>
+      <Reveal className="home-about__story">{showEditorial ? <><p className="home-lead">Rooted in Nigeria since 1962. Attuned to the business of today.</p><p>G.R.F. Dalley & Partners brings together generations of legal experience to advise businesses and individuals in increasingly complex markets.</p><p>Our practice spans corporate and commercial matters, dispute resolution, banking and finance, intellectual property and more. We combine an understanding of your sector with a practical focus on your objectives.</p><div className="home-about__signature"><span aria-hidden="true" /><p>Experience. Understanding. Perspective.</p></div></> : <><p className="home-lead">Established in Nigeria in 1962.</p><p>Explore the firm and its confirmed practice-area directory, or contact us for further information.</p></>}</Reveal>
     </Container></section>
     <section className="home-section home-practices" aria-labelledby="practices-heading"><Container>
       <Reveal className="home-section-heading"><SectionHeading id="practices-heading" eyebrow="Our expertise" title="Clarity for complex matters."><p>Commercial understanding, applied across the legal issues that matter to your business.</p></SectionHeading><ButtonLink to="/practices" variant="outline" arrow>Explore Our Practices</ButtonLink></Reveal>

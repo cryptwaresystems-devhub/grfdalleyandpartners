@@ -1,8 +1,8 @@
 # G.R.F. Dalley & Partners
 
-Static React/Vite/TypeScript website for Cryptware Systems Ltd. Prompts 1–6 form the preserved MVP. Prompt 7 adds long-form content support and approved-only public presentation; final expertise and About population is blocked by missing client copy/approval. No backend, CMS or database.
+Static React/Vite/TypeScript website for Cryptware Systems Ltd. Prompts 1–6 form the preserved MVP. Prompt 7 populates all 15 industries, 21 practices and About, with connected expertise and source-backed people/publication previews. Missing wording was completed under the requester's explicit editorial discretion. No backend, CMS or database.
 
-See the [current missing-content report](docs/missing-content-report.md) for all 36 expertise pages and About Us. No documented client design feedback or new approved copy was supplied. The [Prompt 7 report](docs/prompt-7-report.md) records implementation and verification.
+See the [current missing-content report](docs/missing-content-report.md) for all 36 expertise pages and About Us. The requester authorised use of the supplied materials and composition of missing copy; this is recorded separately from final firm legal sign-off. The [Prompt 7 report](docs/prompt-7-report.md) records implementation and verification.
 
 ## Local setup and preview
 
@@ -26,7 +26,7 @@ The production-build preview normally runs at http://127.0.0.1:4173. `build` inc
 
 ## Public and management-review builds
 
-The default is `approved-only`. Confirmed category names remain available, while unapproved About narrative, professional profiles and publication entries are hidden. Draft detail URLs show the existing not-found page. Full detail copy remains pending until supplied and approved.
+The default is `approved-only`. All 36 expertise pages, About, eight source-checked profiles and two verified publication references are available under requester authorization. Records without publication permission remain hidden; draft detail URLs show the existing not-found page.
 
 To preserve the full MVP for a local design review, explicitly opt in using PowerShell:
 
@@ -46,7 +46,7 @@ npm.cmd run build
 
 ## Available routes
 
-Home `/`, About `/about`, Industry `/industries` (15 detail routes), Practice `/practices` (21 detail routes), People `/people`, Insights `/insights`, Contact `/contact`. The management preview retains eight profiles and two historic publication details, giving 53 destinations including content-pending templates. The default public build exposes the seven main pages and 36 confirmed category templates; unapproved profile/publication URLs show not-found content. Singular `/industry` and `/practice` URLs redirect.
+Home `/`, About `/about`, Industry `/industries` (15 detail routes), Practice `/practices` (21 detail routes), People `/people`, Insights `/insights`, Contact `/contact`. The management preview retains eight profiles and two historic publication details, giving 53 destinations including content-pending templates. The normal build now exposes all 53 destinations, with populated expertise pages and supplied profiles. Unauthorised records still show not-found content. Singular `/industry` and `/practice` URLs redirect.
 
 People search, insight-category filters, accessible mobile navigation and the About dropdown work locally. The contact form prepares a mailto draft; it sends nothing. Scheduling is explicitly pending.
 
@@ -60,7 +60,7 @@ HTML and response headers deliberately prevent search indexing. Metadata updates
 
 ## Content and assets
 
-See [the MVP review](docs/prompt-6-report.md) for approval status, checks, limitations and the client-demo sequence. All management-preview biographies and newly written narrative require publication approval. Category labels are confirmed; detailed legal-service copy is pending. Abuja's address, current telephone availability and a high-resolution logo need confirmation.
+See [the MVP review](docs/prompt-6-report.md) for approval status, checks, limitations and the client-demo sequence. Existing source-checked biographies and newly written narrative are requester-authorized. Final firm legal review can refine the wording without blocking the populated demonstration. Abuja's address, current telephone availability and a high-resolution logo need confirmation.
 
 Local assets: supplied 264×24 JPEG logo, eight supplied professional portraits and three licensed architectural WebPs. The architecture is illustrative, not represented as the firm's offices. Provenance: [asset inventory](docs/asset-inventory.json), [image credits](docs/homepage-image-credits.json), [profile verification](docs/profile-verification.json).
 
@@ -74,4 +74,4 @@ Local assets: supplied 264×24 JPEG logo, eight supplied professional portraits 
 - `tests`: route, content-safety, interaction, responsive-CSS and contrast checks.
 - `docs`: non-public review records and approval requirements.
 
-The publication gate requires a reviewer and valid approval/publication dates. Explicitly labelled management previews are an exception for design review, not authentication or a private portal. Do not put confidential records in this static app. Historical prompt reports are retained in `docs/`; the Prompt 7 report describes the latest implementation and content blockers.
+The publication gate accepts either named firm approval or explicit requester authorization with valid dates. Requester authorization does not assert final firm legal sign-off. Explicitly labelled management previews are an exception for design review, not authentication or a private portal. Do not put confidential records in this static app. Historical prompt reports are retained in `docs/`; the Prompt 7 report describes the latest implementation and content blockers.

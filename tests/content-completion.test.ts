@@ -40,11 +40,10 @@ test('public presentation fails closed; preview requires an explicit valid build
         assert.equal(doc.querySelectorAll('main').length, 1);
         assert.equal(doc.querySelectorAll('h1').length, 1);
         if (mode === 'approved-only') {
-          for (const person of lawyers) assert.ok(!doc.body.textContent.includes(person.name), `${path}: unapproved person exposed`);
-          for (const insight of insights) assert.ok(!doc.body.textContent.includes(insight.name), `${path}: unapproved publication exposed`);
-          assert.ok(!doc.body.textContent.includes(about.service), `${path}: provisional service copy exposed`);
           assert.ok(!doc.querySelector('.management-preview-banner'));
-          if (path.startsWith('/people/') || path.startsWith('/insights/')) assert.equal(getRouteTitle(path, mode), 'Page not found');
+          assert.ok(!doc.querySelector('.content-pending'));
+          if (path === '/about') assert.ok(doc.body.textContent.includes(about.service));
+          if (path.startsWith('/people/') || path.startsWith('/insights/')) assert.notEqual(getRouteTitle(path, mode), 'Page not found');
         } else assert.ok(doc.querySelector('.management-preview-banner'));
       } finally { dom.happyDOM.close(); }
     }
@@ -52,22 +51,24 @@ test('public presentation fails closed; preview requires an explicit valid build
 });
 
 test('About approval changes visibility without rewriting its page template', () => {
-  assert.equal(getAboutContent(about), null);
-  assert.equal(getAboutContent(about, 'management-preview'), about);
+  const pending = { ...about, editorial: { status: 'in-review' as const, source: 'TEST FIXTURE ONLY' } };
+  assert.equal(getAboutContent(pending), null);
+  assert.equal(getAboutContent(pending, 'management-preview'), pending);
+  assert.equal(getAboutContent(about), about);
   const content = { ...about, editorial: approved, introduction: 'APPROVED INTRO FIXTURE', service: 'APPROVED SERVICE FIXTURE' };
   assert.equal(getAboutContent(content, 'approved-only', now), content);
   const dom = render(h(PresentationProvider, { mode: 'approved-only' }, h(AboutPage, { content })));
   try {
     assert.ok(dom.document.body.textContent.includes('APPROVED SERVICE FIXTURE'));
     assert.ok(!dom.document.querySelector('.provisional-notice'));
-    assert.equal(dom.document.querySelectorAll('.person-preview').length, 0);
+    assert.equal(dom.document.querySelectorAll('.person-preview').length, 3);
   } finally { dom.happyDOM.close(); }
   assert.equal(getAboutContent({ ...content, editorial: { ...approved, publishedAt: '2099-01-01' } }, 'approved-only', now), null);
   assert.equal(getAboutContent({ ...about, editorial: { ...about.editorial, status: 'archived' } }, 'management-preview', now), null);
 });
 
 function fixtures(): ExpertiseData {
-  return { ...expertiseData, industries: [{ ...expertiseData.industries[0] }], practices: [{ ...expertiseData.practices[0] }], lawyers: [], insights: [], matters: [], publications: [], connections: [] };
+  return { ...expertiseData, industries: [{ ...expertiseData.industries[0], editorial: { status: 'in-review', source: 'fixture' } }], practices: [{ ...expertiseData.practices[0], editorial: { status: 'in-review', source: 'fixture' } }], lawyers: [], insights: [], matters: [], publications: [], connections: [] };
 }
 test('independently approved taxonomy links are reciprocal, deduplicated and do not publish narrative', () => {
   const data = fixtures();
@@ -108,7 +109,7 @@ test('approved expertise sections render paragraphs, services and accessible sec
   assert.deepEqual(pending.sections, []);
 });
 
-test('all confirmed expertise routes keep correct breadcrumb destinations and suppress missing content', () => {
+test('all 36 populated expertise routes have body copy, breadcrumbs and connected expertise', () => {
   for (const kind of ['industry', 'practice'] as const) {
     for (const record of kind === 'industry' ? expertiseData.industries : expertiseData.practices) {
       const detail = getExpertiseDetail(kind, record.slug)!;
@@ -117,16 +118,20 @@ test('all confirmed expertise routes keep correct breadcrumb destinations and su
         const doc = dom.document;
         assert.equal(doc.querySelector('h1')?.textContent, record.name);
         assert.ok(doc.querySelector(`.breadcrumbs a[href="/${kind === 'industry' ? 'industries' : 'practices'}"]`));
-        assert.equal(doc.querySelectorAll('.content-pending').length, 1);
-        assert.equal(doc.querySelectorAll('#related-people, #related-insights, #connected-expertise').length, 0);
+        assert.equal(doc.querySelectorAll('.content-pending').length, 0);
+        assert.ok(doc.querySelector('.detail-summary')?.textContent);
+        assert.ok(doc.querySelectorAll('.detail-services li').length >= 4);
+        assert.ok(doc.getElementById('connected-expertise'));
+        assert.equal(detail.sections.length, 2);
       } finally { dom.happyDOM.close(); }
     }
   }
 });
 
-test('public metadata cannot reveal an unapproved person or insight through a direct URL', () => {
+test('public metadata resolves requester-authorized records and rejects unknown URLs', () => {
   for (const path of [`/people/${lawyers[0].slug}`, `/insights/${insights[0].slug}`]) {
-    assert.match(getRouteMetadata(path, 'approved-only').title, /Page not found/);
+    assert.doesNotMatch(getRouteMetadata(path, 'approved-only').title, /Page not found/);
+    assert.match(getRouteMetadata(`${path}-missing`, 'approved-only').title, /Page not found/);
     assert.doesNotMatch(getRouteMetadata(path, 'management-preview').title, /Page not found/);
   }
 });

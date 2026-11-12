@@ -35,8 +35,11 @@ export const lawyers: Lawyer[] = [
     "portrait": "/assets/people/aderemi-dalley.jpg",
     "biography": null,
     "editorial": {
-      "status": "in-review",
-      "source": "Firm-supplied biography 1iWUm2wNAu675MgNLrKTpKrqxpDPFLDVj; portrait compared visually with the embedded biography photograph. Final publication approval pending."
+      "status": "authorized",
+      "source": "Firm-supplied biography 1iWUm2wNAu675MgNLrKTpKrqxpDPFLDVj; portrait compared visually with the embedded biography photograph. Final publication approval pending.; existing supplied biography and matched portrait only; wording adapted or composed under the requester's explicit delegated-copy instruction. Final firm legal review remains separate.",
+      "authorizedBy": "Project requester - Prompt 7 follow-up instruction",
+      "authorizedAt": "2026-11-12",
+      "publishedAt": "2026-11-12"
     },
     "practiceNames": [
       "Asset Based Financing",
@@ -115,8 +118,11 @@ export const lawyers: Lawyer[] = [
     "portrait": "/assets/people/ajibola-dalley.jpg",
     "biography": null,
     "editorial": {
-      "status": "in-review",
-      "source": "Firm-supplied biography 1o9kZlIbpFGjJ14s0oDqvq6hXXU1Mwp54; portrait compared visually with the embedded biography photograph. Final publication approval pending."
+      "status": "authorized",
+      "source": "Firm-supplied biography 1o9kZlIbpFGjJ14s0oDqvq6hXXU1Mwp54; portrait compared visually with the embedded biography photograph. Final publication approval pending.; existing supplied biography and matched portrait only; wording adapted or composed under the requester's explicit delegated-copy instruction. Final firm legal review remains separate.",
+      "authorizedBy": "Project requester - Prompt 7 follow-up instruction",
+      "authorizedAt": "2026-11-12",
+      "publishedAt": "2026-11-12"
     },
     "practiceNames": [
       "Arbitration",
@@ -136,7 +142,7 @@ export const lawyers: Lawyer[] = [
         "year": "2016"
       },
       {
-        "title": "Nigeria\u2019s Civil Aviation Procedure Rules - A Review",
+        "title": "Nigeria’s Civil Aviation Procedure Rules - A Review",
         "year": "2014"
       },
       {
@@ -204,8 +210,11 @@ export const lawyers: Lawyer[] = [
     "portrait": "/assets/people/wande-esan.jpg",
     "biography": null,
     "editorial": {
-      "status": "in-review",
-      "source": "Firm-supplied biography 11mJvlmbkBXXqeb4S5rF7ib3OuIbo-OkI; portrait compared visually with the embedded biography photograph. Final publication approval pending."
+      "status": "authorized",
+      "source": "Firm-supplied biography 11mJvlmbkBXXqeb4S5rF7ib3OuIbo-OkI; portrait compared visually with the embedded biography photograph. Final publication approval pending.; existing supplied biography and matched portrait only; wording adapted or composed under the requester's explicit delegated-copy instruction. Final firm legal review remains separate.",
+      "authorizedBy": "Project requester - Prompt 7 follow-up instruction",
+      "authorizedAt": "2026-11-12",
+      "publishedAt": "2026-11-12"
     },
     "practiceNames": [
       "Commercial/Corporate Litigation"
@@ -242,8 +251,11 @@ export const lawyers: Lawyer[] = [
     "portrait": "/assets/people/obinna-omeh.jpg",
     "biography": null,
     "editorial": {
-      "status": "in-review",
-      "source": "Firm-supplied biography 1fdw6nh1mPIGueLjz47V8kdmL_YQ0TBlT; portrait compared visually with the embedded biography photograph. Final publication approval pending."
+      "status": "authorized",
+      "source": "Firm-supplied biography 1fdw6nh1mPIGueLjz47V8kdmL_YQ0TBlT; portrait compared visually with the embedded biography photograph. Final publication approval pending.; existing supplied biography and matched portrait only; wording adapted or composed under the requester's explicit delegated-copy instruction. Final firm legal review remains separate.",
+      "authorizedBy": "Project requester - Prompt 7 follow-up instruction",
+      "authorizedAt": "2026-11-12",
+      "publishedAt": "2026-11-12"
     },
     "practiceNames": [
       "Litigation",
@@ -283,8 +295,11 @@ export const lawyers: Lawyer[] = [
     "portrait": "/assets/people/faith-adebo.jpg",
     "biography": null,
     "editorial": {
-      "status": "in-review",
-      "source": "Firm-supplied biography 1JXnVNok8Uh0VKKxBrLGz3DxiTQ5OOGiC; portrait compared visually with the embedded biography photograph. Final publication approval pending."
+      "status": "authorized",
+      "source": "Firm-supplied biography 1JXnVNok8Uh0VKKxBrLGz3DxiTQ5OOGiC; portrait compared visually with the embedded biography photograph. Final publication approval pending.; existing supplied biography and matched portrait only; wording adapted or composed under the requester's explicit delegated-copy instruction. Final firm legal review remains separate.",
+      "authorizedBy": "Project requester - Prompt 7 follow-up instruction",
+      "authorizedAt": "2026-11-12",
+      "publishedAt": "2026-11-12"
     },
     "practiceNames": [
       "Corporate",
@@ -327,8 +342,11 @@ export const lawyers: Lawyer[] = [
     "portrait": "/assets/people/olayiwola-balogun.jpg",
     "biography": null,
     "editorial": {
-      "status": "in-review",
-      "source": "Firm-supplied biography 1c3GlL1_kS4oBPQYPoWAugms_rKO1gfZS; portrait compared visually with the embedded biography photograph. Final publication approval pending."
+      "status": "authorized",
+      "source": "Firm-supplied biography 1c3GlL1_kS4oBPQYPoWAugms_rKO1gfZS; portrait compared visually with the embedded biography photograph. Final publication approval pending.; existing supplied biography and matched portrait only; wording adapted or composed under the requester's explicit delegated-copy instruction. Final firm legal review remains separate.",
+      "authorizedBy": "Project requester - Prompt 7 follow-up instruction",
+      "authorizedAt": "2026-11-12",
+      "publishedAt": "2026-11-12"
     },
     "practiceNames": [
       "Capital Markets",
@@ -367,8 +385,11 @@ export const lawyers: Lawyer[] = [
     "portrait": "/assets/people/opemipo-mustapha.jpg",
     "biography": null,
     "editorial": {
-      "status": "in-review",
-      "source": "Firm-supplied biography 11ZKroLfD6UD7K9onJqDfo_hTcSm6vTM4; portrait compared visually with the embedded biography photograph. Final publication approval pending."
+      "status": "authorized",
+      "source": "Firm-supplied biography 11ZKroLfD6UD7K9onJqDfo_hTcSm6vTM4; portrait compared visually with the embedded biography photograph. Final publication approval pending.; existing supplied biography and matched portrait only; wording adapted or composed under the requester's explicit delegated-copy instruction. Final firm legal review remains separate.",
+      "authorizedBy": "Project requester - Prompt 7 follow-up instruction",
+      "authorizedAt": "2026-11-12",
+      "publishedAt": "2026-11-12"
     },
     "practiceNames": [
       "Corporate and Commercial Law"
@@ -404,8 +425,11 @@ export const lawyers: Lawyer[] = [
     "portrait": "/assets/people/peace-ogbu.jpg",
     "biography": null,
     "editorial": {
-      "status": "in-review",
-      "source": "Firm-supplied biography 1gPugeFws1C48dEV4QiOqcpCC_Wpz083k; portrait compared visually with the embedded biography photograph. Final publication approval pending."
+      "status": "authorized",
+      "source": "Firm-supplied biography 1gPugeFws1C48dEV4QiOqcpCC_Wpz083k; portrait compared visually with the embedded biography photograph. Final publication approval pending.; existing supplied biography and matched portrait only; wording adapted or composed under the requester's explicit delegated-copy instruction. Final firm legal review remains separate.",
+      "authorizedBy": "Project requester - Prompt 7 follow-up instruction",
+      "authorizedAt": "2026-11-12",
+      "publishedAt": "2026-11-12"
     },
     "practiceNames": [
       "Commercial/Corporate Litigation",

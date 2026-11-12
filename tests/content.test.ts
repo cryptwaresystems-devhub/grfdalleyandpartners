@@ -11,8 +11,9 @@ test('confirmed taxonomy counts and unique IDs', () => {
  assert.equal(industries.length, 15); assert.equal(practices.length, 21);
  for (const collection of [industries, practices, lawyers, offices]) assert.equal(new Set(collection.map(x => x.id)).size, collection.length);
 });
-test('supplied content remains unpublished pending approval', () => {
- assert.equal(publishedOnly([...industries, ...practices, ...lawyers, ...insights, ...offices]).length, 0);
+test('requester-authorized content is visible while unconfirmed office records stay unpublished', () => {
+ assert.equal(publishedOnly([...industries, ...practices, ...lawyers, ...insights]).length, 46);
+ assert.equal(publishedOnly(offices).length, 0);
 });
 test('publication gate validates approval, ordering and scheduling', () => {
  const record: ContentRecord = { id: 'example', slug: 'example', name: 'Example', editorial: { status: 'approved', source: 'test fixture', approvedBy: 'Reviewer', approvedAt: '2026-11-01', publishedAt: '2026-11-02' } };
@@ -22,3 +23,12 @@ test('publication gate validates approval, ordering and scheduling', () => {
  assert.equal(isPublished({...record, editorial: {...record.editorial, ...change}}, now), false);
  }
 });
+
+ test('requester authorization is explicit and rejects missing or future authorization metadata', () => {
+  const record = practices[0];
+  assert.equal(record.editorial.status, 'authorized');
+  assert.equal(isPublished(record), true);
+  for (const change of [{ authorizedBy: '' }, { authorizedAt: 'invalid' }, { publishedAt: '2099-01-01' }, { status: 'in-review' as const }]) {
+    assert.equal(isPublished({ ...record, editorial: { ...record.editorial, ...change } }), false);
+  }
+ });

@@ -104,12 +104,12 @@ test('legacy IDs and explicit cross-taxonomy relationships remain compatible', (
   assert.equal(getExpertiseDetail('industry', data.industries[0].slug, data, now)!.connected.length, 1);
 });
 
-test('About narrative is visibly provisional and leadership retains its preview notice', () => {
+test('About narrative and supplied leadership render under requester authorization', () => {
   const doc = render(h(AboutPage)).document;
   assert.equal(doc.querySelectorAll('h1').length, 1);
-  assert.ok(doc.querySelector('.provisional-notice')?.textContent.includes('Provisional copy'));
+  assert.ok(!doc.querySelector('.provisional-notice'));
   assert.ok(doc.body.textContent.includes('Established in 1962'));
-  assert.ok(doc.body.textContent.includes('Profile previews. Full biographies are awaiting final approval.'));
+  assert.ok(doc.body.textContent.includes('The people shaping our practice.'));
   assert.ok(doc.querySelector('a[href="/contact"]'));
   assert.equal(doc.querySelectorAll('.person-preview').length, 3);
 });

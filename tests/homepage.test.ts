@@ -53,7 +53,7 @@ test('featured services and industries use confirmed taxonomy, and publications 
   for (const item of verifiedPublications) { assert.equal(item.year, '2019'); assert.ok(item.source); }
   const text = home().document.body.textContent;
   assert.ok(text.includes('Archive publications reflect the law at the time of writing.'));
-  assert.ok(text.includes('Profile previews. Full biographies are awaiting final approval.'));
+  assert.ok(text.includes('The people behind') || text.includes('Meet the people behind our practice.'));
   assert.ok(!text.includes('Latest news'));
 });
 

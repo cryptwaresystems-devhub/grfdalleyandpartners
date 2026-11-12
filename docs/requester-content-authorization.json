@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-12",
+  "basis": "Project requester explicitly instructed use of existing supplied documents/assets and delegated authorship of missing copy.",
+  "publicationStatus": "Requester-authorized; not represented as final firm legal sign-off.",
+  "expertisePages": 36,
+  "aboutPopulated": true,
+  "taxonomyConnections": 68,
+  "sourceProfilesReused": 8,
+  "verifiedArchiveReferencesReused": 2,
+  "notInvented": [
+    "Credentials",
+    "Professional memberships",
+    "Awards and rankings",
+    "Representative matters",
+    "Case outcomes",
+    "New article metadata"
+  ],
+  "finalReview": [
+    "Firm legal review of newly authored sector and practice wording",
+    "Current memberships and titles",
+    "Abuja address",
+    "Phone availability",
+    "High-resolution logo"
+  ]
+}

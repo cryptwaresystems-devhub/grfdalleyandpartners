@@ -26,12 +26,12 @@ function render(element: Parameters<typeof renderToStaticMarkup>[0], width = 144
   dom.document.body.innerHTML = renderToStaticMarkup(h(MemoryRouter, null, h(PresentationProvider, { mode: 'management-preview' }, element)));
   return dom;
 }
-test('all eight people use biography-checked portraits, valid practice IDs and pending approval', () => {
+test('all eight people use biography-checked portraits, valid practice IDs and requester authorization', () => {
   assert.equal(lawyers.length, 8);
-  assert.equal(getVisibleLawyers().length, 0);
+  assert.equal(getVisibleLawyers().length, 8);
   assert.equal(getVisibleLawyers('management-preview').length, 8);
   for (const person of lawyers) {
-    assert.equal(person.editorial.status, 'in-review');
+    assert.equal(person.editorial.status, 'authorized');
     assert.equal(person.verification?.photoMatch, 'embedded-portrait-match');
     assert.ok(person.verification?.biographyFileId && person.verification.portraitFileId);
     assert.ok(person.portrait && existsSync(`public${person.portrait}`));
@@ -47,10 +47,10 @@ test('source verification does not promote drafts or incomplete approvals', () =
   for (const status of ['draft', 'archived', 'approved'] as const) {
     assert.equal(getVisibleLawyers('management-preview', [{ ...person, editorial: { ...person.editorial, status } }]).length, 0);
   }
-  assert.equal(getVisibleLawyers('management-preview', [{ ...person, verification: undefined }]).length, 0);
-  assert.equal(getVisibleInsights().length, 0);
+  assert.equal(getVisibleLawyers('management-preview', [{ ...person, editorial: { status: 'in-review', source: 'TEST FIXTURE' }, verification: undefined }]).length, 0);
+  assert.equal(getVisibleInsights().length, 2);
   const item = insights[0];
-  assert.equal(getVisibleInsights('management-preview', [{ ...item, verification: undefined }]).length, 0);
+  assert.equal(getVisibleInsights('management-preview', [{ ...item, editorial: { status: 'in-review', source: 'TEST FIXTURE' }, verification: undefined }]).length, 0);
   assert.equal(getVisibleInsights('management-preview', [{ ...item, editorial: { ...item.editorial, status: 'draft' } }]).length, 0);
 });
 test('people search matches names, roles, practices and blank queries consistently', () => {

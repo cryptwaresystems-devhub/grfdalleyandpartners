@@ -1,5 +1,5 @@
-export type ApprovalStatus = 'draft' | 'in-review' | 'approved' | 'archived';
-export interface Editorial { status: ApprovalStatus; source: string; approvedBy?: string; approvedAt?: string; publishedAt?: string; }
+export type ApprovalStatus = 'draft' | 'in-review' | 'authorized' | 'approved' | 'archived';
+export interface Editorial { status: ApprovalStatus; source: string; approvedBy?: string; approvedAt?: string; authorizedBy?: string; authorizedAt?: string; publishedAt?: string; }
 export interface ContentRecord { id: string; slug: string; name: string; editorial: Editorial; }
 export interface Firm extends ContentRecord { email: string; telephone: string; foundedYear: number; domain: string; }
 export interface Office extends ContentRecord { address: string | null; telephone: string | null; email: string | null; hours: string | null; }
@@ -42,6 +42,8 @@ export interface Lawyer extends ContentRecord {
 }
 export type InsightType = 'article' | 'case-review' | 'external-publication' | 'news' | 'event' | 'video' | 'award';
 export interface Insight extends ContentRecord {
+  /** Article-body permission is independent of archive metadata permission. */
+  bodyEditorial?: Editorial;
   type: InsightType; date: string; authorIds: string[]; practiceIds: string[]; industryIds: string[]; body: string; externalUrl?: string;
   datePrecision?: 'day' | 'month' | 'year'; publisher?: string; publisherNote?: string; subtitle?: string;
   verification?: { status: 'publisher-verified'; sourceUrl: string; checkedOn: string };

@@ -70,7 +70,7 @@ test('shared small-text palette meets WCAG AA contrast on its intended backgroun
 test('route metadata normalises legacy URLs and handles missing content without publishing claims', () => {
   assert.deepEqual(getRouteMetadata('/industry/'), getRouteMetadata('/industries'));
   assert.match(getRouteMetadata('/people/missing').title, /Page not found/);
-  assert.match(getRouteMetadata(`/practices/${practices[0].slug}`).description, /publication approval/);
+  assert.ok(getRouteMetadata(`/practices/${practices[0].slug}`).description.startsWith(practices[0].summary!.slice(0, 100)));
 });
 
 test('reduced-motion CSS keeps reveal content visible and disables hero movement', () => {

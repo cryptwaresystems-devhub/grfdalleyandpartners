@@ -1,10 +1,10 @@
 import { firm } from './firm';
 import type { AboutContent } from '../types/content';
 
-// Newly composed narrative remains provisional. The page displays its status.
+// Profile-grounded narrative published under the requester's delegated-copy instruction.
 export const about: AboutContent = {
   id: 'about-narrative', slug: 'about', name: 'About Us',
-  editorial: { status: 'in-review' as const, source: 'Updated Firm Profile, pp. 2, 5 and 12' },
+  editorial: {"status": "authorized", "source": "Updated Firm Profile pp. 2, 5 and 12; edited firm introduction and service approach; wording adapted or composed under the requester's explicit delegated-copy instruction. Final firm legal review remains separate.", "authorizedBy": "Project requester - Prompt 7 follow-up instruction", "authorizedAt": "2026-11-12", "publishedAt": "2026-11-12"},
   established: firm.foundedYear,
   introduction: 'A Nigerian legal practice with a long perspective and a commercial focus.',
   history: [

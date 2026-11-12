@@ -23,7 +23,7 @@
     "credentialsDocumentOpened": false
   },
   "about": {
-    "status": "in-review",
+    "status": "populated-requester-authorized",
     "sourcePages": [
       2
     ],
@@ -49,8 +49,9 @@
       "coverage": "Historic food-company matter reference only; no approved industry description.",
       "candidateExcerpts": [],
       "excerptPages": [],
-      "status": "awaiting-client-content-and-approval",
-      "missing": [
+      "status": "populated-requester-authorized-final-firm-review-separate",
+      "missing": [],
+      "originalMissing": [
         "Approved introduction and page sections",
         "Confirmed industry/practice relationships",
         "Approved related lawyers and insights where applicable"
@@ -65,8 +66,9 @@
       "coverage": "No dedicated narrative located in the supplied profile; the specification supplies the category label only.",
       "candidateExcerpts": [],
       "excerptPages": [],
-      "status": "awaiting-client-content-and-approval",
-      "missing": [
+      "status": "populated-requester-authorized-final-firm-review-separate",
+      "missing": [],
+      "originalMissing": [
         "Approved introduction and page sections",
         "Confirmed industry/practice relationships",
         "Approved related lawyers and insights where applicable"
@@ -83,8 +85,9 @@
       "coverage": "Historic IP-client reference only; no approved industry description.",
       "candidateExcerpts": [],
       "excerptPages": [],
-      "status": "awaiting-client-content-and-approval",
-      "missing": [
+      "status": "populated-requester-authorized-final-firm-review-separate",
+      "missing": [],
+      "originalMissing": [
         "Approved introduction and page sections",
         "Confirmed industry/practice relationships",
         "Approved related lawyers and insights where applicable"
@@ -106,8 +109,9 @@
       "excerptPages": [
         18
       ],
-      "status": "awaiting-client-content-and-approval",
-      "missing": [
+      "status": "populated-requester-authorized-final-firm-review-separate",
+      "missing": [],
+      "originalMissing": [
         "Approved introduction and page sections",
         "Confirmed industry/practice relationships",
         "Approved related lawyers and insights where applicable"
@@ -131,8 +135,9 @@
       "excerptPages": [
         3
       ],
-      "status": "awaiting-client-content-and-approval",
-      "missing": [
+      "status": "populated-requester-authorized-final-firm-review-separate",
+      "missing": [],
+      "originalMissing": [
         "Approved introduction and page sections",
         "Confirmed industry/practice relationships",
         "Approved related lawyers and insights where applicable"
@@ -147,8 +152,9 @@
       "coverage": "No dedicated narrative located in the supplied profile; the specification supplies the category label only.",
       "candidateExcerpts": [],
       "excerptPages": [],
-      "status": "awaiting-client-content-and-approval",
-      "missing": [
+      "status": "populated-requester-authorized-final-firm-review-separate",
+      "missing": [],
+      "originalMissing": [
         "Approved introduction and page sections",
         "Confirmed industry/practice relationships",
         "Approved related lawyers and insights where applicable"
@@ -163,8 +169,9 @@
       "coverage": "No dedicated narrative located in the supplied profile; the specification supplies the category label only.",
       "candidateExcerpts": [],
       "excerptPages": [],
-      "status": "awaiting-client-content-and-approval",
-      "missing": [
+      "status": "populated-requester-authorized-final-firm-review-separate",
+      "missing": [],
+      "originalMissing": [
         "Approved introduction and page sections",
         "Confirmed industry/practice relationships",
         "Approved related lawyers and insights where applicable"
@@ -181,8 +188,9 @@
       "coverage": "Oil/gas and power services; no complete approved Energy introduction.",
       "candidateExcerpts": [],
       "excerptPages": [],
-      "status": "awaiting-client-content-and-approval",
-      "missing": [
+      "status": "populated-requester-authorized-final-firm-review-separate",
+      "missing": [],
+      "originalMissing": [
         "Approved introduction and page sections",
         "Confirmed industry/practice relationships",
         "Approved related lawyers and insights where applicable"
@@ -201,8 +209,9 @@
       "coverage": "Banking narrative and property-client reference; no complete sector introduction.",
       "candidateExcerpts": [],
       "excerptPages": [],
-      "status": "awaiting-client-content-and-approval",
-      "missing": [
+      "status": "populated-requester-authorized-final-firm-review-separate",
+      "missing": [],
+      "originalMissing": [
         "Approved introduction and page sections",
         "Confirmed industry/practice relationships",
         "Approved related lawyers and insights where applicable"
@@ -220,8 +229,9 @@
       "coverage": "Client-sector references only; no approved industry description.",
       "candidateExcerpts": [],
       "excerptPages": [],
-      "status": "awaiting-client-content-and-approval",
-      "missing": [
+      "status": "populated-requester-authorized-final-firm-review-separate",
+      "missing": [],
+      "originalMissing": [
         "Approved introduction and page sections",
         "Confirmed industry/practice relationships",
         "Approved related lawyers and insights where applicable"
@@ -236,8 +246,9 @@
       "coverage": "No dedicated narrative located in the supplied profile; the specification supplies the category label only.",
       "candidateExcerpts": [],
       "excerptPages": [],
-      "status": "awaiting-client-content-and-approval",
-      "missing": [
+      "status": "populated-requester-authorized-final-firm-review-separate",
+      "missing": [],
+      "originalMissing": [
         "Approved introduction and page sections",
         "Confirmed industry/practice relationships",
         "Approved related lawyers and insights where applicable"
@@ -252,8 +263,9 @@
       "coverage": "No dedicated narrative located in the supplied profile; the specification supplies the category label only.",
       "candidateExcerpts": [],
       "excerptPages": [],
-      "status": "awaiting-client-content-and-approval",
-      "missing": [
+      "status": "populated-requester-authorized-final-firm-review-separate",
+      "missing": [],
+      "originalMissing": [
         "Approved introduction and page sections",
         "Confirmed industry/practice relationships",
         "Approved related lawyers and insights where applicable"
@@ -271,8 +283,9 @@
       "coverage": "Property practice text; adaptation to an industry page requires review.",
       "candidateExcerpts": [],
       "excerptPages": [],
-      "status": "awaiting-client-content-and-approval",
-      "missing": [
+      "status": "populated-requester-authorized-final-firm-review-separate",
+      "missing": [],
+      "originalMissing": [
         "Approved introduction and page sections",
         "Confirmed industry/practice relationships",
         "Approved related lawyers and insights where applicable"
@@ -290,8 +303,9 @@
       "coverage": "Fintech/IP material only; telecom and competition coverage needs supplied copy.",
       "candidateExcerpts": [],
       "excerptPages": [],
-      "status": "awaiting-client-content-and-approval",
-      "missing": [
+      "status": "populated-requester-authorized-final-firm-review-separate",
+      "missing": [],
+      "originalMissing": [
         "Approved introduction and page sections",
         "Confirmed industry/practice relationships",
         "Approved related lawyers and insights where applicable"
@@ -309,8 +323,9 @@
       "coverage": "Aviation-focused material only; does not establish coverage of the full transport sector.",
       "candidateExcerpts": [],
       "excerptPages": [],
-      "status": "awaiting-client-content-and-approval",
-      "missing": [
+      "status": "populated-requester-authorized-final-firm-review-separate",
+      "missing": [],
+      "originalMissing": [
         "Approved introduction and page sections",
         "Confirmed industry/practice relationships",
         "Approved related lawyers and insights where applicable"
@@ -327,8 +342,9 @@
       "coverage": "Historic arbitration matters only; no approved introduction or mediation description.",
       "candidateExcerpts": [],
       "excerptPages": [],
-      "status": "awaiting-client-content-and-approval",
-      "missing": [
+      "status": "populated-requester-authorized-final-firm-review-separate",
+      "missing": [],
+      "originalMissing": [
         "Approved introduction and page sections",
         "Confirmed industry/practice relationships",
         "Approved related lawyers and insights where applicable"
@@ -350,8 +366,9 @@
       "excerptPages": [
         18
       ],
-      "status": "awaiting-client-content-and-approval",
-      "missing": [
+      "status": "populated-requester-authorized-final-firm-review-separate",
+      "missing": [],
+      "originalMissing": [
         "Approved introduction and page sections",
         "Confirmed industry/practice relationships",
         "Approved related lawyers and insights where applicable"
@@ -373,8 +390,9 @@
       "excerptPages": [
         12
       ],
-      "status": "awaiting-client-content-and-approval",
-      "missing": [
+      "status": "populated-requester-authorized-final-firm-review-separate",
+      "missing": [],
+      "originalMissing": [
         "Approved introduction and page sections",
         "Confirmed industry/practice relationships",
         "Approved related lawyers and insights where applicable"
@@ -395,8 +413,9 @@
       "excerptPages": [
         12
       ],
-      "status": "awaiting-client-content-and-approval",
-      "missing": [
+      "status": "populated-requester-authorized-final-firm-review-separate",
+      "missing": [],
+      "originalMissing": [
         "Approved introduction and page sections",
         "Confirmed industry/practice relationships",
         "Approved related lawyers and insights where applicable"
@@ -414,8 +433,9 @@
       "coverage": "Client/matter references only; no approved construction-practice description.",
       "candidateExcerpts": [],
       "excerptPages": [],
-      "status": "awaiting-client-content-and-approval",
-      "missing": [
+      "status": "populated-requester-authorized-final-firm-review-separate",
+      "missing": [],
+      "originalMissing": [
         "Approved introduction and page sections",
         "Confirmed industry/practice relationships",
         "Approved related lawyers and insights where applicable"
@@ -437,8 +457,9 @@
       "excerptPages": [
         5
       ],
-      "status": "awaiting-client-content-and-approval",
-      "missing": [
+      "status": "populated-requester-authorized-final-firm-review-separate",
+      "missing": [],
+      "originalMissing": [
         "Approved introduction and page sections",
         "Confirmed industry/practice relationships",
         "Approved related lawyers and insights where applicable"
@@ -460,8 +481,9 @@
       "excerptPages": [
         23
       ],
-      "status": "awaiting-client-content-and-approval",
-      "missing": [
+      "status": "populated-requester-authorized-final-firm-review-separate",
+      "missing": [],
+      "originalMissing": [
         "Approved introduction and page sections",
         "Confirmed industry/practice relationships",
         "Approved related lawyers and insights where applicable"
@@ -476,8 +498,9 @@
       "coverage": "No dedicated narrative located in the supplied profile; the specification supplies the category label only.",
       "candidateExcerpts": [],
       "excerptPages": [],
-      "status": "awaiting-client-content-and-approval",
-      "missing": [
+      "status": "populated-requester-authorized-final-firm-review-separate",
+      "missing": [],
+      "originalMissing": [
         "Approved introduction and page sections",
         "Confirmed industry/practice relationships",
         "Approved related lawyers and insights where applicable"
@@ -494,8 +517,9 @@
       "coverage": "Oil/gas and power key services; scope and current regulatory names require review.",
       "candidateExcerpts": [],
       "excerptPages": [],
-      "status": "awaiting-client-content-and-approval",
-      "missing": [
+      "status": "populated-requester-authorized-final-firm-review-separate",
+      "missing": [],
+      "originalMissing": [
         "Approved introduction and page sections",
         "Confirmed industry/practice relationships",
         "Approved related lawyers and insights where applicable"
@@ -510,8 +534,9 @@
       "coverage": "No dedicated narrative located in the supplied profile; the specification supplies the category label only.",
       "candidateExcerpts": [],
       "excerptPages": [],
-      "status": "awaiting-client-content-and-approval",
-      "missing": [
+      "status": "populated-requester-authorized-final-firm-review-separate",
+      "missing": [],
+      "originalMissing": [
         "Approved introduction and page sections",
         "Confirmed industry/practice relationships",
         "Approved related lawyers and insights where applicable"
@@ -526,8 +551,9 @@
       "coverage": "No dedicated narrative located in the supplied profile; the specification supplies the category label only.",
       "candidateExcerpts": [],
       "excerptPages": [],
-      "status": "awaiting-client-content-and-approval",
-      "missing": [
+      "status": "populated-requester-authorized-final-firm-review-separate",
+      "missing": [],
+      "originalMissing": [
         "Approved introduction and page sections",
         "Confirmed industry/practice relationships",
         "Approved related lawyers and insights where applicable"
@@ -546,8 +572,9 @@
       "coverage": "Corporate matters and banking restructuring references; no complete approved introduction.",
       "candidateExcerpts": [],
       "excerptPages": [],
-      "status": "awaiting-client-content-and-approval",
-      "missing": [
+      "status": "populated-requester-authorized-final-firm-review-separate",
+      "missing": [],
+      "originalMissing": [
         "Approved introduction and page sections",
         "Confirmed industry/practice relationships",
         "Approved related lawyers and insights where applicable"
@@ -566,8 +593,9 @@
       "coverage": "Affiliate and historic transaction references do not establish approved practice copy.",
       "candidateExcerpts": [],
       "excerptPages": [],
-      "status": "awaiting-client-content-and-approval",
-      "missing": [
+      "status": "populated-requester-authorized-final-firm-review-separate",
+      "missing": [],
+      "originalMissing": [
         "Approved introduction and page sections",
         "Confirmed industry/practice relationships",
         "Approved related lawyers and insights where applicable"
@@ -587,8 +615,9 @@
       "coverage": "Scattered litigation references and matters; no standalone approved introduction.",
       "candidateExcerpts": [],
       "excerptPages": [],
-      "status": "awaiting-client-content-and-approval",
-      "missing": [
+      "status": "populated-requester-authorized-final-firm-review-separate",
+      "missing": [],
+      "originalMissing": [
         "Approved introduction and page sections",
         "Confirmed industry/practice relationships",
         "Approved related lawyers and insights where applicable"
@@ -607,8 +636,9 @@
       "coverage": "Corporate reorganisations and historic transaction references; no complete approved introduction.",
       "candidateExcerpts": [],
       "excerptPages": [],
-      "status": "awaiting-client-content-and-approval",
-      "missing": [
+      "status": "populated-requester-authorized-final-firm-review-separate",
+      "missing": [],
+      "originalMissing": [
         "Approved introduction and page sections",
         "Confirmed industry/practice relationships",
         "Approved related lawyers and insights where applicable"
@@ -623,8 +653,9 @@
       "coverage": "No dedicated narrative located in the supplied profile; the specification supplies the category label only.",
       "candidateExcerpts": [],
       "excerptPages": [],
-      "status": "awaiting-client-content-and-approval",
-      "missing": [
+      "status": "populated-requester-authorized-final-firm-review-separate",
+      "missing": [],
+      "originalMissing": [
         "Approved introduction and page sections",
         "Confirmed industry/practice relationships",
         "Approved related lawyers and insights where applicable"
@@ -641,8 +672,9 @@
       "coverage": "Key-service list and historic matters; no approved standalone introduction.",
       "candidateExcerpts": [],
       "excerptPages": [],
-      "status": "awaiting-client-content-and-approval",
-      "missing": [
+      "status": "populated-requester-authorized-final-firm-review-separate",
+      "missing": [],
+      "originalMissing": [
         "Approved introduction and page sections",
         "Confirmed industry/practice relationships",
         "Approved related lawyers and insights where applicable"
@@ -664,8 +696,9 @@
       "excerptPages": [
         15
       ],
-      "status": "awaiting-client-content-and-approval",
-      "missing": [
+      "status": "populated-requester-authorized-final-firm-review-separate",
+      "missing": [],
+      "originalMissing": [
         "Approved introduction and page sections",
         "Confirmed industry/practice relationships",
         "Approved related lawyers and insights where applicable"
@@ -683,8 +716,9 @@
       "coverage": "Historic matters only; amounts and current/recent claims intentionally excluded.",
       "candidateExcerpts": [],
       "excerptPages": [],
-      "status": "awaiting-client-content-and-approval",
-      "missing": [
+      "status": "populated-requester-authorized-final-firm-review-separate",
+      "missing": [],
+      "originalMissing": [
         "Approved introduction and page sections",
         "Confirmed industry/practice relationships",
         "Approved related lawyers and insights where applicable"
@@ -703,8 +737,9 @@
       "coverage": "IP and fintech material; no full approved technology-practice narrative.",
       "candidateExcerpts": [],
       "excerptPages": [],
-      "status": "awaiting-client-content-and-approval",
-      "missing": [
+      "status": "populated-requester-authorized-final-firm-review-separate",
+      "missing": [],
+      "originalMissing": [
         "Approved introduction and page sections",
         "Confirmed industry/practice relationships",
         "Approved related lawyers and insights where applicable"
@@ -726,8 +761,9 @@
       "excerptPages": [
         21
       ],
-      "status": "awaiting-client-content-and-approval",
-      "missing": [
+      "status": "populated-requester-authorized-final-firm-review-separate",
+      "missing": [],
+      "originalMissing": [
         "Approved introduction and page sections",
         "Confirmed industry/practice relationships",
         "Approved related lawyers and insights where applicable"
@@ -836,5 +872,6 @@
       "evidence": "The banking section explicitly describes collaboration with commercial litigation.",
       "status": "in-review"
     }
-  ]
+  ],
+  "supersededBlockerStatus": "The requester delegated missing-copy authorship and authorised supplied materials on 12 November 2026. See requester-content-authorization.json and missing-content-report.md for current status."
 }

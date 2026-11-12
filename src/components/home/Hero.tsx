@@ -1,3 +1,5 @@
+import { about } from '../../data/about';
+import { isPublished } from '../../lib/publication';
 import { usePresentationMode } from '../../lib/presentation';
 import { ArrowDown } from 'lucide-react';
 import { Container } from '../Container';
@@ -5,7 +7,7 @@ import { ButtonLink } from '../Button';
 import { homepageCopy } from '../../data/homepage';
 
 export function Hero() {
-  const preview = usePresentationMode() === 'management-preview';
+  const preview = usePresentationMode() === 'management-preview' || isPublished(about);
   return <section className="home-hero" aria-labelledby="hero-heading">
     <picture className="home-hero__image"><source media="(max-width: 47.99rem)" srcSet="/assets/architecture/towers-960.webp" /><img src="/assets/architecture/towers-1920.webp" width="1920" height="1080" alt="" aria-hidden="true" fetchPriority="high" decoding="async" /></picture>
     <div className="home-hero__shade" aria-hidden="true" />

@@ -1,55 +1,29 @@
-# Expertise content guide
+﻿# Expertise content and publication guide
 
-## What is currently public
+All 15 industry and 21 practice pages are populated. Copy combines the supplied Firm Profile where applicable with original, neutral sector/practice wording written under the requester's explicit discretion. The 68 industry/practice associations are editorial navigation, not claims of past representative work.
 
-The WRS-confirmed category names, routes and content-pending states are visible. No detailed industry/practice summaries, representative matters or draft biographies were invented or promoted to approved status.
+## Publication states
 
-`labelApproval.status = confirmed` confirms the category name only. Its source identifies the relevant WRS section. It is independent of `editorial`, which governs the summary and relationships. If retiring a category completely, withdraw its label confirmation as well as its publication approval.
+`approved` records require `approvedBy`, `approvedAt` and `publishedAt`. `authorized` records instead require `authorizedBy`, `authorizedAt` and `publishedAt`: the real requester instruction is recorded, without inventing final firm legal review. Both reject missing/invalid metadata, future publication and publication before authorization/approval. Draft, archived and in-review records remain excluded from normal views.
 
-## Add approved introductions
+The current requester authorization is documented in `requester-content-authorization.json`. Actual firm legal sign-off remains a separate later review. Do not invent approval names, credentials, rankings, matters or dates. These are static display controls, not authentication; confidential information must not be placed in frontend content files.
 
-Edit the matching record in `src/data/industries.ts` or `src/data/practices.ts` and populate `summary`. Record the real approval metadata in `editorial`: approved status, named reviewer, approval timestamp and publication timestamp. The existing `isPublished` selector rejects missing/invalid dates, future publication and publication before approval.
+## Page content
 
-A confirmed name never publishes its draft summary. No approval names or timestamps should be fabricated. Keep confidential material out of static source modules; this is an editorial display gate, not access control.
+Edit matching records in `src/data/industries.ts` and `src/data/practices.ts`. Each has `summary` and `sections: [{ heading, paragraphs, items? }]`. The template generates section anchors, an on-page menu and service/discussion lists, and safely renders text without raw HTML. Confirmed names are independently governed by `labelApproval`.
 
-For long-form content, add `sections: [{ heading, paragraphs: string[], items?: string[] }]` on the expertise record. These paragraphs and service bullets share the record's approval gate. The template generates section anchors and on-page navigation automatically and renders text safely without raw HTML.
+`src/data/about.ts` contains profile-grounded history, positioning and service approach. It shares the publication boundary. Homepage leadership and insight previews draw on central source records.
 
-The source-reference inventory is `docs/content-review.json`: all 36 page gaps, 11 verbatim candidate excerpts including About, and ten proposed taxonomy associations. It stays outside app data. No excerpt or suggested association is approved merely because it is listed there. Run `npm run content:report` after updating actual content/approval records.
+## Relationships
 
-## Populate relationships
+`src/data/expertise-connections.ts` stores `{ id, industryId, practiceId, editorial }` records. One permitted connection resolves in both directions, with deduplication and confirmed destinations. Withdrawn, dangling and unpublished links do not appear. This independent permission does not publish an otherwise unapproved page narrative.
 
-`Expertise.relationships` accepts arrays of existing IDs:
+Existing `relationships` arrays and legacy `relatedIds` still work. Source-checked lawyer practice IDs populate related people; verified insight associations populate related insights. Related records must have their own publication permission. Do not assign a lawyer to a new sector solely to fill a panel.
 
-- industryIds / practiceIds: cross-taxonomy expertise.
-- lawyerIds: related fully approved lawyers.
-- insightIds: related fully approved insights.
-- matterIds: related fully approved representative matters.
-- publicationIds: related fully approved publications.
+Archive metadata permission does not authorize reproduction of an article body. An insight body additionally requires its own valid `bodyEditorial` metadata. No new article bodies have been supplied or generated.
 
-Explicit relationships on an expertise record become active when that source record is fully published. The resolver also recognises inverse associations from approved records. Published lawyers use practiceIds; insights, matters and publications use practiceIds and industryIds. Do not invent associations merely to fill a page.
+## Reports and final review
 
-A taxonomy relationship may also be reviewed independently of either narrative. Add its `id`, `industryId`, `practiceId` and real `editorial` approval metadata to `src/data/expertise-connections.ts`. Approved associations appear in both directions, resolve confirmed destinations only and are deduplicated. Draft, scheduled, incomplete and dangling associations do not appear. This does not publish either page's unapproved copy. The list is currently empty because the proposed associations await approval.
+Run `npm run content:report` to regenerate `docs/missing-content-report.md`. It checks all 36 pages and reports current content coverage and outstanding factual/asset confirmations. `content-review.json` preserves original source-page coverage and candidate evidence; it is outside public build output.
 
-Related people and insights link directly to their approved detail routes. Their own publication approval remains required even when the expertise introduction or taxonomy association is approved.
-
-The legacy `relatedIds` field still resolves cross-taxonomy links and can coexist with the new fields. Dangling IDs are ignored. Cross-taxonomy destinations require a confirmed category name or full publication approval; their summaries remain gated independently.
-
-## Matters and publications
-
-`src/data/matters.ts` and `src/data/publications.ts` start empty. Add only approved, source-backed records using the types in `src/types/content.ts`. Matters support a summary. Publications support author IDs, publisher, optional verified year and external URL.
-
-Only fully approved records display. External links accept HTTP/HTTPS only; text is rendered safely as text. Publication bodies, unverified dates and case outcomes should not be fabricated. The homepage's two verified archive excerpts remain separate from these approval-governed detail-page datasets.
-
-## Template behavior
-
-`getExpertiseDetail` resolves the introduction and relationships. `ExpertiseDetailTemplate` displays approved sections automatically and omits empty ones. With no approved summary, it displays a content-pending panel and enquiry link. With no related material, it displays a concise forthcoming note. Adjacent-category navigation and breadcrumbs are automatic.
-
-No React template changes are needed to add approved content or relationships. As with the rest of this static Vite site, data updates still require the normal build/deployment process.
-
-The practice browsing groups are editorial navigation, not additional legal services or approved marketing claims. New confirmed practice records not assigned to a group fall into Further practice areas.
-
-## Before public launch
-
-Approve About marketing language and all visible management-preview portraits, complete content review, perform real-browser/device QA, and remove preview noindex only when launch is authorised. No CMS or backend has been introduced.
-
-The default presentation is approved-only. An explicit `VITE_CONTENT_MODE=management-preview` build preserves the MVP for review and displays a banner. About, directories/detail pages, homepage previews, authors/related writing and route metadata share this boundary. Technical implementation approval is separate from content publication approval.
+The default build displays authorized/approved records. `VITE_CONTENT_MODE=management-preview` additionally displays eligible review records with a banner. Both retain noindex until launch is separately authorised. Final wording review, current professional details, Abuja address, phone availability and a better logo remain documented refinements. They do not require blanking the completed demonstration pages.

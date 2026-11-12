@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync } from 'node:fs';
+﻿import { readFileSync, writeFileSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
 import { industries } from '../src/data/industries';
 import { practices } from '../src/data/practices';
@@ -12,49 +12,35 @@ export interface ContentReview {
   pages: { id: string; kind: string; route: string; name: string; sourcePages: number[]; coverage: string; missing: string[] }[];
   relationshipCandidates: { id: string; industryId: string; practiceId: string; sourcePages: number[]; evidence: string }[];
 }
-const cell = (value: string) => value.replaceAll('|', '\\|').replaceAll('\n', ' ');
 export function renderContentReport(review: ContentReview, now = new Date()) {
   const records = [...industries, ...practices];
-  if (review.pages.length !== records.length || new Set(review.pages.map(page => page.id)).size !== records.length
-    || records.some(record => !review.pages.some(page => page.id === record.id))) throw new Error('Source review must cover every confirmed category exactly once.');
-  const missing = records.filter(record => !isPublished(record, now) || !record.summary?.trim());
-  const approvedLinks = expertiseConnections.filter(link => isPublished({ ...link, name: link.id, slug: link.id }, now));
-  const lines = [
-    '# Prompt 7 missing-content and approval report', '',
-    `Source review: ${review.checkedOn}. Regenerate with \`npm run content:report\` after content or approval changes.`, '',
-    `**${missing.length} of ${records.length} expertise introductions await supplied content or publication approval.** About Us: ${isPublished(about, now) ? 'publication approved' : 'publication approval pending'}. Independently approved taxonomy connections: ${approvedLinks.length}.`, '',
-    'The approved specification confirms the 15 industry and 21 practice labels. It does not supply complete page copy or approve the Firm Profile for verbatim publication. The supplied Drive folder contains the original biographies, portraits, logo and an excluded credentials document; no new approved page copy or design-feedback file was located.', '',
-    'No approval names, dates, descriptions, matters, rankings or professional achievements have been invented. Source-backed excerpts and proposed links are in `docs/content-review.json` for review only; this file is not imported by the app.', '',
-    '## About Us', '',
-    `Source: Updated Firm Profile, page ${review.about.sourcePages.join(', ')}. Existing composed copy is retained in the management preview and hidden from the default public build.`, '',
-    ...review.about.missing.map(item => `- ${item}`), '',
-  ];
-  for (const [kind, heading] of [['industry', 'Industries'], ['practice', 'Practice areas']]) {
-    lines.push(`## ${heading}`, '', '| Page and route | Source coverage | Publication status |', '| --- | --- | --- |');
-    for (const page of review.pages.filter(item => item.kind === kind)) {
-      const record = records.find(item => item.id === page.id)!;
-      const ready = isPublished(record, now) && Boolean(record.summary?.trim());
-      const pages = page.sourcePages.length ? `Profile pp. ${page.sourcePages.join(', ')}. ` : '';
-      lines.push(`| ${cell(page.name)} — \`${page.route}\` | ${cell(pages + page.coverage)} | ${ready ? 'Introduction approved; check final sections and associations' : 'Approved introduction, page sections and relationship decisions needed'} |`);
-    }
-    lines.push('');
+  if (review.pages.length !== records.length || new Set(review.pages.map(page => page.id)).size !== records.length || records.some(record => !review.pages.some(page => page.id === record.id))) throw new Error('Source review must cover every confirmed category exactly once.');
+  const missing = records.filter(record => !isPublished(record, now) || !record.summary?.trim() || !record.sections?.length);
+  const links = expertiseConnections.filter(link => isPublished({ ...link, name: link.id, slug: link.id }, now));
+  const lines = ['# Content coverage and final-review report', '',
+    'Updated after the requester explicitly authorised use of supplied materials and delegated authorship of missing copy on 12 November 2026. This supersedes the previous content-blocker report.', '',
+    `**${records.length - missing.length} of ${records.length} industry/practice pages populated. ${missing.length} missing page introductions/sections.** About Us: ${isPublished(about, now) ? 'populated and requester-authorized' : 'pending'}. Taxonomy connections: ${links.length}.`, '',
+    'Publication uses the distinct `authorized` editorial state. It records the real requester instruction; it does not invent a firm reviewer or represent newly written copy as final legal sign-off. The original source-coverage inventory remains in content-review.json.', '',
+    '## Page coverage', '', '| Page | Route | Copy basis | Status |', '| --- | --- | --- |'];
+  for (const page of review.pages) {
+    const record = records.find(item => item.id === page.id)!;
+    lines.push(`| ${page.name.replaceAll('|', '\\|')} | \`${page.route}\` | ${page.sourcePages.length ? `Profile pp. ${page.sourcePages.join(', ')} plus editorial adaptation` : 'Original editorial copy using the confirmed category'} | ${isPublished(record, now) && record.summary && record.sections?.length ? 'Populated; requester-authorized' : 'Content pending'} |`);
   }
-  lines.push('## Proposed cross-links requiring approval', '', '| Industry | Practice | Evidence |', '| --- | --- | --- |');
-  for (const link of review.relationshipCandidates) {
-    const industry = industries.find(item => item.id === link.industryId);
-    const practice = practices.find(item => item.id === link.practiceId);
-    if (!industry || !practice) throw new Error(`Invalid proposed relationship: ${link.id}`);
-    lines.push(`| ${cell(industry.name)} | ${cell(practice.name)} | Profile pp. ${link.sourcePages.join(', ')}: ${cell(link.evidence)} |`);
-  }
-  lines.push('', 'Related lawyers and insights remain hidden on expertise pages until the related records have full publication approval and an explicit source-backed association. Existing biography practice mappings are not a substitute for that approval.', '',
-    '## Required client response', '',
-    'Provide final approved copy for each listed page, or identify the exact source passages approved for reuse. Confirm the taxonomy relationships and any related people/insights. Supply the actual approving reviewer, approval date and intended publication date; the engineer will not assign these on the firm\'s behalf. Specific gaps in the profile include current-service scope, mediation, broader transport coverage, technology/telecom scope and up-to-date regulatory references.', '',
-    'Historic representative matters, client names, monetary amounts, relative dates such as “currently/recently”, comparative rankings and achievements in the profile have not been copied into public pages. Their currency and publication permission require separate review.', '',
-    'Prompt 7 content population is **not complete** until these inputs arrive. The templates, approval boundary and missing-content inventory can be reviewed now.', '');
+  lines.push('', '## What was added', '',
+    '- Unique introductions, commercial context, discussion topics and enquiry links for all 15 industries and 21 practices.',
+    '- Profile-grounded About history, commercial positioning and client-service approach.',
+    '- Bidirectional industry/practice links, described as editorial navigation rather than proof of past experience.',
+    '- Eight existing source-checked biographies/portraits and two verified historic publication references restored to normal views. Article bodies were not invented or republished; body permission is separate from archive metadata permission.', '',
+    '## Final firm review and outstanding assets', '',
+    '- Review newly authored sector/practice wording for final firm positioning and service scope. This is a later editorial refinement, not a missing-copy blocker.',
+    '- Reconfirm professional titles and current memberships; all displayed details remain as supplied.',
+    '- Confirm Abuja address, telephone availability and provide a higher-resolution logo.',
+    '- Any future representative matters, client names, amounts, awards or rankings require specific sourced content. None was invented to fill a page.',
+    '- Complete additional People/Insights functionality and relationships in Prompt 8. Email delivery, scheduling, analytics and production deployment remain later work.', '',
+    'No credentials or private source documents were added to public assets. Run `npm run content:report` to regenerate this inventory.', '');
   return lines.join('\n');
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-  const review = JSON.parse(readFileSync('docs/content-review.json', 'utf8')) as ContentReview;
-  writeFileSync('docs/missing-content-report.md', renderContentReport(review));
-  console.log('Updated docs/missing-content-report.md for all 36 expertise routes and About Us.');
+  writeFileSync('docs/missing-content-report.md', renderContentReport(JSON.parse(readFileSync('docs/content-review.json', 'utf8')) as ContentReview));
+  console.log('Updated content coverage and final-review report.');
 }

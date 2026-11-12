@@ -7,7 +7,7 @@ export const insights: Insight[] = [
     subtitle: 'Court intervention in arbitration proceedings', publisher: 'The Gravitas Review', publisherNote: 'Publisher page; purchase may be required.',
     externalUrl: 'https://gravitasreview.com.ng/product/non-interventionist-principle-sections-30-and-34/',
     verification: { status: 'publisher-verified', sourceUrl: 'https://gravitasreview.com.ng/product/non-interventionist-principle-sections-30-and-34/', checkedOn: '2026-11-12' },
-    editorial: { status: 'in-review', source: 'Title and author confirmed at publisher; December 2019 issue confirmed in supplied Ajibola Dalley biography. Site approval pending.' },
+    editorial: {"status": "authorized", "source": "Title and author confirmed at publisher; December 2019 issue confirmed in supplied Ajibola Dalley biography. Site approval pending.; existing publisher metadata and external link only; wording adapted or composed under the requester's explicit delegated-copy instruction. Final firm legal review remains separate.", "authorizedBy": "Project requester - Prompt 7 follow-up instruction", "authorizedAt": "2026-11-12", "publishedAt": "2026-11-12"},
   },
   {
     id: 'continental-free-trade', slug: 'continental-free-trade', name: 'Continental free trade agreement renews hope for Africa’s prosperity',
@@ -16,6 +16,6 @@ export const insights: Insight[] = [
     publisher: 'The Guardian', publisherNote: 'External archive publication.',
     externalUrl: 'https://guardian.ng/features/continental-free-trade-agreement-renews-hope-for-africas-prosperity/',
     verification: { status: 'publisher-verified', sourceUrl: 'https://guardian.ng/features/continental-free-trade-agreement-renews-hope-for-africas-prosperity/', checkedOn: '2026-11-12' },
-    editorial: { status: 'in-review', source: 'Title, author and 3 September 2019 date confirmed at the original publisher. Site approval pending.' },
+    editorial: {"status": "authorized", "source": "Title, author and 3 September 2019 date confirmed at the original publisher. Site approval pending.; existing publisher metadata and external link only; wording adapted or composed under the requester's explicit delegated-copy instruction. Final firm legal review remains separate.", "authorizedBy": "Project requester - Prompt 7 follow-up instruction", "authorizedAt": "2026-11-12", "publishedAt": "2026-11-12"},
   },
 ];
