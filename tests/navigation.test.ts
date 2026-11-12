@@ -22,6 +22,7 @@ const { industries } = await import('../src/data/industries');
 const { practices } = await import('../src/data/practices');
 const { lawyers } = await import('../src/data/lawyers');
 const { insights } = await import('../src/data/insights');
+const { getRouteMetadata } = await import('../src/lib/route-metadata');
 let root: ReturnType<typeof createRoot> | undefined;
 
 async function mount() {
@@ -48,6 +49,11 @@ test('all desktop primary links navigate and expose the active page', async () =
     const link = required<HTMLAnchorElement>(`.desktop-navigation .nav-link[href="${item.path}"]`);
     await click(link);
     assert.equal(required('main').getAttribute('data-page'), item.path);
+    const metadata = getRouteMetadata(item.path);
+    assert.equal(document.title, metadata.title);
+    assert.equal(required<HTMLMetaElement>('meta[name="description"]').content, metadata.description);
+    assert.equal(required<HTMLMetaElement>('meta[property="og:title"]').content, metadata.title);
+    assert.equal(document.querySelectorAll('meta[name="description"]').length, 1);
     assert.equal(required(`.desktop-navigation .nav-link[href="${item.path}"]`).getAttribute('aria-current'), 'page', `Active state for ${item.path}`);
   }
 });

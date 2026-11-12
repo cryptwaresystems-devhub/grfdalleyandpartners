@@ -82,7 +82,7 @@
 .contact-main-email:hover { color: var(--color-burgundy); }
 .contact-main-phone { font-size: 1.1rem; text-decoration: none; }
 .contact-introduction .directory-note { margin-top: 0.6rem; }
-.contact-offices { padding-block: var(--section-space); scroll-margin-top: calc(var(--header-height) + 2rem); }
+.contact-offices { padding-block: var(--section-space); scroll-margin-top: 1rem; }
 .contact-section-heading h2 { font-size: clamp(2rem, 3.6vw, 3.25rem); margin-bottom: 2.5rem; }
 .contact-offices-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--color-line); }
 .contact-offices-grid article { padding: 2rem 2rem 0 0; }

@@ -1,0 +1,5 @@
+tmp/
+.review-deps/
+.qodo/
+.env
+.env.*

@@ -44,7 +44,7 @@
 .practice-jump-links a:hover { border-color: var(--color-burgundy); color: var(--color-burgundy); }
 .directory-note { margin: 1.4rem 0 0; color: var(--color-muted); font-size: 0.7rem; }
 .practice-directory-groups { padding-top: 3rem; }
-.practice-group { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; padding-block: 2.5rem 3.5rem; border-top: 1px solid var(--color-line); scroll-margin-top: calc(var(--header-height) + 2rem); }
+.practice-group { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; padding-block: 2.5rem 3.5rem; border-top: 1px solid var(--color-line); scroll-margin-top: 1rem; }
 .practice-group__heading > span { display: block; color: var(--color-accent); font-size: 0.65rem; margin-bottom: 1.2rem; }
 .practice-group__heading h2 { font-size: clamp(1.7rem, 2.6vw, 2.45rem); }
 .practice-group__list { min-width: 0; }
@@ -54,7 +54,7 @@
 .practice-group__list .expertise-card:hover { padding-inline: 0.5rem; }
 .expertise-detail-layout { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: clamp(3rem, 7vw, 7rem); padding-top: var(--section-space); }
 .expertise-detail-main { min-width: 0; }
-.detail-section { padding-bottom: 3.5rem; scroll-margin-top: calc(var(--header-height) + 2rem); }
+.detail-section { padding-bottom: 3.5rem; scroll-margin-top: 1rem; }
 .detail-section + .detail-section { border-top: 1px solid var(--color-line); padding-top: 2.5rem; }
 .detail-section h2 { font-size: clamp(2rem, 3vw, 2.8rem); margin-bottom: 1.4rem; }
 .detail-summary { color: var(--color-muted); font-size: 1rem; white-space: pre-line; }
