@@ -10,6 +10,7 @@ import { InsightsPage } from '../pages/InsightsPage';
 import { InsightDetailPage } from '../pages/InsightDetailPage';
 import { ContactPage } from '../pages/ContactPage';
 import { NotFoundPage } from '../pages/NotFoundPage';
+import { PresentationProvider, sitePresentationMode, type PresentationMode } from '../lib/presentation';
 
 function LegacyExpertiseRedirect({ base }: { base: string }) {
   const { slug } = useParams();
@@ -17,7 +18,7 @@ function LegacyExpertiseRedirect({ base }: { base: string }) {
   return <Navigate replace to={{ pathname: slug ? `${base}/${encodeURIComponent(slug)}` : base, search, hash }} />;
 }
 // Shared with route tests so aliases and details exercise the real app tree.
-export const routes: RouteObject[] = [{ element: <FoundationLayout />, children: [
+export function createAppRoutes(mode: PresentationMode = sitePresentationMode): RouteObject[] { return [{ element: <PresentationProvider mode={mode}><FoundationLayout /></PresentationProvider>, children: [
   { index: true, element: <HomePage /> },
   { path: '/about', element: <AboutPage /> },
   { path: '/industries', element: <ExpertiseOverviewPage kind="industry" /> },
@@ -34,4 +35,5 @@ export const routes: RouteObject[] = [{ element: <FoundationLayout />, children:
   { path: '/insights/:slug', element: <InsightDetailPage /> },
   { path: '/contact', element: <ContactPage /> },
   { path: '*', element: <NotFoundPage /> },
-] }];
+] }]; }
+export const routes = createAppRoutes();

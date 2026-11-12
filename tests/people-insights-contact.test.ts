@@ -1,3 +1,4 @@
+import { PresentationProvider } from '../src/lib/presentation';
 import { afterEach, test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
@@ -22,7 +23,7 @@ const windows: Window[] = [];
 afterEach(() => { windows.splice(0).forEach(dom => dom.happyDOM.close()); });
 function render(element: Parameters<typeof renderToStaticMarkup>[0], width = 1440) {
   const dom = new Window({ width, height: 900 }); windows.push(dom);
-  dom.document.body.innerHTML = renderToStaticMarkup(h(MemoryRouter, null, element));
+  dom.document.body.innerHTML = renderToStaticMarkup(h(MemoryRouter, null, h(PresentationProvider, { mode: 'management-preview' }, element)));
   return dom;
 }
 test('all eight people use biography-checked portraits, valid practice IDs and pending approval', () => {

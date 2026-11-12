@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "typecheck": "tsc -b",
     "test": "tsx --test tests/*.test.ts",
-    "lint": "eslint . --max-warnings 0"
+    "lint": "eslint . --max-warnings 0",
+    "content:report": "tsx scripts/content-report.ts"
   },
   "engines": {
     "node": ">=22.12.0"

@@ -1,7 +1,8 @@
 import { firm } from './firm';
+import type { AboutContent } from '../types/content';
 
 // Newly composed narrative remains provisional. The page displays its status.
-export const about = {
+export const about: AboutContent = {
   id: 'about-narrative', slug: 'about', name: 'About Us',
   editorial: { status: 'in-review' as const, source: 'Updated Firm Profile, pp. 2, 5 and 12' },
   established: firm.foundedYear,

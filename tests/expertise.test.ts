@@ -1,3 +1,4 @@
+import { PresentationProvider } from '../src/lib/presentation';
 import { afterEach, test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
@@ -16,7 +17,7 @@ const windows: Window[] = [];
 afterEach(() => { for (const window of windows.splice(0)) window.happyDOM.close(); });
 function render(element: Parameters<typeof renderToStaticMarkup>[0], width = 1440) {
   const dom = new Window({ width, height: 900 }); windows.push(dom);
-  dom.document.body.innerHTML = renderToStaticMarkup(h(MemoryRouter, null, element));
+  dom.document.body.innerHTML = renderToStaticMarkup(h(MemoryRouter, null, h(PresentationProvider, { mode: 'management-preview' }, element)));
   return dom;
 }
 const now = new Date('2026-11-12');

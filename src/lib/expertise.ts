@@ -6,9 +6,11 @@ import { insights } from '../data/insights';
 import { matters } from '../data/matters';
 import { publications } from '../data/publications';
 import { isPublished, publishedOnly } from './publication';
+import { expertiseConnections } from '../data/expertise-connections';
+import type { ExpertiseConnection } from '../types/content';
 
-export interface ExpertiseData { industries: Expertise[]; practices: Expertise[]; lawyers: Lawyer[]; insights: Insight[]; matters: Matter[]; publications: Publication[] }
-export const expertiseData: ExpertiseData = { industries, practices, lawyers, insights, matters, publications };
+export interface ExpertiseData { industries: Expertise[]; practices: Expertise[]; lawyers: Lawyer[]; insights: Insight[]; matters: Matter[]; publications: Publication[]; connections?: ExpertiseConnection[] }
+export const expertiseData: ExpertiseData = { industries, practices, lawyers, insights, matters, publications, connections: expertiseConnections };
 export const expertiseBase = (kind: ExpertiseKind) => kind === 'industry' ? '/industries' : '/practices';
 export const expertiseLabel = (kind: ExpertiseKind) => kind === 'industry' ? 'Industry' : 'Practice';
 export function isCategoryVisible(record: Expertise, now = new Date()) {
@@ -27,12 +29,16 @@ export function getExpertiseDetail(kind: ExpertiseKind, slug: string, data = exp
   const legacyIds = sourcePublished ? record.relatedIds : [];
   const otherKind: ExpertiseKind = kind === 'industry' ? 'practice' : 'industry';
   const linkedExpertiseIds = kind === 'industry' ? links.practiceIds : links.industryIds;
-  const connected = getExpertiseCategories(otherKind, data, now).filter(item => [...linkedExpertiseIds ?? [], ...legacyIds].includes(item.id)
+  const approvedConnections = (data.connections ?? []).filter(item => isPublished({ ...item, slug: item.id, name: item.id }, now)
+    && (kind === 'industry' ? item.industryId : item.practiceId) === record.id);
+  const approvedIds = approvedConnections.map(item => kind === 'industry' ? item.practiceId : item.industryId);
+  const connected = getExpertiseCategories(otherKind, data, now).filter(item => [...linkedExpertiseIds ?? [], ...legacyIds, ...approvedIds].includes(item.id)
     || (isPublished(item, now) && ((kind === 'industry' ? item.relationships?.industryIds : item.relationships?.practiceIds)?.includes(record.id) || item.relatedIds.includes(record.id))));
   const matches = (item: { practiceIds: string[]; industryIds: string[] }) => (kind === 'industry' ? item.industryIds : item.practiceIds).includes(record.id);
   return {
     record, kind, otherKind, connected,
     summary: isPublished(record, now) ? record.summary : null,
+    sections: sourcePublished ? record.sections ?? [] : [],
     lawyers: publishedOnly(data.lawyers, now).filter(item => links.lawyerIds?.includes(item.id) || (kind === 'practice' && item.practiceIds.includes(record.id))),
     insights: publishedOnly(data.insights, now).filter(item => links.insightIds?.includes(item.id) || matches(item)),
     matters: publishedOnly(data.matters, now).filter(item => links.matterIds?.includes(item.id) || matches(item)),

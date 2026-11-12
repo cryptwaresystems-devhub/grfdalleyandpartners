@@ -12,6 +12,10 @@ Edit the matching record in `src/data/industries.ts` or `src/data/practices.ts` 
 
 A confirmed name never publishes its draft summary. No approval names or timestamps should be fabricated. Keep confidential material out of static source modules; this is an editorial display gate, not access control.
 
+For long-form content, add `sections: [{ heading, paragraphs: string[], items?: string[] }]` on the expertise record. These paragraphs and service bullets share the record's approval gate. The template generates section anchors and on-page navigation automatically and renders text safely without raw HTML.
+
+The source-reference inventory is `docs/content-review.json`: all 36 page gaps, 11 verbatim candidate excerpts including About, and ten proposed taxonomy associations. It stays outside app data. No excerpt or suggested association is approved merely because it is listed there. Run `npm run content:report` after updating actual content/approval records.
+
 ## Populate relationships
 
 `Expertise.relationships` accepts arrays of existing IDs:
@@ -23,6 +27,10 @@ A confirmed name never publishes its draft summary. No approval names or timesta
 - publicationIds: related fully approved publications.
 
 Explicit relationships on an expertise record become active when that source record is fully published. The resolver also recognises inverse associations from approved records. Published lawyers use practiceIds; insights, matters and publications use practiceIds and industryIds. Do not invent associations merely to fill a page.
+
+A taxonomy relationship may also be reviewed independently of either narrative. Add its `id`, `industryId`, `practiceId` and real `editorial` approval metadata to `src/data/expertise-connections.ts`. Approved associations appear in both directions, resolve confirmed destinations only and are deduplicated. Draft, scheduled, incomplete and dangling associations do not appear. This does not publish either page's unapproved copy. The list is currently empty because the proposed associations await approval.
+
+Related people and insights link directly to their approved detail routes. Their own publication approval remains required even when the expertise introduction or taxonomy association is approved.
 
 The legacy `relatedIds` field still resolves cross-taxonomy links and can coexist with the new fields. Dangling IDs are ignored. Cross-taxonomy destinations require a confirmed category name or full publication approval; their summaries remain gated independently.
 
@@ -43,3 +51,5 @@ The practice browsing groups are editorial navigation, not additional legal serv
 ## Before public launch
 
 Approve About marketing language and all visible management-preview portraits, complete content review, perform real-browser/device QA, and remove preview noindex only when launch is authorised. No CMS or backend has been introduced.
+
+The default presentation is approved-only. An explicit `VITE_CONTENT_MODE=management-preview` build preserves the MVP for review and displays a banner. About, directories/detail pages, homepage previews, authors/related writing and route metadata share this boundary. Technical implementation approval is separate from content publication approval.

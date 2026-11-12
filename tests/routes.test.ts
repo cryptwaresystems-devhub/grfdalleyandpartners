@@ -1,3 +1,4 @@
+import { PresentationProvider } from '../src/lib/presentation';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { createElement } from 'react';
@@ -7,7 +8,7 @@ import { HomePage } from '../src/pages/HomePage';
 import { SectionPage } from '../src/pages/SectionPage';
 import { navigation } from '../src/data/navigation';
 test('home exposes all prepared section paths', () => {
- const html = renderToStaticMarkup(createElement(MemoryRouter, null, createElement(HomePage)));
+ const html = renderToStaticMarkup(createElement(MemoryRouter, null, createElement(PresentationProvider, { mode: 'management-preview' }, createElement(HomePage))));
  for (const item of navigation.slice(1)) assert.ok(html.includes(`href="${item.path}"`));
 });
 test('generic pending template remains reusable for future content', () => {

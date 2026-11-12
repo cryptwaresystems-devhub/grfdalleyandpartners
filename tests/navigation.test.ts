@@ -17,7 +17,9 @@ const { SiteHeader } = await import('../src/components/SiteHeader');
 const { SiteFooter } = await import('../src/components/SiteFooter');
 const { RouteEffects } = await import('../src/components/RouteEffects');
 const { navigation } = await import('../src/data/navigation');
-const { routes: appRoutes } = await import('../src/app/routes');
+const { createAppRoutes } = await import('../src/app/routes');
+const appRoutes = createAppRoutes('management-preview');
+const { PresentationProvider } = await import('../src/lib/presentation');
 const { industries } = await import('../src/data/industries');
 const { practices } = await import('../src/data/practices');
 const { lawyers } = await import('../src/data/lawyers');
@@ -30,7 +32,7 @@ async function mount() {
   document.body.innerHTML = '<div id="app"></div>';
   root = createRoot(document.getElementById('app')!);
   await act(async () => root!.render(h(MemoryRouter, null,
-    h(RouteEffects), h(SiteHeader), h(Routes, null, ...navigation.map(item => h(Route, { key: item.path, path: item.path, element: h('main', { id: 'main-content', tabIndex: -1, 'data-page': item.path }, item.label) }))), h(SiteFooter),
+    h(PresentationProvider, { mode: 'management-preview' }, h(RouteEffects)), h(SiteHeader), h(Routes, null, ...navigation.map(item => h(Route, { key: item.path, path: item.path, element: h('main', { id: 'main-content', tabIndex: -1, 'data-page': item.path }, item.label) }))), h(SiteFooter),
   )));
 }
 function required<T extends Element>(selector: string): T {
@@ -49,7 +51,7 @@ test('all desktop primary links navigate and expose the active page', async () =
     const link = required<HTMLAnchorElement>(`.desktop-navigation .nav-link[href="${item.path}"]`);
     await click(link);
     assert.equal(required('main').getAttribute('data-page'), item.path);
-    const metadata = getRouteMetadata(item.path);
+    const metadata = getRouteMetadata(item.path, 'management-preview');
     assert.equal(document.title, metadata.title);
     assert.equal(required<HTMLMetaElement>('meta[name="description"]').content, metadata.description);
     assert.equal(required<HTMLMetaElement>('meta[property="og:title"]').content, metadata.title);

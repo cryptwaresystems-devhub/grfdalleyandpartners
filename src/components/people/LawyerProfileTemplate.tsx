@@ -1,3 +1,4 @@
+import { usePresentationMode } from '../../lib/presentation';
 import { Link } from 'react-router-dom';
 import { ExternalLink } from 'lucide-react';
 import type { Lawyer } from '../../types/content';
@@ -10,8 +11,9 @@ import { getExpertiseCategories, safeExternalUrl } from '../../lib/expertise';
 import { getVisibleInsights, insightDateLabel } from '../../lib/insights';
 
 export function LawyerProfileTemplate({ person }: { person: Lawyer }) {
+  const mode = usePresentationMode();
   const practices = getExpertiseCategories('practice').filter(item => person.practiceIds.includes(item.id));
-  const writing = getVisibleInsights('management-preview').filter(item => item.authorIds.includes(person.id));
+  const writing = getVisibleInsights(mode).filter(item => item.authorIds.includes(person.id));
   const linkedin = safeExternalUrl(person.linkedin ?? undefined);
   return <><PageHeader title={person.name} eyebrow="Our people" description={person.role} breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'People', to: '/people' }, { label: person.name }]} /><Container>
     {!isPublished(person) && <PreviewNotice>Details are drawn from the supplied biography and remain subject to final publication approval. Affiliations and credentials are shown as supplied.</PreviewNotice>}

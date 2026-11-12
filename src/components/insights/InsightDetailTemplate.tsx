@@ -1,3 +1,4 @@
+import { usePresentationMode } from '../../lib/presentation';
 import { Link } from 'react-router-dom';
 import type { Insight } from '../../types/content';
 import { PageHeader } from '../PageHeader';
@@ -9,7 +10,8 @@ import { getExpertiseCategories, safeExternalUrl } from '../../lib/expertise';
 import { isPublished } from '../../lib/publication';
 import { insightCategoryLabel } from '../../data/insight-categories';
 export function InsightDetailTemplate({ insight }: { insight: Insight }) {
-  const authors = getVisibleLawyers('management-preview').filter(person => insight.authorIds.includes(person.id));
+  const mode = usePresentationMode();
+  const authors = getVisibleLawyers(mode).filter(person => insight.authorIds.includes(person.id));
   const practices = getExpertiseCategories('practice').filter(item => insight.practiceIds.includes(item.id));
   const industries = getExpertiseCategories('industry').filter(item => insight.industryIds.includes(item.id));
   const url = safeExternalUrl(insight.externalUrl);

@@ -14,11 +14,18 @@ export interface ExpertiseRelationships {
 }
 export interface Expertise extends ContentRecord {
   summary: string | null;
+  sections?: { heading: string; paragraphs: string[]; items?: string[] }[];
   /** Legacy cross-taxonomy IDs, retained for existing content. */
   relatedIds: string[];
   /** Confirms the category name only; does not approve its narrative content. */
   labelApproval?: { status: 'confirmed' | 'pending'; source: string };
   relationships?: ExpertiseRelationships;
+}
+/** An independently reviewed taxonomy link does not approve either narrative. */
+export interface ExpertiseConnection { id: string; industryId: string; practiceId: string; editorial: Editorial; }
+export interface AboutContent extends ContentRecord {
+  established: number; introduction: string; history: string[]; service: string;
+  approach: { title: string; text: string }[];
 }
 export interface Matter extends ContentRecord { summary: string; practiceIds: string[]; industryIds: string[]; }
 export interface Publication extends ContentRecord {

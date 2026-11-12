@@ -1,3 +1,4 @@
+import { PresentationProvider } from '../src/lib/presentation';
 import { afterEach, test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
@@ -16,7 +17,7 @@ afterEach(() => { for (const dom of windows.splice(0)) dom.happyDOM.close(); });
 function home(width = 1440) {
   const dom = new Window({ url: 'http://localhost:5173', width, height: 900 });
   windows.push(dom);
-  dom.document.body.innerHTML = renderToStaticMarkup(h(MemoryRouter, null, h(HomePage)));
+  dom.document.body.innerHTML = renderToStaticMarkup(h(MemoryRouter, null, h(PresentationProvider, { mode: 'management-preview' }, h(HomePage))));
   return dom;
 }
 test('homepage has one heading, named sections, useful image alternatives and real destinations', () => {
@@ -33,7 +34,7 @@ test('homepage has one heading, named sections, useful image alternatives and re
     assert.ok(existsSync(`public${img.getAttribute('src')}`));
     assert.ok(img.hasAttribute('width') && img.hasAttribute('height'));
   }
-  const allowed = new Set(['/about', '/industries', '/practices', '/people', '/insights', '/contact']);
+  const allowed = new Set(['/about', '/industries', '/practices', '/people', '/insights', '/contact', ...practices.map(item => `/practices/${item.slug}`)]);
   for (const link of doc.querySelectorAll('a')) {
     const href = link.getAttribute('href')!;
     assert.ok(allowed.has(href) || verifiedPublications.some(item => item.url === href) || (href.startsWith('#') && doc.getElementById(href.slice(1))), href);

@@ -1,10 +1,12 @@
+import { usePresentationMode } from '../lib/presentation';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { getRouteMetadata } from '../lib/route-metadata';
 export function RouteEffects() {
  const { pathname, hash } = useLocation();
+ const mode = usePresentationMode();
  useEffect(() => {
-   const metadata = getRouteMetadata(pathname);
+   const metadata = getRouteMetadata(pathname, mode);
    document.title = metadata.title;
    for (const [attribute, key, content] of [
      ['name', 'description', metadata.description],
@@ -27,6 +29,6 @@ export function RouteEffects() {
      window.scrollTo(0, 0);
      document.getElementById('main-content')?.focus();
    }
- }, [pathname, hash]);
+ }, [pathname, hash, mode]);
  return null;
 }

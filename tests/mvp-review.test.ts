@@ -5,7 +5,8 @@ import { createElement as h } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { MemoryRouter, useRoutes } from 'react-router-dom';
 import { Window } from 'happy-dom';
-import { routes } from '../src/app/routes';
+import { createAppRoutes } from '../src/app/routes';
+const routes = createAppRoutes('management-preview');
 import { industries } from '../src/data/industries';
 import { practices } from '../src/data/practices';
 import { getVisibleLawyers } from '../src/lib/people';
@@ -35,7 +36,7 @@ test('all 53 MVP routes render landmarks, unique IDs, valid links, labels and lo
         assert.ok(href && href !== '#' && !href.startsWith('javascript:'), `${path}: empty/unsafe destination`);
         assert.ok(link.textContent.trim() || link.getAttribute('aria-label') || link.querySelector('img[alt]'), `${path}: unnamed link`);
         if (href.startsWith('/') && !href.startsWith('//')) {
-          assert.notEqual(getRouteTitle(new URL(href, 'https://preview.invalid').pathname), 'Page not found', `${path}: ${href}`);
+          assert.notEqual(getRouteTitle(new URL(href, 'https://preview.invalid').pathname, 'management-preview'), 'Page not found', `${path}: ${href}`);
         } else if (href.startsWith('#')) assert.ok(doc.getElementById(href.slice(1)), `${path}: missing ${href}`);
       }
       for (const image of doc.querySelectorAll('img')) {
@@ -46,8 +47,8 @@ test('all 53 MVP routes render landmarks, unique IDs, valid links, labels and lo
       for (const control of doc.querySelectorAll('input, select, textarea')) {
         assert.ok(doc.querySelector(`label[for="${control.id}"]`) || control.getAttribute('aria-label'), `${path}: unlabelled control`);
       }
-      const metadata = getRouteMetadata(path);
-      assert.ok(metadata.title.includes(getRouteTitle(path)));
+      const metadata = getRouteMetadata(path, 'management-preview');
+      assert.ok(metadata.title.includes(getRouteTitle(path, 'management-preview')));
       assert.ok(metadata.description.length > 50 && metadata.description.length < 300);
     }
   } finally { dom.happyDOM.close(); }
@@ -69,7 +70,7 @@ test('shared small-text palette meets WCAG AA contrast on its intended backgroun
 test('route metadata normalises legacy URLs and handles missing content without publishing claims', () => {
   assert.deepEqual(getRouteMetadata('/industry/'), getRouteMetadata('/industries'));
   assert.match(getRouteMetadata('/people/missing').title, /Page not found/);
-  assert.match(getRouteMetadata(`/practices/${practices[0].slug}`).description, /approval.*pending/);
+  assert.match(getRouteMetadata(`/practices/${practices[0].slug}`).description, /publication approval/);
 });
 
 test('reduced-motion CSS keeps reveal content visible and disables hero movement', () => {

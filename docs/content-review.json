@@ -1,0 +1,840 @@
+{
+  "checkedOn": "2026-11-12",
+  "purpose": "Non-public editorial review only; none of this file constitutes publication approval.",
+  "sourceDocuments": [
+    {
+      "file": "G.R.F. Dalley & Partners - Website Requirements Specification (2).docx",
+      "sha256": "993aa87410a917c753ed8a5f4d753aa46a583d1fe6f0a0ad435c431524382eab"
+    },
+    {
+      "file": "G.R.F. Dalley & Partners - Scope of Work (1).docx",
+      "sha256": "a806f9d06e400289b7489147e566c7db0aeeabf0b167b2384256bf021dbfbd6a"
+    },
+    {
+      "file": "GRF Dalley & Partnerts - Updated Profile.pdf",
+      "sha256": "82dc309b69147dff15a3573bf0ff47b3180864b68b8876e9c12084c17b52c9dc"
+    }
+  ],
+  "driveReview": {
+    "folderId": "1aJ6zIh1KEzkj-kUkwFghApZKrEbks8k_",
+    "fileCount": 18,
+    "newApprovedCopyLocated": false,
+    "designFeedbackLocated": false,
+    "credentialsDocumentOpened": false
+  },
+  "about": {
+    "status": "in-review",
+    "sourcePages": [
+      2
+    ],
+    "candidateExcerpts": [
+      "The firm now known as G.R.F. DALLEY & PARTNERS was established in 1962.",
+      "Our goal is to provide efficient and qualitative service purely beneficial to the needs of our clients."
+    ],
+    "missing": [
+      "Firm-approved final history, introduction, positioning and service approach",
+      "Named reviewer and approval/publication dates",
+      "Leadership publication approval"
+    ]
+  },
+  "pages": [
+    {
+      "kind": "industry",
+      "id": "agri-business-and-food",
+      "name": "Agri-business and Food",
+      "route": "/industries/agri-business-and-food",
+      "sourcePages": [
+        6
+      ],
+      "coverage": "Historic food-company matter reference only; no approved industry description.",
+      "candidateExcerpts": [],
+      "excerptPages": [],
+      "status": "awaiting-client-content-and-approval",
+      "missing": [
+        "Approved introduction and page sections",
+        "Confirmed industry/practice relationships",
+        "Approved related lawyers and insights where applicable"
+      ]
+    },
+    {
+      "kind": "industry",
+      "id": "artificial-intelligence",
+      "name": "Artificial Intelligence",
+      "route": "/industries/artificial-intelligence",
+      "sourcePages": [],
+      "coverage": "No dedicated narrative located in the supplied profile; the specification supplies the category label only.",
+      "candidateExcerpts": [],
+      "excerptPages": [],
+      "status": "awaiting-client-content-and-approval",
+      "missing": [
+        "Approved introduction and page sections",
+        "Confirmed industry/practice relationships",
+        "Approved related lawyers and insights where applicable"
+      ]
+    },
+    {
+      "kind": "industry",
+      "id": "automotive-and-mobility",
+      "name": "Automotive and Mobility",
+      "route": "/industries/automotive-and-mobility",
+      "sourcePages": [
+        8
+      ],
+      "coverage": "Historic IP-client reference only; no approved industry description.",
+      "candidateExcerpts": [],
+      "excerptPages": [],
+      "status": "awaiting-client-content-and-approval",
+      "missing": [
+        "Approved introduction and page sections",
+        "Confirmed industry/practice relationships",
+        "Approved related lawyers and insights where applicable"
+      ]
+    },
+    {
+      "kind": "industry",
+      "id": "aviation-and-airlines",
+      "name": "Aviation and Airlines",
+      "route": "/industries/aviation-and-airlines",
+      "sourcePages": [
+        18,
+        19
+      ],
+      "coverage": "Aviation services and historic matters; current sector introduction still requires approval.",
+      "candidateExcerpts": [
+        "Over the years we have provided advice to our clients on aircraft and vessel financing, aircraft route licensing and regulation, general insurance and litigation claims."
+      ],
+      "excerptPages": [
+        18
+      ],
+      "status": "awaiting-client-content-and-approval",
+      "missing": [
+        "Approved introduction and page sections",
+        "Confirmed industry/practice relationships",
+        "Approved related lawyers and insights where applicable"
+      ]
+    },
+    {
+      "kind": "industry",
+      "id": "banking-payments-and-fintech",
+      "name": "Banking, Payments and Fintech",
+      "route": "/industries/banking-payments-and-fintech",
+      "sourcePages": [
+        3,
+        4,
+        12,
+        13
+      ],
+      "coverage": "Fintech and banking service text; combine and update only after client review.",
+      "candidateExcerpts": [
+        "Our activity in the Fintech space spans across various service offerings including:"
+      ],
+      "excerptPages": [
+        3
+      ],
+      "status": "awaiting-client-content-and-approval",
+      "missing": [
+        "Approved introduction and page sections",
+        "Confirmed industry/practice relationships",
+        "Approved related lawyers and insights where applicable"
+      ]
+    },
+    {
+      "kind": "industry",
+      "id": "blockchain-data-centers-and-digital-infrastructure",
+      "name": "Blockchain, Data Centers and Digital Infrastructure",
+      "route": "/industries/blockchain-data-centers-and-digital-infrastructure",
+      "sourcePages": [],
+      "coverage": "No dedicated narrative located in the supplied profile; the specification supplies the category label only.",
+      "candidateExcerpts": [],
+      "excerptPages": [],
+      "status": "awaiting-client-content-and-approval",
+      "missing": [
+        "Approved introduction and page sections",
+        "Confirmed industry/practice relationships",
+        "Approved related lawyers and insights where applicable"
+      ]
+    },
+    {
+      "kind": "industry",
+      "id": "derivatives",
+      "name": "Derivatives",
+      "route": "/industries/derivatives",
+      "sourcePages": [],
+      "coverage": "No dedicated narrative located in the supplied profile; the specification supplies the category label only.",
+      "candidateExcerpts": [],
+      "excerptPages": [],
+      "status": "awaiting-client-content-and-approval",
+      "missing": [
+        "Approved introduction and page sections",
+        "Confirmed industry/practice relationships",
+        "Approved related lawyers and insights where applicable"
+      ]
+    },
+    {
+      "kind": "industry",
+      "id": "energy",
+      "name": "Energy",
+      "route": "/industries/energy",
+      "sourcePages": [
+        20
+      ],
+      "coverage": "Oil/gas and power services; no complete approved Energy introduction.",
+      "candidateExcerpts": [],
+      "excerptPages": [],
+      "status": "awaiting-client-content-and-approval",
+      "missing": [
+        "Approved introduction and page sections",
+        "Confirmed industry/practice relationships",
+        "Approved related lawyers and insights where applicable"
+      ]
+    },
+    {
+      "kind": "industry",
+      "id": "financial-institutions",
+      "name": "Financial Institutions",
+      "route": "/industries/financial-institutions",
+      "sourcePages": [
+        12,
+        13,
+        15
+      ],
+      "coverage": "Banking narrative and property-client reference; no complete sector introduction.",
+      "candidateExcerpts": [],
+      "excerptPages": [],
+      "status": "awaiting-client-content-and-approval",
+      "missing": [
+        "Approved introduction and page sections",
+        "Confirmed industry/practice relationships",
+        "Approved related lawyers and insights where applicable"
+      ]
+    },
+    {
+      "kind": "industry",
+      "id": "food-drug-and-healthcare",
+      "name": "Food, Drug and Healthcare",
+      "route": "/industries/food-drug-and-healthcare",
+      "sourcePages": [
+        5,
+        8
+      ],
+      "coverage": "Client-sector references only; no approved industry description.",
+      "candidateExcerpts": [],
+      "excerptPages": [],
+      "status": "awaiting-client-content-and-approval",
+      "missing": [
+        "Approved introduction and page sections",
+        "Confirmed industry/practice relationships",
+        "Approved related lawyers and insights where applicable"
+      ]
+    },
+    {
+      "kind": "industry",
+      "id": "insurance",
+      "name": "Insurance",
+      "route": "/industries/insurance",
+      "sourcePages": [],
+      "coverage": "No dedicated narrative located in the supplied profile; the specification supplies the category label only.",
+      "candidateExcerpts": [],
+      "excerptPages": [],
+      "status": "awaiting-client-content-and-approval",
+      "missing": [
+        "Approved introduction and page sections",
+        "Confirmed industry/practice relationships",
+        "Approved related lawyers and insights where applicable"
+      ]
+    },
+    {
+      "kind": "industry",
+      "id": "rail",
+      "name": "Rail",
+      "route": "/industries/rail",
+      "sourcePages": [],
+      "coverage": "No dedicated narrative located in the supplied profile; the specification supplies the category label only.",
+      "candidateExcerpts": [],
+      "excerptPages": [],
+      "status": "awaiting-client-content-and-approval",
+      "missing": [
+        "Approved introduction and page sections",
+        "Confirmed industry/practice relationships",
+        "Approved related lawyers and insights where applicable"
+      ]
+    },
+    {
+      "kind": "industry",
+      "id": "real-estate",
+      "name": "Real Estate",
+      "route": "/industries/real-estate",
+      "sourcePages": [
+        15,
+        16
+      ],
+      "coverage": "Property practice text; adaptation to an industry page requires review.",
+      "candidateExcerpts": [],
+      "excerptPages": [],
+      "status": "awaiting-client-content-and-approval",
+      "missing": [
+        "Approved introduction and page sections",
+        "Confirmed industry/practice relationships",
+        "Approved related lawyers and insights where applicable"
+      ]
+    },
+    {
+      "kind": "industry",
+      "id": "technology-telecom-and-internet-competition",
+      "name": "Technology, Telecom and Internet Competition",
+      "route": "/industries/technology-telecom-and-internet-competition",
+      "sourcePages": [
+        3,
+        7
+      ],
+      "coverage": "Fintech/IP material only; telecom and competition coverage needs supplied copy.",
+      "candidateExcerpts": [],
+      "excerptPages": [],
+      "status": "awaiting-client-content-and-approval",
+      "missing": [
+        "Approved introduction and page sections",
+        "Confirmed industry/practice relationships",
+        "Approved related lawyers and insights where applicable"
+      ]
+    },
+    {
+      "kind": "industry",
+      "id": "transportation",
+      "name": "Transportation",
+      "route": "/industries/transportation",
+      "sourcePages": [
+        18,
+        19
+      ],
+      "coverage": "Aviation-focused material only; does not establish coverage of the full transport sector.",
+      "candidateExcerpts": [],
+      "excerptPages": [],
+      "status": "awaiting-client-content-and-approval",
+      "missing": [
+        "Approved introduction and page sections",
+        "Confirmed industry/practice relationships",
+        "Approved related lawyers and insights where applicable"
+      ]
+    },
+    {
+      "kind": "practice",
+      "id": "arbitration-mediation",
+      "name": "Arbitration & Mediation",
+      "route": "/practices/arbitration-mediation",
+      "sourcePages": [
+        9
+      ],
+      "coverage": "Historic arbitration matters only; no approved introduction or mediation description.",
+      "candidateExcerpts": [],
+      "excerptPages": [],
+      "status": "awaiting-client-content-and-approval",
+      "missing": [
+        "Approved introduction and page sections",
+        "Confirmed industry/practice relationships",
+        "Approved related lawyers and insights where applicable"
+      ]
+    },
+    {
+      "kind": "practice",
+      "id": "aviation-transportation",
+      "name": "Aviation & Transportation",
+      "route": "/practices/aviation-transportation",
+      "sourcePages": [
+        18,
+        19
+      ],
+      "coverage": "Direct aviation services; broader transport scope requires copy.",
+      "candidateExcerpts": [
+        "Over the years we have provided advice to our clients on aircraft and vessel financing, aircraft route licensing and regulation, general insurance and litigation claims."
+      ],
+      "excerptPages": [
+        18
+      ],
+      "status": "awaiting-client-content-and-approval",
+      "missing": [
+        "Approved introduction and page sections",
+        "Confirmed industry/practice relationships",
+        "Approved related lawyers and insights where applicable"
+      ]
+    },
+    {
+      "kind": "practice",
+      "id": "banking-financial-services",
+      "name": "Banking & Financial Services",
+      "route": "/practices/banking-financial-services",
+      "sourcePages": [
+        12,
+        13
+      ],
+      "coverage": "Direct banking narrative and key services; current copy needs approval.",
+      "candidateExcerpts": [
+        "We have advised several banks on issues ranging from financing, restructuring, debt recovery, divestiture as well as documentation and regulatory compliance issues."
+      ],
+      "excerptPages": [
+        12
+      ],
+      "status": "awaiting-client-content-and-approval",
+      "missing": [
+        "Approved introduction and page sections",
+        "Confirmed industry/practice relationships",
+        "Approved related lawyers and insights where applicable"
+      ]
+    },
+    {
+      "kind": "practice",
+      "id": "commercial-litigation",
+      "name": "Commercial Litigation",
+      "route": "/practices/commercial-litigation",
+      "sourcePages": [
+        12
+      ],
+      "coverage": "Banking-specific litigation paragraph only; general practice introduction required.",
+      "candidateExcerpts": [
+        "Our commercial litigation department works very closely with our corporate department with the aim of not only averting damaging claims against our clients but also ensuring the provision of a proper defense where necessary."
+      ],
+      "excerptPages": [
+        12
+      ],
+      "status": "awaiting-client-content-and-approval",
+      "missing": [
+        "Approved introduction and page sections",
+        "Confirmed industry/practice relationships",
+        "Approved related lawyers and insights where applicable"
+      ]
+    },
+    {
+      "kind": "practice",
+      "id": "construction",
+      "name": "Construction",
+      "route": "/practices/construction",
+      "sourcePages": [
+        9,
+        10
+      ],
+      "coverage": "Client/matter references only; no approved construction-practice description.",
+      "candidateExcerpts": [],
+      "excerptPages": [],
+      "status": "awaiting-client-content-and-approval",
+      "missing": [
+        "Approved introduction and page sections",
+        "Confirmed industry/practice relationships",
+        "Approved related lawyers and insights where applicable"
+      ]
+    },
+    {
+      "kind": "practice",
+      "id": "corporate-and-commercial",
+      "name": "Corporate and Commercial",
+      "route": "/practices/corporate-and-commercial",
+      "sourcePages": [
+        5,
+        6
+      ],
+      "coverage": "Direct corporate-practice narrative and key services; historic matters excluded.",
+      "candidateExcerpts": [
+        "Our corporate practice comprises of a combination of advisory, transactional and litigation work spanning across quite a number of sectors."
+      ],
+      "excerptPages": [
+        5
+      ],
+      "status": "awaiting-client-content-and-approval",
+      "missing": [
+        "Approved introduction and page sections",
+        "Confirmed industry/practice relationships",
+        "Approved related lawyers and insights where applicable"
+      ]
+    },
+    {
+      "kind": "practice",
+      "id": "criminal",
+      "name": "Criminal",
+      "route": "/practices/criminal",
+      "sourcePages": [
+        23,
+        24
+      ],
+      "coverage": "Direct criminal-practice narrative; professional assertions and cases need review.",
+      "candidateExcerpts": [
+        "We have represented clients in a number of criminal matters at various courts in Nigeria including the Supreme Court and the Court of Appeal."
+      ],
+      "excerptPages": [
+        23
+      ],
+      "status": "awaiting-client-content-and-approval",
+      "missing": [
+        "Approved introduction and page sections",
+        "Confirmed industry/practice relationships",
+        "Approved related lawyers and insights where applicable"
+      ]
+    },
+    {
+      "kind": "practice",
+      "id": "employment-labour",
+      "name": "Employment & Labour",
+      "route": "/practices/employment-labour",
+      "sourcePages": [],
+      "coverage": "No dedicated narrative located in the supplied profile; the specification supplies the category label only.",
+      "candidateExcerpts": [],
+      "excerptPages": [],
+      "status": "awaiting-client-content-and-approval",
+      "missing": [
+        "Approved introduction and page sections",
+        "Confirmed industry/practice relationships",
+        "Approved related lawyers and insights where applicable"
+      ]
+    },
+    {
+      "kind": "practice",
+      "id": "energy-utilities",
+      "name": "Energy & Utilities",
+      "route": "/practices/energy-utilities",
+      "sourcePages": [
+        20
+      ],
+      "coverage": "Oil/gas and power key services; scope and current regulatory names require review.",
+      "candidateExcerpts": [],
+      "excerptPages": [],
+      "status": "awaiting-client-content-and-approval",
+      "missing": [
+        "Approved introduction and page sections",
+        "Confirmed industry/practice relationships",
+        "Approved related lawyers and insights where applicable"
+      ]
+    },
+    {
+      "kind": "practice",
+      "id": "health-care",
+      "name": "Health Care",
+      "route": "/practices/health-care",
+      "sourcePages": [],
+      "coverage": "No dedicated narrative located in the supplied profile; the specification supplies the category label only.",
+      "candidateExcerpts": [],
+      "excerptPages": [],
+      "status": "awaiting-client-content-and-approval",
+      "missing": [
+        "Approved introduction and page sections",
+        "Confirmed industry/practice relationships",
+        "Approved related lawyers and insights where applicable"
+      ]
+    },
+    {
+      "kind": "practice",
+      "id": "human-rights",
+      "name": "Human Rights",
+      "route": "/practices/human-rights",
+      "sourcePages": [],
+      "coverage": "No dedicated narrative located in the supplied profile; the specification supplies the category label only.",
+      "candidateExcerpts": [],
+      "excerptPages": [],
+      "status": "awaiting-client-content-and-approval",
+      "missing": [
+        "Approved introduction and page sections",
+        "Confirmed industry/practice relationships",
+        "Approved related lawyers and insights where applicable"
+      ]
+    },
+    {
+      "kind": "practice",
+      "id": "insolvency-restructuring",
+      "name": "Insolvency & Restructuring",
+      "route": "/practices/insolvency-restructuring",
+      "sourcePages": [
+        6,
+        12,
+        13
+      ],
+      "coverage": "Corporate matters and banking restructuring references; no complete approved introduction.",
+      "candidateExcerpts": [],
+      "excerptPages": [],
+      "status": "awaiting-client-content-and-approval",
+      "missing": [
+        "Approved introduction and page sections",
+        "Confirmed industry/practice relationships",
+        "Approved related lawyers and insights where applicable"
+      ]
+    },
+    {
+      "kind": "practice",
+      "id": "international-cross-border",
+      "name": "International/Cross Border",
+      "route": "/practices/international-cross-border",
+      "sourcePages": [
+        2,
+        6,
+        22
+      ],
+      "coverage": "Affiliate and historic transaction references do not establish approved practice copy.",
+      "candidateExcerpts": [],
+      "excerptPages": [],
+      "status": "awaiting-client-content-and-approval",
+      "missing": [
+        "Approved introduction and page sections",
+        "Confirmed industry/practice relationships",
+        "Approved related lawyers and insights where applicable"
+      ]
+    },
+    {
+      "kind": "practice",
+      "id": "litigation-dispute-resolution",
+      "name": "Litigation & Dispute Resolution",
+      "route": "/practices/litigation-dispute-resolution",
+      "sourcePages": [
+        9,
+        12,
+        15,
+        23
+      ],
+      "coverage": "Scattered litigation references and matters; no standalone approved introduction.",
+      "candidateExcerpts": [],
+      "excerptPages": [],
+      "status": "awaiting-client-content-and-approval",
+      "missing": [
+        "Approved introduction and page sections",
+        "Confirmed industry/practice relationships",
+        "Approved related lawyers and insights where applicable"
+      ]
+    },
+    {
+      "kind": "practice",
+      "id": "mergers-acquisitions",
+      "name": "Mergers & Acquisitions",
+      "route": "/practices/mergers-acquisitions",
+      "sourcePages": [
+        5,
+        6,
+        13
+      ],
+      "coverage": "Corporate reorganisations and historic transaction references; no complete approved introduction.",
+      "candidateExcerpts": [],
+      "excerptPages": [],
+      "status": "awaiting-client-content-and-approval",
+      "missing": [
+        "Approved introduction and page sections",
+        "Confirmed industry/practice relationships",
+        "Approved related lawyers and insights where applicable"
+      ]
+    },
+    {
+      "kind": "practice",
+      "id": "mining",
+      "name": "Mining",
+      "route": "/practices/mining",
+      "sourcePages": [],
+      "coverage": "No dedicated narrative located in the supplied profile; the specification supplies the category label only.",
+      "candidateExcerpts": [],
+      "excerptPages": [],
+      "status": "awaiting-client-content-and-approval",
+      "missing": [
+        "Approved introduction and page sections",
+        "Confirmed industry/practice relationships",
+        "Approved related lawyers and insights where applicable"
+      ]
+    },
+    {
+      "kind": "practice",
+      "id": "oil-and-gas",
+      "name": "Oil and Gas",
+      "route": "/practices/oil-and-gas",
+      "sourcePages": [
+        20
+      ],
+      "coverage": "Key-service list and historic matters; no approved standalone introduction.",
+      "candidateExcerpts": [],
+      "excerptPages": [],
+      "status": "awaiting-client-content-and-approval",
+      "missing": [
+        "Approved introduction and page sections",
+        "Confirmed industry/practice relationships",
+        "Approved related lawyers and insights where applicable"
+      ]
+    },
+    {
+      "kind": "practice",
+      "id": "real-property",
+      "name": "Real Property",
+      "route": "/practices/real-property",
+      "sourcePages": [
+        15,
+        16
+      ],
+      "coverage": "Direct property-practice narrative and services; matters excluded.",
+      "candidateExcerpts": [
+        "Our practice covers professional advice on issues relating to property finance, acquisition and disposal, letting and management, tax, planning and environment."
+      ],
+      "excerptPages": [
+        15
+      ],
+      "status": "awaiting-client-content-and-approval",
+      "missing": [
+        "Approved introduction and page sections",
+        "Confirmed industry/practice relationships",
+        "Approved related lawyers and insights where applicable"
+      ]
+    },
+    {
+      "kind": "practice",
+      "id": "recovery",
+      "name": "Recovery",
+      "route": "/practices/recovery",
+      "sourcePages": [
+        10,
+        11
+      ],
+      "coverage": "Historic matters only; amounts and current/recent claims intentionally excluded.",
+      "candidateExcerpts": [],
+      "excerptPages": [],
+      "status": "awaiting-client-content-and-approval",
+      "missing": [
+        "Approved introduction and page sections",
+        "Confirmed industry/practice relationships",
+        "Approved related lawyers and insights where applicable"
+      ]
+    },
+    {
+      "kind": "practice",
+      "id": "technology-intellectual-property",
+      "name": "Technology & Intellectual Property",
+      "route": "/practices/technology-intellectual-property",
+      "sourcePages": [
+        3,
+        7,
+        8
+      ],
+      "coverage": "IP and fintech material; no full approved technology-practice narrative.",
+      "candidateExcerpts": [],
+      "excerptPages": [],
+      "status": "awaiting-client-content-and-approval",
+      "missing": [
+        "Approved introduction and page sections",
+        "Confirmed industry/practice relationships",
+        "Approved related lawyers and insights where applicable"
+      ]
+    },
+    {
+      "kind": "practice",
+      "id": "wills-trusts-estates",
+      "name": "Wills, Trusts & Estates",
+      "route": "/practices/wills-trusts-estates",
+      "sourcePages": [
+        21,
+        22
+      ],
+      "coverage": "Private-client material includes probate, estates and trusts; scope-specific review required.",
+      "candidateExcerpts": [
+        "Our private client practice is consistently centered on family and divorce, probate and estate administration, as well as all estate and trust matters."
+      ],
+      "excerptPages": [
+        21
+      ],
+      "status": "awaiting-client-content-and-approval",
+      "missing": [
+        "Approved introduction and page sections",
+        "Confirmed industry/practice relationships",
+        "Approved related lawyers and insights where applicable"
+      ]
+    }
+  ],
+  "relationshipCandidates": [
+    {
+      "id": "aviation-and-airlines--aviation-transportation",
+      "industryId": "aviation-and-airlines",
+      "practiceId": "aviation-transportation",
+      "sourcePages": [
+        18
+      ],
+      "evidence": "The aviation-practice section lists airline licensing, financing, insurance and claims services.",
+      "status": "in-review"
+    },
+    {
+      "id": "banking-payments-and-fintech--banking-financial-services",
+      "industryId": "banking-payments-and-fintech",
+      "practiceId": "banking-financial-services",
+      "sourcePages": [
+        3,
+        12
+      ],
+      "evidence": "Separate Fintech and Banking and Finance sections provide source context; consolidated taxonomy mapping requires approval.",
+      "status": "in-review"
+    },
+    {
+      "id": "banking-payments-and-fintech--corporate-and-commercial",
+      "industryId": "banking-payments-and-fintech",
+      "practiceId": "corporate-and-commercial",
+      "sourcePages": [
+        3
+      ],
+      "evidence": "The Fintech section lists corporate advisory, incorporation and related commercial services.",
+      "status": "in-review"
+    },
+    {
+      "id": "banking-payments-and-fintech--technology-intellectual-property",
+      "industryId": "banking-payments-and-fintech",
+      "practiceId": "technology-intellectual-property",
+      "sourcePages": [
+        3
+      ],
+      "evidence": "The Fintech section explicitly lists intellectual property protection.",
+      "status": "in-review"
+    },
+    {
+      "id": "financial-institutions--banking-financial-services",
+      "industryId": "financial-institutions",
+      "practiceId": "banking-financial-services",
+      "sourcePages": [
+        12
+      ],
+      "evidence": "The banking-practice section describes advice to banks.",
+      "status": "in-review"
+    },
+    {
+      "id": "financial-institutions--real-property",
+      "industryId": "financial-institutions",
+      "practiceId": "real-property",
+      "sourcePages": [
+        15
+      ],
+      "evidence": "The property section explicitly includes financial institutions and banks among its clients.",
+      "status": "in-review"
+    },
+    {
+      "id": "real-estate--real-property",
+      "industryId": "real-estate",
+      "practiceId": "real-property",
+      "sourcePages": [
+        15
+      ],
+      "evidence": "The property section describes property finance, acquisition, disposal, letting and management.",
+      "status": "in-review"
+    },
+    {
+      "id": "energy--oil-and-gas",
+      "industryId": "energy",
+      "practiceId": "oil-and-gas",
+      "sourcePages": [
+        20
+      ],
+      "evidence": "The Oil & Gas section lists energy-related services; current scope requires review.",
+      "status": "in-review"
+    },
+    {
+      "id": "energy--energy-utilities",
+      "industryId": "energy",
+      "practiceId": "energy-utilities",
+      "sourcePages": [
+        20
+      ],
+      "evidence": "The Oil & Gas section lists power generation and utility-company advice.",
+      "status": "in-review"
+    },
+    {
+      "id": "banking-payments-and-fintech--commercial-litigation",
+      "industryId": "banking-payments-and-fintech",
+      "practiceId": "commercial-litigation",
+      "sourcePages": [
+        12
+      ],
+      "evidence": "The banking section explicitly describes collaboration with commercial litigation.",
+      "status": "in-review"
+    }
+  ]
+}
