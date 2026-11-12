@@ -7,5 +7,5 @@ export function enquiryMailto(draft: EnquiryDraft) {
 }
 export function configuredBookingUrl(value: string | null) {
   if (!value) return null;
-  try { const url = new URL(value); return url.protocol === 'https:' && ['calendly.com', 'www.calendly.com'].includes(url.hostname) && url.pathname.length > 1 ? url.href : null; } catch { return null; }
+  try { const url = new URL(value); return url.protocol === 'https:' && ['calendly.com', 'www.calendly.com'].includes(url.hostname) && !url.username && !url.password && !url.port && url.pathname.length > 1 ? url.href : null; } catch { return null; }
 }

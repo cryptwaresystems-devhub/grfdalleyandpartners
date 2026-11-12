@@ -60,6 +60,6 @@ Publication uses the distinct `authorized` editorial state. It records the real 
 - Reconfirm professional titles and current memberships; all displayed details remain as supplied.
 - Confirm Abuja address, telephone availability and provide a higher-resolution logo.
 - Any future representative matters, client names, amounts, awards or rankings require specific sourced content. None was invented to fill a page.
-- Prompt 8 People/Insights search, filters, pagination and source relationships are implemented. Additional news, event, case-review and video records remain dependent on real supplied material. Email delivery, scheduling, analytics and production deployment remain later work.
+- Prompt 8 People/Insights search, filters, pagination and source relationships are implemented. Additional news, event, case-review and video records remain dependent on real supplied material. Prompt 9 adds secure email delivery and Calendly adapters; live delivery credentials, a verified sender, Turnstile configuration and the approved booking URL remain pending. Analytics and production deployment remain later work.
 
 No credentials or private source documents were added to public assets. Run `npm run content:report` to regenerate this inventory.

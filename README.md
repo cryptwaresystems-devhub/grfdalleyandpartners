@@ -50,11 +50,11 @@ Current People/Insights functionality, source limits and test results are record
 
 Home `/`, About `/about`, Industry `/industries` (15 detail routes), Practice `/practices` (21 detail routes), People `/people`, Insights `/insights`, Contact `/contact`. The management preview retains eight profiles and three historic publication details, giving 54 destinations. The normal build now exposes all 54 destinations, with populated expertise pages and supplied profiles. Unauthorised records still show not-found content. Singular `/industry` and `/practice` URLs redirect.
 
-People search and practice filters, Insights search and category/author/practice/industry filters, pagination, accessible mobile navigation and the About dropdown work locally. Directory selections use shareable URL parameters. Insights pagination uses six records per page; the current three references fit on one page. The contact form prepares a mailto draft; it sends nothing. Scheduling is explicitly pending.
+People search and practice filters, Insights search and category/author/practice/industry filters, pagination, accessible mobile navigation and the About dropdown work locally. Directory selections use shareable URL parameters. Insights pagination uses six records per page; the current three references fit on one page. Contact provides enquiry and consultation-request forms, shared validation, accessible feedback and a secure Vercel delivery adapter. Without configuration it prepares an email draft and sends nothing. Calendly remains pending until the approved URL is configured. See [contact setup](docs/contact-services-setup.md).
 
 ## Staging on Vercel
 
-Use a staging-only Vercel project or a Preview deployment, with this repository root as the root directory. Install `npm ci`, build `npm run build`, output `dist`. `vercel.json` supplies SPA fallback and noindex headers. No environment variables are required.
+Use a staging-only Vercel project or a Preview deployment, with this repository root as the root directory. Install `npm ci`, build `npm run build`, output `dist`. `vercel.json` supplies SPA fallback and noindex headers. The website can be previewed without environment variables; online email delivery and Calendly require the server settings documented in [contact setup](docs/contact-services-setup.md).
 
 For a manual preview from a linked staging project, run `npx vercel` and use the generated preview URL. Do not use `--prod`, attach the firm's production domain, or change DNS. Check the target project before linking; pushes to a configured production branch can trigger production deployments. A push to GitHub is not evidence that staging has been deployed or verified.
 
@@ -76,4 +76,9 @@ Local assets: supplied 264×24 JPEG logo, eight supplied professional portraits 
 - `tests`: route, content-safety, interaction, responsive-CSS and contrast checks.
 - `docs`: non-public review records and approval requirements.
 
-The publication gate accepts either named firm approval or explicit requester authorization with valid dates. Requester authorization does not assert final firm legal sign-off. Explicitly labelled management previews are an exception for design review, not authentication or a private portal. Do not put confidential records in this static app. Historical prompt reports are retained in `docs/`; the [Prompt 8 report](docs/prompt-8-report.md) describes the latest implementation and verification. See the [People and Insights content guide](docs/people-insights-content-guide.md) to maintain records and add approved media.
+The publication gate accepts either named firm approval or explicit requester authorization with valid dates. Requester authorization does not assert final firm legal sign-off. Explicitly labelled management previews are an exception for design review, not authentication or a private portal. Do not put confidential records in this static app. Historical prompt reports are retained in `docs/`; the [Prompt 8 report](docs/prompt-8-report.md) describes People/Insights implementation. The [Prompt 9 report](docs/prompt-9-report.md) records the latest Contact implementation and verification. See the [People and Insights content guide](docs/people-insights-content-guide.md) to maintain records and add approved media.
+
+
+## Contact services (Prompt 9)
+
+The static React site now has one minimal Vercel serverless function, `/api/contact`, solely for secure contact delivery. No database or CMS was added. Read [configuration and verification](docs/contact-services-setup.md) before enabling delivery. `npm.cmd run dev` and `npm.cmd run preview` only serve the frontend; an unavailable endpoint leaves the email-draft fallback active. Use `npx vercel dev` for local full-stack verification or a staging Preview deployment with server environment variables. Never use `--prod` for a staging check.

@@ -400,3 +400,55 @@ test('approved video loads an allowlisted iframe only after a click and disappea
   assert.equal(document.querySelector('iframe'), null);
   assert.equal(document.querySelector('.insight-video'), null);
 });
+
+
+test('configured contact validates, requires spam verification, prevents duplicates and reports provider acceptance honestly', async () => {
+  const originalFetch = globalThis.fetch;
+  let tokenCallback: ((token: string) => void) | undefined;
+  window.turnstile = { render: (_element, options) => { tokenCallback = (options as { callback: (token: string) => void }).callback; return 'fixture-widget'; }, remove: () => {} };
+  let requests = 0;
+  let complete: ((response: Response) => void) | undefined;
+  globalThis.fetch = async (_url, options) => {
+    if (options?.method === 'POST') { requests++; return new Promise<Response>(resolve => { complete = resolve; }); }
+    return new Response(JSON.stringify({ deliveryConfigured: true, turnstileSiteKey: 'fixture', bookingUrl: null }), { status: 200 });
+  };
+  document.body.innerHTML = '<div id="app"></div>';
+  root = createRoot(document.getElementById('app')!);
+  const router = createMemoryRouter(appRoutes, { initialEntries: ['/contact'] });
+  try {
+    await act(async () => root!.render(h(RouterProvider, { router })));
+    const form = required<HTMLFormElement>('.enquiry-form');
+    const submit = () => form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+    await act(async () => { submit(); });
+    assert.equal(required('#enquiry-name').getAttribute('aria-invalid'), 'true');
+    await searchValue('enquiry-name', 'Contact Tester');
+    await searchValue('enquiry-email', 'tester@example.test');
+    await selectValue('enquiry-nature', 'General enquiry');
+    await act(async () => { submit(); });
+    assert.equal(requests, 0);
+    assert.ok(form.textContent?.includes('Complete the spam check'));
+    await click(Array.from(form.querySelectorAll('button')).find(button => button.textContent === 'Enable spam check')!);
+    await act(async () => { tokenCallback!('fixture-token'); });
+    await act(async () => { submit(); submit(); });
+    assert.equal(requests, 1);
+    assert.equal(form.getAttribute('aria-busy'), 'true');
+    assert.ok(required<HTMLButtonElement>('.enquiry-form button[type="submit"]').disabled);
+    await act(async () => complete!(new Response(JSON.stringify({ status: 'accepted', reference: 'fixture-reference' }), { status: 202 })));
+    assert.ok(form.textContent?.includes('accepted for email delivery'));
+    assert.ok(form.textContent?.includes('Inbox delivery has not been independently confirmed'));
+    assert.equal(form.getAttribute('aria-busy'), 'false');
+    assert.ok(document.querySelector('#consultation-name'));
+  } finally { globalThis.fetch = originalFetch; delete window.turnstile; router.dispose(); }
+});
+
+test('Calendly is click-to-load and loading the frame never confirms a booking', async () => {
+  const { ConsultationBooking } = await import('../src/components/contact/ConsultationBooking');
+  document.body.innerHTML = '<div id="app"></div>';
+  root = createRoot(document.getElementById('app')!);
+  await act(async () => root!.render(h(ConsultationBooking, { bookingUrl: 'https://calendly.com/test-fixture/consultation' })));
+  assert.equal(document.querySelector('iframe'), null);
+  await click(required('button'));
+  assert.equal(required('iframe').getAttribute('src'), 'https://calendly.com/test-fixture/consultation');
+  await act(async () => required('iframe').dispatchEvent(new Event('load')));
+  assert.ok(!document.body.textContent?.includes('Your booking is confirmed'));
+});

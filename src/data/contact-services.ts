@@ -1,5 +1,3 @@
-// Public configuration only. Never put delivery API keys in frontend code.
-export const contactServices: { bookingUrl: string | null; enquiryMode: 'mailto-draft' } = {
-  bookingUrl: null,
-  enquiryMode: 'mailto-draft',
-};
+// Optional approved public booking fallback. Server configuration is preferred.
+// Never put delivery credentials here or in any VITE_ variable.
+export const contactServices: { bookingUrl: string | null } = { bookingUrl: null };
