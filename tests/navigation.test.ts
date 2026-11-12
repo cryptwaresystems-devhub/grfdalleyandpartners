@@ -2,7 +2,7 @@ import { after, afterEach, test } from 'node:test';
 import assert from 'node:assert/strict';
 import { Window } from 'happy-dom';
 
-const dom = new Window({ url: 'http://localhost:5173' });
+const dom = new Window({ url: 'http://localhost:5173', settings: { disableIframePageLoading: true } });
 for (const key of ['window', 'document', 'HTMLElement', 'Element', 'Node', 'Event', 'MouseEvent', 'KeyboardEvent', 'PointerEvent', 'navigator'] as const) {
   Object.defineProperty(globalThis, key, { configurable: true, value: key === 'window' ? dom : dom[key] });
 }
@@ -24,6 +24,8 @@ const { industries } = await import('../src/data/industries');
 const { practices } = await import('../src/data/practices');
 const { lawyers } = await import('../src/data/lawyers');
 const { insights } = await import('../src/data/insights');
+const { InsightsPage } = await import('../src/pages/InsightsPage');
+const { ApprovedVideo } = await import('../src/components/insights/ApprovedVideo');
 const { getRouteMetadata } = await import('../src/lib/route-metadata');
 let root: ReturnType<typeof createRoot> | undefined;
 
@@ -44,6 +46,16 @@ async function click(node: Element) { await act(async () => { node.dispatchEvent
 async function escape() { await act(async () => { document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true })); }); }
 afterEach(async () => { if (root) await act(async () => root!.unmount()); root = undefined; });
 after(() => dom.happyDOM.close());
+
+async function selectValue(id: string, value: string) {
+  const node = required<HTMLSelectElement>(`#${id}`);
+  await act(async () => { node.value = value; node.dispatchEvent(new Event('change', { bubbles: true })); });
+}
+async function searchValue(id: string, value: string) {
+  const node = required<HTMLInputElement>(`#${id}`);
+  const setValue = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value')!.set!;
+  await act(async () => { setValue.call(node, value); node.dispatchEvent(new Event('input', { bubbles: true })); });
+}
 
 test('all desktop primary links navigate and expose the active page', async () => {
   await mount();
@@ -239,10 +251,10 @@ test('Insights filters show honest empty categories and archive detail/author ro
     for (let index = 0; index < buttons.length; index++) {
       await click(buttons[index]);
       assert.equal(buttons[index].getAttribute('aria-pressed'), 'true');
-      assert.equal(document.querySelectorAll('.insight-list-card').length, [0, 3].includes(index) ? 2 : 0);
+      assert.equal(document.querySelectorAll('.insight-list-card').length, [0, 3].includes(index) ? 3 : 0);
     }
     await click(required('.listing-empty button'));
-    assert.equal(document.querySelectorAll('.insight-list-card').length, 2);
+    assert.equal(document.querySelectorAll('.insight-list-card').length, 3);
     for (const insight of insights) {
       await click(required(`.insight-list-card h2 a[href="/insights/${insight.slug}"]`));
       assert.equal(required('main h1').textContent, insight.name);
@@ -288,4 +300,103 @@ test('Contact validates inputs and prepares an editable email draft without clai
     assert.ok(required('.booking-pending').textContent?.includes('forthcoming'));
     assert.equal(document.querySelector('iframe'), null);
   } finally { router.dispose(); }
+});
+
+test('People URL search and practice filters combine, survive profile navigation and clear together', async () => {
+  document.body.innerHTML = '<div id="app"></div>';
+  root = createRoot(document.getElementById('app')!);
+  const router = createMemoryRouter(appRoutes, { initialEntries: ['/people?q=Faith&practice=corporate-and-commercial'] });
+  try {
+    await act(async () => root!.render(h(RouterProvider, { router })));
+    assert.equal(document.querySelectorAll('.directory-person').length, 1);
+    assert.equal(required<HTMLSelectElement>('#people-practice').value, 'corporate-and-commercial');
+    await click(required('.directory-person__link'));
+    assert.equal(required('main h1').textContent, 'Faith Izegboya Adebo');
+    await act(async () => { await router.navigate(-1); });
+    assert.equal(required<HTMLInputElement>('#people-search').value, 'Faith');
+    assert.equal(document.querySelectorAll('.directory-person').length, 1);
+    await selectValue('people-practice', 'arbitration-mediation');
+    assert.equal(document.querySelectorAll('.directory-person').length, 0);
+    assert.ok(required('.listing-empty'));
+    await click(required('.listing-empty button'));
+    assert.equal(document.querySelectorAll('.directory-person').length, 8);
+    assert.equal(required<HTMLSelectElement>('#people-practice').value, 'all');
+    assert.equal(router.state.location.search, '');
+    await act(async () => { await router.navigate('/people?practice=unavailable'); });
+    assert.equal(document.querySelectorAll('.directory-person').length, 0);
+    assert.equal(required<HTMLSelectElement>('#people-practice').value, 'unavailable');
+  } finally { router.dispose(); }
+});
+
+test('Insights URL filters combine author, practice, industry and search and reset honest empty states', async () => {
+  document.body.innerHTML = '<div id="app"></div>';
+  root = createRoot(document.getElementById('app')!);
+  const router = createMemoryRouter(appRoutes, { initialEntries: ['/insights?industry=aviation-and-airlines'] });
+  try {
+    await act(async () => root!.render(h(RouterProvider, { router })));
+    assert.equal(document.querySelectorAll('.insight-list-card').length, 1);
+    assert.ok(required('.insight-list-card h2').textContent?.includes('Warsaw Convention'));
+    await selectValue('insights-author', lawyers[1].id);
+    await searchValue('insights-search', '2006 Dalley');
+    assert.equal(document.querySelectorAll('.insight-list-card').length, 1);
+    assert.ok(router.state.location.search.includes('q=2006'));
+    await selectValue('insights-practice', 'arbitration-mediation');
+    assert.equal(document.querySelectorAll('.insight-list-card').length, 0);
+    await click(required('.listing-empty button'));
+    assert.equal(document.querySelectorAll('.insight-list-card').length, 3);
+    assert.equal(required<HTMLInputElement>('#insights-search').value, '');
+    assert.equal(required<HTMLSelectElement>('#insights-industry').value, 'all');
+    const events = [...document.querySelectorAll('.insight-category-filters button')].find(button => button.textContent === 'Events')!;
+    await click(events);
+    assert.equal(document.querySelectorAll('.insight-list-card').length, 0);
+    assert.equal(document.querySelectorAll('iframe').length, 0);
+    await click(required('.listing-empty button'));
+    assert.equal(document.querySelectorAll('.insight-list-card').length, 3);
+    await act(async () => { await router.navigate('/insights?author=unavailable'); });
+    assert.equal(document.querySelectorAll('.insight-list-card').length, 0);
+    assert.equal(required<HTMLSelectElement>('#insights-author').value, 'unavailable');
+  } finally { router.dispose(); }
+});
+
+test('Insights pagination browses real records and changing filters resets the page and focus', async () => {
+  document.body.innerHTML = '<div id="app"></div>';
+  root = createRoot(document.getElementById('app')!);
+  const router = createMemoryRouter([{ path: '/insights', element: h(InsightsPage, { pageSize: 1 }) }], { initialEntries: ['/insights?page=2'] });
+  try {
+    await act(async () => root!.render(h(RouterProvider, { router })));
+    assert.equal(document.querySelectorAll('.insight-list-card').length, 1);
+    assert.ok(required('.insight-list-card h2').textContent?.includes('Continental free trade'));
+    assert.ok(required('.listing-pagination').textContent?.includes('Page 2 of 3'));
+    await click(required('.listing-pagination button:last-child'));
+    assert.ok(required('.insight-list-card h2').textContent?.includes('Warsaw Convention'));
+    assert.equal(required<HTMLButtonElement>('.listing-pagination button:last-child').disabled, true);
+    assert.equal(document.activeElement?.id, 'insights-results-status');
+    await click(required('.listing-pagination button:first-child'));
+    assert.ok(required('.listing-pagination').textContent?.includes('Page 2 of 3'));
+    await selectValue('insights-practice', 'arbitration-mediation');
+    assert.ok(required('.insight-list-card h2').textContent?.includes('Non-Interventionist'));
+    assert.equal(document.querySelector('.listing-pagination'), null);
+    assert.equal(new URLSearchParams(router.state.location.search).has('page'), false);
+    await click(required('.directory-reset'));
+    assert.ok(required('.listing-pagination').textContent?.includes('Page 1 of 3'));
+    await act(async () => { await router.navigate('/insights?page=999'); });
+    assert.ok(required('.listing-pagination').textContent?.includes('Page 3 of 3'));
+  } finally { router.dispose(); }
+});
+
+test('approved video loads an allowlisted iframe only after a click and disappears when permission is withdrawn', async () => {
+  document.body.innerHTML = '<div id="app"></div>';
+  root = createRoot(document.getElementById('app')!);
+  const editorial = { status: 'approved' as const, source: 'TEST FIXTURE ONLY', approvedBy: 'Test reviewer', approvedAt: '2026-11-01', publishedAt: '2026-11-02' };
+  const video = { provider: 'youtube' as const, id: 'TESTvideo01', title: 'TEST VIDEO FIXTURE', editorial };
+  await act(async () => root!.render(h(ApprovedVideo, { insight: { ...insights[0], video } })));
+  assert.equal(document.querySelector('iframe'), null);
+  await click(required('.insight-video button'));
+  const iframe = required<HTMLIFrameElement>('iframe');
+  assert.equal(iframe.getAttribute('src'), 'https://www.youtube-nocookie.com/embed/TESTvideo01');
+  assert.equal(iframe.title, 'TEST VIDEO FIXTURE');
+  assert.equal(iframe.getAttribute('loading'), 'lazy');
+  await act(async () => root!.render(h(ApprovedVideo, { insight: { ...insights[0], video: { ...video, editorial: { status: 'draft', source: 'TEST FIXTURE' } } } })));
+  assert.equal(document.querySelector('iframe'), null);
+  assert.equal(document.querySelector('.insight-video'), null);
 });

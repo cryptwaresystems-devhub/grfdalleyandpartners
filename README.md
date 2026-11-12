@@ -1,6 +1,6 @@
 # G.R.F. Dalley & Partners
 
-Static React/Vite/TypeScript website for Cryptware Systems Ltd. Prompts 1–6 form the preserved MVP. Prompt 7 populates all 15 industries, 21 practices and About, with connected expertise and source-backed people/publication previews. Missing wording was completed under the requester's explicit editorial discretion. No backend, CMS or database.
+Static React/Vite/TypeScript website for Cryptware Systems Ltd. Prompts 1–6 form the preserved MVP. Prompt 7 populates all 15 industries, 21 practices and About, with connected expertise and source-backed people/publication previews. Missing wording was completed under the requester's explicit editorial discretion. Prompt 8 adds People practice filters, complete source-grounded profiles and searchable, multi-filtered Insights with pagination. No backend, CMS or database.
 
 See the [current missing-content report](docs/missing-content-report.md) for all 36 expertise pages and About Us. The requester authorised use of the supplied materials and composition of missing copy; this is recorded separately from final firm legal sign-off. The [Prompt 7 report](docs/prompt-7-report.md) records implementation and verification.
 
@@ -26,7 +26,7 @@ The production-build preview normally runs at http://127.0.0.1:4173. `build` inc
 
 ## Public and management-review builds
 
-The default is `approved-only`. All 36 expertise pages, About, eight source-checked profiles and two verified publication references are available under requester authorization. Records without publication permission remain hidden; draft detail URLs show the existing not-found page.
+The default is `approved-only`. All 36 expertise pages, About, eight source-checked profiles and three verified publication references are available under requester authorization. Records without publication permission remain hidden; draft detail URLs show the existing not-found page.
 
 To preserve the full MVP for a local design review, explicitly opt in using PowerShell:
 
@@ -46,9 +46,11 @@ npm.cmd run build
 
 ## Available routes
 
-Home `/`, About `/about`, Industry `/industries` (15 detail routes), Practice `/practices` (21 detail routes), People `/people`, Insights `/insights`, Contact `/contact`. The management preview retains eight profiles and two historic publication details, giving 53 destinations including content-pending templates. The normal build now exposes all 53 destinations, with populated expertise pages and supplied profiles. Unauthorised records still show not-found content. Singular `/industry` and `/practice` URLs redirect.
+Current People/Insights functionality, source limits and test results are recorded in the [Prompt 8 report](docs/prompt-8-report.md). Use the [content guide](docs/people-insights-content-guide.md) for adding approved records and media.
 
-People search, insight-category filters, accessible mobile navigation and the About dropdown work locally. The contact form prepares a mailto draft; it sends nothing. Scheduling is explicitly pending.
+Home `/`, About `/about`, Industry `/industries` (15 detail routes), Practice `/practices` (21 detail routes), People `/people`, Insights `/insights`, Contact `/contact`. The management preview retains eight profiles and three historic publication details, giving 54 destinations. The normal build now exposes all 54 destinations, with populated expertise pages and supplied profiles. Unauthorised records still show not-found content. Singular `/industry` and `/practice` URLs redirect.
+
+People search and practice filters, Insights search and category/author/practice/industry filters, pagination, accessible mobile navigation and the About dropdown work locally. Directory selections use shareable URL parameters. Insights pagination uses six records per page; the current three references fit on one page. The contact form prepares a mailto draft; it sends nothing. Scheduling is explicitly pending.
 
 ## Staging on Vercel
 
@@ -74,4 +76,4 @@ Local assets: supplied 264×24 JPEG logo, eight supplied professional portraits 
 - `tests`: route, content-safety, interaction, responsive-CSS and contrast checks.
 - `docs`: non-public review records and approval requirements.
 
-The publication gate accepts either named firm approval or explicit requester authorization with valid dates. Requester authorization does not assert final firm legal sign-off. Explicitly labelled management previews are an exception for design review, not authentication or a private portal. Do not put confidential records in this static app. Historical prompt reports are retained in `docs/`; the Prompt 7 report describes the latest implementation and content blockers.
+The publication gate accepts either named firm approval or explicit requester authorization with valid dates. Requester authorization does not assert final firm legal sign-off. Explicitly labelled management previews are an exception for design review, not authentication or a private portal. Do not put confidential records in this static app. Historical prompt reports are retained in `docs/`; the [Prompt 8 report](docs/prompt-8-report.md) describes the latest implementation and verification. See the [People and Insights content guide](docs/people-insights-content-guide.md) to maintain records and add approved media.

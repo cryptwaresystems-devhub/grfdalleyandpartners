@@ -52,7 +52,7 @@ Publication uses the distinct `authorized` editorial state. It records the real 
 - Unique introductions, commercial context, discussion topics and enquiry links for all 15 industries and 21 practices.
 - Profile-grounded About history, commercial positioning and client-service approach.
 - Bidirectional industry/practice links, described as editorial navigation rather than proof of past experience.
-- Eight existing source-checked biographies/portraits and two verified historic publication references restored to normal views. Article bodies were not invented or republished; body permission is separate from archive metadata permission.
+- Eight source-checked biographies/portraits and three verified historic publication references available in normal views. Article bodies were not invented or republished; body permission is separate from archive metadata permission.
 
 ## Final firm review and outstanding assets
 
@@ -60,6 +60,6 @@ Publication uses the distinct `authorized` editorial state. It records the real 
 - Reconfirm professional titles and current memberships; all displayed details remain as supplied.
 - Confirm Abuja address, telephone availability and provide a higher-resolution logo.
 - Any future representative matters, client names, amounts, awards or rankings require specific sourced content. None was invented to fill a page.
-- Complete additional People/Insights functionality and relationships in Prompt 8. Email delivery, scheduling, analytics and production deployment remain later work.
+- Prompt 8 People/Insights search, filters, pagination and source relationships are implemented. Additional news, event, case-review and video records remain dependent on real supplied material. Email delivery, scheduling, analytics and production deployment remain later work.
 
 No credentials or private source documents were added to public assets. Run `npm run content:report` to regenerate this inventory.

@@ -145,3 +145,50 @@
   .contact-main-email { font-size: 1.15rem; }
 }
 @media (prefers-reduced-motion: reduce) { .directory-person__link:hover img { transform: none; } }
+
+/* Shared search/refinement controls retain the editorial palette. */
+.directory-controls { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr) auto; gap: 1.5rem 2rem; align-items: end; margin-bottom: 1.5rem; }
+.directory-controls .search-field { width: 100%; }
+.directory-select { min-width: 0; }
+.directory-select label { display: block; font-size: 0.75rem; margin-bottom: 0.75rem; }
+.directory-select select { width: 100%; min-height: 3.4rem; border: 1px solid #bcb0b5; background: var(--color-paper); color: var(--color-ink); padding: 0.6rem 0.8rem; font: inherit; font-size: 0.9rem; border-radius: 0; }
+.directory-select select:disabled { opacity: 0.65; }
+.directory-reset { min-height: 3rem; padding: 0.65rem 0.4rem; background: transparent; border: 0; color: var(--color-burgundy); font-size: 0.8rem; text-decoration: underline; text-underline-offset: 0.3em; }
+.people-directory > .listing-count { margin-bottom: 2.5rem; }
+.insights-search { grid-template-columns: minmax(0, 1fr) auto; max-width: 49rem; margin-bottom: 2rem; }
+.insight-refine-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; padding-block: 1rem 2rem; }
+.insight-card-context { padding-block: 0.7rem; color: var(--color-muted); }
+.insight-card-authors { font-size: 0.78rem; margin-bottom: 1rem; }
+.insight-card-context a { color: inherit; }
+.insight-card-context a:hover { color: var(--color-burgundy); }
+.insight-card-context ul { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; padding: 0; margin: 0 0 0.75rem; }
+.insight-card-context li { min-width: 0; }
+.insight-card-context li a { display: inline-flex; min-height: 2rem; align-items: center; border-bottom: 1px solid var(--color-line); font-size: 0.7rem; line-height: 1.5; overflow-wrap: anywhere; }
+.insight-list-card h2 { font-size: clamp(1.6rem, 2.3vw, 2.2rem); }
+.listing-pagination { display: flex; align-items: center; justify-content: center; gap: 1.5rem; padding-block: 2.5rem 0; }
+.listing-pagination > span { font-size: 0.8rem; text-align: center; }
+#insights-results-status { scroll-margin-top: 1rem; }
+#insights-results-status:focus { outline: 2px solid var(--color-accent); outline-offset: 0.4rem; }
+.insight-video { margin-bottom: 2.5rem; }
+.insight-video > div { padding: 1.5rem; border: 1px solid var(--color-line); background: var(--color-surface); }
+.insight-video iframe { width: 100%; aspect-ratio: 16/9; border: 0; display: block; }
+.insight-event { padding: 1.5rem; margin-bottom: 2rem; background: var(--color-surface); }
+.insight-event dl > div { margin-bottom: 1rem; }
+.insight-event dt { color: var(--color-muted); font-size: 0.75rem; }
+.insight-event dd { margin: 0.25rem 0 0; }
+.related-insights-section { border-top: 1px solid var(--color-line); padding-block: 3rem var(--section-space); }
+.related-insights-section h2 { font-size: clamp(2rem, 3vw, 2.75rem); }
+.related-insights-section ul { list-style: none; padding: 0; margin: 0; }
+.related-insights-section li { padding-block: 1.25rem; border-bottom: 1px solid var(--color-line); }
+.related-insights-section a { display: block; max-width: var(--reading-width); font-family: var(--font-display); font-size: 1.35rem; line-height: 1.4; }
+.related-insights-section span { display: block; margin-top: 0.5rem; font-size: 0.75rem; color: var(--color-muted); }
+.profile-email { display: block; margin-top: 1rem; overflow-wrap: anywhere; font-size: 0.85rem; }
+@media (max-width: 47.99rem) {
+  .directory-controls { grid-template-columns: 1fr; gap: 1.25rem; }
+  .directory-select select { font-size: 1rem; }
+  .directory-controls .search-field input { font-size: 1rem; }
+  .insight-refine-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+  .directory-reset { justify-self: start; }
+  .listing-pagination { gap: 0.75rem; }
+  .listing-pagination .button { padding-inline: 1rem; gap: 0.5rem; }
+}

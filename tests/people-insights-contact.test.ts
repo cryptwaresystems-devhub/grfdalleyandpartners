@@ -48,7 +48,7 @@ test('source verification does not promote drafts or incomplete approvals', () =
     assert.equal(getVisibleLawyers('management-preview', [{ ...person, editorial: { ...person.editorial, status } }]).length, 0);
   }
   assert.equal(getVisibleLawyers('management-preview', [{ ...person, editorial: { status: 'in-review', source: 'TEST FIXTURE' }, verification: undefined }]).length, 0);
-  assert.equal(getVisibleInsights().length, 2);
+  assert.equal(getVisibleInsights().length, 3);
   const item = insights[0];
   assert.equal(getVisibleInsights('management-preview', [{ ...item, editorial: { status: 'in-review', source: 'TEST FIXTURE' }, verification: undefined }]).length, 0);
   assert.equal(getVisibleInsights('management-preview', [{ ...item, editorial: { ...item.editorial, status: 'draft' } }]).length, 0);
@@ -70,16 +70,16 @@ test('profile templates omit unsupplied facts and keep historical bibliography q
   assert.ok(aderemi.body.textContent.includes('Selected bibliography'));
   assert.ok(aderemi.body.textContent.includes('await final review'));
   const ajibola = render(h(LawyerProfileTemplate, { person: lawyers[1] })).document;
-  assert.equal(ajibola.querySelectorAll('a[href^="/insights/"]').length, 2);
+  assert.equal(ajibola.querySelectorAll('a[href^="/insights/"]').length, 3);
 });
 test('Insights only shows verified historic entries and suppresses unapproved article bodies', () => {
   const entries = getVisibleInsights('management-preview');
-  assert.equal(entries.length, 2);
+  assert.equal(entries.length, 3);
   assert.equal(insightDateLabel(entries[0]), 'December 2019');
   assert.equal(insightDateLabel(entries[1]), '3 September 2019');
   const doc = render(h(InsightsPage)).document;
-  assert.equal(doc.querySelectorAll('.insight-list-card').length, 2);
-  assert.equal(doc.querySelectorAll('.insight-category-filters button').length, 7);
+  assert.equal(doc.querySelectorAll('.insight-list-card').length, 3);
+  assert.equal(doc.querySelectorAll('.insight-category-filters button').length, 8);
   const detail = render(h(InsightDetailTemplate, { insight: { ...entries[0], body: 'UNAPPROVED BODY MUST STAY HIDDEN' } })).document;
   assert.ok(!detail.body.textContent.includes('UNAPPROVED BODY MUST STAY HIDDEN'));
   assert.ok(detail.querySelector(`a[href="${entries[0].externalUrl}"]`));

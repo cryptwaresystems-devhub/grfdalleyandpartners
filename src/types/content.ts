@@ -32,7 +32,7 @@ export interface Publication extends ContentRecord {
   authorIds: string[]; practiceIds: string[]; industryIds: string[];
   publisher: string; year?: string; externalUrl?: string;
 }
-export interface BibliographicEntry { title: string; year?: string; }
+export interface BibliographicEntry { title: string; year?: string; insightId?: string; }
 export interface Lawyer extends ContentRecord {
   role: string; practiceIds: string[]; officeId: string | null; yearOfCall: number | null;
   education: string[]; memberships: string[]; linkedin: string | null; email: string | null;
@@ -44,7 +44,10 @@ export type InsightType = 'article' | 'case-review' | 'external-publication' | '
 export interface Insight extends ContentRecord {
   /** Article-body permission is independent of archive metadata permission. */
   bodyEditorial?: Editorial;
+  video?: { provider: 'youtube' | 'vimeo'; id: string; title: string; editorial: Editorial };
+  event?: { startsAt: string; endsAt?: string; location?: string; registrationUrl?: string };
   type: InsightType; date: string; authorIds: string[]; practiceIds: string[]; industryIds: string[]; body: string; externalUrl?: string;
   datePrecision?: 'day' | 'month' | 'year'; publisher?: string; publisherNote?: string; subtitle?: string;
+  archive?: boolean;
   verification?: { status: 'publisher-verified'; sourceUrl: string; checkedOn: string };
 }

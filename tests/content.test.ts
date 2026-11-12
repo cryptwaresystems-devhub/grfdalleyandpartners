@@ -12,7 +12,7 @@ test('confirmed taxonomy counts and unique IDs', () => {
  for (const collection of [industries, practices, lawyers, offices]) assert.equal(new Set(collection.map(x => x.id)).size, collection.length);
 });
 test('requester-authorized content is visible while unconfirmed office records stay unpublished', () => {
- assert.equal(publishedOnly([...industries, ...practices, ...lawyers, ...insights]).length, 46);
+ assert.equal(publishedOnly([...industries, ...practices, ...lawyers, ...insights]).length, 47);
  assert.equal(publishedOnly(offices).length, 0);
 });
 test('publication gate validates approval, ordering and scheduling', () => {

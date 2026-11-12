@@ -33,10 +33,10 @@ export const lawyers: Lawyer[] = [
     "linkedin": "https://www.linkedin.com/in/remi-dalley-06749454",
     "email": null,
     "portrait": "/assets/people/aderemi-dalley.jpg",
-    "biography": null,
+    "biography": "Rasheed Goriola Aderemi Dalley is a founding partner at G.R.F. Dalley & Partners. They were called to the Nigerian Bar in 1999.\n\nAreas of practice include Asset Based Financing, Aviation, Banking and Finance, Commercial Litigation, Corporate Finance, Litigation, Intellectual Property, Insolvency, Maritime Law and Labour Law.",
     "editorial": {
       "status": "authorized",
-      "source": "Firm-supplied biography 1iWUm2wNAu675MgNLrKTpKrqxpDPFLDVj; portrait compared visually with the embedded biography photograph. Final publication approval pending.; existing supplied biography and matched portrait only; wording adapted or composed under the requester's explicit delegated-copy instruction. Final firm legal review remains separate.",
+      "source": "Firm-supplied biography 1iWUm2wNAu675MgNLrKTpKrqxpDPFLDVj; portrait compared visually with the embedded biography photograph. Final publication approval pending.; existing supplied biography and matched portrait only; wording adapted or composed under the requester's explicit delegated-copy instruction. Final firm legal review remains separate. Prompt 8 profile narrative uses only the supplied role, practice list and year of call.",
       "authorizedBy": "Project requester - Prompt 7 follow-up instruction",
       "authorizedAt": "2026-11-12",
       "publishedAt": "2026-11-12"
@@ -116,10 +116,10 @@ export const lawyers: Lawyer[] = [
     "linkedin": "https://www.linkedin.com/in/ajibola-dalley-san-fciarb-42b786a2",
     "email": null,
     "portrait": "/assets/people/ajibola-dalley.jpg",
-    "biography": null,
+    "biography": "Fatai Ajibola Dalley SAN, FCIArb (UK) is a co-founding partner at G.R.F. Dalley & Partners. They were called to the Nigerian Bar in 2001.\n\nAreas of practice include Arbitration, Aviation, Banking, Corporate/Commercial Litigation and Intellectual Property.",
     "editorial": {
       "status": "authorized",
-      "source": "Firm-supplied biography 1o9kZlIbpFGjJ14s0oDqvq6hXXU1Mwp54; portrait compared visually with the embedded biography photograph. Final publication approval pending.; existing supplied biography and matched portrait only; wording adapted or composed under the requester's explicit delegated-copy instruction. Final firm legal review remains separate.",
+      "source": "Firm-supplied biography 1o9kZlIbpFGjJ14s0oDqvq6hXXU1Mwp54; portrait compared visually with the embedded biography photograph. Final publication approval pending.; existing supplied biography and matched portrait only; wording adapted or composed under the requester's explicit delegated-copy instruction. Final firm legal review remains separate. Prompt 8 profile narrative uses only the supplied role, practice list and year of call.",
       "authorizedBy": "Project requester - Prompt 7 follow-up instruction",
       "authorizedAt": "2026-11-12",
       "publishedAt": "2026-11-12"
@@ -179,7 +179,8 @@ export const lawyers: Lawyer[] = [
       },
       {
         "title": "The Exclusivity of the Warsaw Convention Regime Vis-a-vis Actions and Remedies in International Carriage by Air Under Nigerian Laws",
-        "year": "2006"
+        "year": "2006",
+        "insightId": "warsaw-convention-exclusivity"
       }
     ],
     "verification": {
@@ -208,10 +209,10 @@ export const lawyers: Lawyer[] = [
     "linkedin": "https://linkedin.com/in/wande-esan-916b478a",
     "email": null,
     "portrait": "/assets/people/wande-esan.jpg",
-    "biography": null,
+    "biography": "Wande Adenike Esan is a partner (non-equity) at G.R.F. Dalley & Partners. They were called to the Nigerian Bar in 2012.\n\nAreas of practice include Commercial/Corporate Litigation.",
     "editorial": {
       "status": "authorized",
-      "source": "Firm-supplied biography 11mJvlmbkBXXqeb4S5rF7ib3OuIbo-OkI; portrait compared visually with the embedded biography photograph. Final publication approval pending.; existing supplied biography and matched portrait only; wording adapted or composed under the requester's explicit delegated-copy instruction. Final firm legal review remains separate.",
+      "source": "Firm-supplied biography 11mJvlmbkBXXqeb4S5rF7ib3OuIbo-OkI; portrait compared visually with the embedded biography photograph. Final publication approval pending.; existing supplied biography and matched portrait only; wording adapted or composed under the requester's explicit delegated-copy instruction. Final firm legal review remains separate. Prompt 8 profile narrative uses only the supplied role, practice list and year of call.",
       "authorizedBy": "Project requester - Prompt 7 follow-up instruction",
       "authorizedAt": "2026-11-12",
       "publishedAt": "2026-11-12"
@@ -249,10 +250,10 @@ export const lawyers: Lawyer[] = [
     "linkedin": null,
     "email": null,
     "portrait": "/assets/people/obinna-omeh.jpg",
-    "biography": null,
+    "biography": "Obinna E. Omeh is an associate at G.R.F. Dalley & Partners.\n\nAreas of practice include Litigation, Intellectual Property, Corporate and Commercial Law and Banking & Finance.",
     "editorial": {
       "status": "authorized",
-      "source": "Firm-supplied biography 1fdw6nh1mPIGueLjz47V8kdmL_YQ0TBlT; portrait compared visually with the embedded biography photograph. Final publication approval pending.; existing supplied biography and matched portrait only; wording adapted or composed under the requester's explicit delegated-copy instruction. Final firm legal review remains separate.",
+      "source": "Firm-supplied biography 1fdw6nh1mPIGueLjz47V8kdmL_YQ0TBlT; portrait compared visually with the embedded biography photograph. Final publication approval pending.; existing supplied biography and matched portrait only; wording adapted or composed under the requester's explicit delegated-copy instruction. Final firm legal review remains separate. Prompt 8 profile narrative uses only the supplied role, practice list and year of call.",
       "authorizedBy": "Project requester - Prompt 7 follow-up instruction",
       "authorizedAt": "2026-11-12",
       "publishedAt": "2026-11-12"
@@ -293,10 +294,10 @@ export const lawyers: Lawyer[] = [
     "linkedin": "https://www.linkedin.com/in/faith-izezy-adebo-b80a19291",
     "email": null,
     "portrait": "/assets/people/faith-adebo.jpg",
-    "biography": null,
+    "biography": "Faith Izegboya Adebo is an associate at G.R.F. Dalley & Partners. They were called to the Nigerian Bar in 2013.\n\nAreas of practice include Corporate, Family Law and Commercial Law.",
     "editorial": {
       "status": "authorized",
-      "source": "Firm-supplied biography 1JXnVNok8Uh0VKKxBrLGz3DxiTQ5OOGiC; portrait compared visually with the embedded biography photograph. Final publication approval pending.; existing supplied biography and matched portrait only; wording adapted or composed under the requester's explicit delegated-copy instruction. Final firm legal review remains separate.",
+      "source": "Firm-supplied biography 1JXnVNok8Uh0VKKxBrLGz3DxiTQ5OOGiC; portrait compared visually with the embedded biography photograph. Final publication approval pending.; existing supplied biography and matched portrait only; wording adapted or composed under the requester's explicit delegated-copy instruction. Final firm legal review remains separate. Prompt 8 profile narrative uses only the supplied role, practice list and year of call.",
       "authorizedBy": "Project requester - Prompt 7 follow-up instruction",
       "authorizedAt": "2026-11-12",
       "publishedAt": "2026-11-12"
@@ -340,10 +341,10 @@ export const lawyers: Lawyer[] = [
     "linkedin": "https://www.linkedin.com/in/olayiwola-balogun-090547169",
     "email": null,
     "portrait": "/assets/people/olayiwola-balogun.jpg",
-    "biography": null,
+    "biography": "Olayiwola Balogun is an associate at G.R.F. Dalley & Partners. They were called to the Nigerian Bar in 2024.\n\nAreas of practice include Capital Markets, Commercial Dispute Resolution and Litigation.",
     "editorial": {
       "status": "authorized",
-      "source": "Firm-supplied biography 1c3GlL1_kS4oBPQYPoWAugms_rKO1gfZS; portrait compared visually with the embedded biography photograph. Final publication approval pending.; existing supplied biography and matched portrait only; wording adapted or composed under the requester's explicit delegated-copy instruction. Final firm legal review remains separate.",
+      "source": "Firm-supplied biography 1c3GlL1_kS4oBPQYPoWAugms_rKO1gfZS; portrait compared visually with the embedded biography photograph. Final publication approval pending.; existing supplied biography and matched portrait only; wording adapted or composed under the requester's explicit delegated-copy instruction. Final firm legal review remains separate. Prompt 8 profile narrative uses only the supplied role, practice list and year of call.",
       "authorizedBy": "Project requester - Prompt 7 follow-up instruction",
       "authorizedAt": "2026-11-12",
       "publishedAt": "2026-11-12"
@@ -383,10 +384,10 @@ export const lawyers: Lawyer[] = [
     "linkedin": "https://www.linkedin.com/in/opemipo-mustapha-13a56b1a5",
     "email": null,
     "portrait": "/assets/people/opemipo-mustapha.jpg",
-    "biography": null,
+    "biography": "Mustapha Opemipo Rofiat is an associate at G.R.F. Dalley & Partners. They were called to the Nigerian Bar in 2025.\n\nAreas of practice include Corporate and Commercial Law.",
     "editorial": {
       "status": "authorized",
-      "source": "Firm-supplied biography 11ZKroLfD6UD7K9onJqDfo_hTcSm6vTM4; portrait compared visually with the embedded biography photograph. Final publication approval pending.; existing supplied biography and matched portrait only; wording adapted or composed under the requester's explicit delegated-copy instruction. Final firm legal review remains separate.",
+      "source": "Firm-supplied biography 11ZKroLfD6UD7K9onJqDfo_hTcSm6vTM4; portrait compared visually with the embedded biography photograph. Final publication approval pending.; existing supplied biography and matched portrait only; wording adapted or composed under the requester's explicit delegated-copy instruction. Final firm legal review remains separate. Prompt 8 profile narrative uses only the supplied role, practice list and year of call.",
       "authorizedBy": "Project requester - Prompt 7 follow-up instruction",
       "authorizedAt": "2026-11-12",
       "publishedAt": "2026-11-12"
@@ -423,10 +424,10 @@ export const lawyers: Lawyer[] = [
     "linkedin": "https://linkedin.com/in/peace-amarachi-4a2933193",
     "email": null,
     "portrait": "/assets/people/peace-ogbu.jpg",
-    "biography": null,
+    "biography": "Peace Amarachi Ogbu is an associate at G.R.F. Dalley & Partners. They were called to the Nigerian Bar in 2025.\n\nAreas of practice include Commercial/Corporate Litigation and Alternative Dispute Resolution.",
     "editorial": {
       "status": "authorized",
-      "source": "Firm-supplied biography 1gPugeFws1C48dEV4QiOqcpCC_Wpz083k; portrait compared visually with the embedded biography photograph. Final publication approval pending.; existing supplied biography and matched portrait only; wording adapted or composed under the requester's explicit delegated-copy instruction. Final firm legal review remains separate.",
+      "source": "Firm-supplied biography 1gPugeFws1C48dEV4QiOqcpCC_Wpz083k; portrait compared visually with the embedded biography photograph. Final publication approval pending.; existing supplied biography and matched portrait only; wording adapted or composed under the requester's explicit delegated-copy instruction. Final firm legal review remains separate. Prompt 8 profile narrative uses only the supplied role, practice list and year of call.",
       "authorizedBy": "Project requester - Prompt 7 follow-up instruction",
       "authorizedAt": "2026-11-12",
       "publishedAt": "2026-11-12"

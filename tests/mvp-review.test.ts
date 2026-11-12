@@ -20,8 +20,8 @@ const paths = ['/', '/about', '/industries', '/practices', '/people', '/insights
   ...getVisibleInsights('management-preview').map(item => `/insights/${item.slug}`)];
 function App() { return useRoutes(routes); }
 
-test('all 53 MVP routes render landmarks, unique IDs, valid links, labels and local images', () => {
-  assert.equal(paths.length, 53);
+test('all 54 website routes render landmarks, unique IDs, valid links, labels and local images', () => {
+  assert.equal(paths.length, 54);
   const dom = new Window();
   try {
     for (const path of paths) {

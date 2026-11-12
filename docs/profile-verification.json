@@ -9,8 +9,9 @@
       "portrait": "/assets/people/aderemi-dalley.jpg",
       "verification": "Text fields checked against biography; standalone portrait visually compared with the embedded photograph.",
       "embeddedImageSha256": "0c5130758e396426d137a3a276b3ee82b43478ee4ef39e879b302fbf8b9bf3f2",
-      "publicationStatus": "in-review",
-      "notes": []
+      "publicationStatus": "requester-authorized",
+      "notes": [],
+      "profileNarrative": "Prompt 8: composed only from the source-checked role, practice list and year of call."
     },
     {
       "name": "Fatai Ajibola Dalley SAN, FCIArb (UK)",
@@ -20,8 +21,9 @@
       "portrait": "/assets/people/ajibola-dalley.jpg",
       "verification": "Text fields checked against biography; standalone portrait visually compared with the embedded photograph.",
       "embeddedImageSha256": "da5738bc55eb68d1f1233ab705a39d3b2ba06c34b00cbfb0dfd7092373180628",
-      "publicationStatus": "in-review",
-      "notes": []
+      "publicationStatus": "requester-authorized",
+      "notes": [],
+      "profileNarrative": "Prompt 8: composed only from the source-checked role, practice list and year of call."
     },
     {
       "name": "Wande Adenike Esan",
@@ -31,8 +33,9 @@
       "portrait": "/assets/people/wande-esan.jpg",
       "verification": "Text fields checked against biography; standalone portrait visually compared with the embedded photograph.",
       "embeddedImageSha256": "5c7efaba344660a490a1960ecfbb43299abc8d8e955036dec522d5be5fb9b578",
-      "publicationStatus": "in-review",
-      "notes": []
+      "publicationStatus": "requester-authorized",
+      "notes": [],
+      "profileNarrative": "Prompt 8: composed only from the source-checked role, practice list and year of call."
     },
     {
       "name": "Obinna E. Omeh",
@@ -42,10 +45,11 @@
       "portrait": "/assets/people/obinna-omeh.jpg",
       "verification": "Text fields checked against biography; standalone portrait visually compared with the embedded photograph.",
       "embeddedImageSha256": "19caebb6ad20da257196ab940163c20789e8efdfc1039c8c0026529942cc9241",
-      "publicationStatus": "in-review",
+      "publicationStatus": "requester-authorized",
       "notes": [
         "Year of call, LL.B. details and LinkedIn were not supplied."
-      ]
+      ],
+      "profileNarrative": "Prompt 8: composed only from the source-checked role, practice list and year of call."
     },
     {
       "name": "Faith Izegboya Adebo",
@@ -55,10 +59,11 @@
       "portrait": "/assets/people/faith-adebo.jpg",
       "verification": "Text fields checked against biography; standalone portrait visually compared with the embedded photograph.",
       "embeddedImageSha256": "2d40d10a561a6ec1e2d27560384fa6029fe38cd1e0c3067cada510cff01cf746",
-      "publicationStatus": "in-review",
+      "publicationStatus": "requester-authorized",
       "notes": [
         "Biography body spells the name Izegboya; the filename uses Izuegboya. The biography spelling is used pending confirmation."
-      ]
+      ],
+      "profileNarrative": "Prompt 8: composed only from the source-checked role, practice list and year of call."
     },
     {
       "name": "Olayiwola Balogun",
@@ -68,8 +73,9 @@
       "portrait": "/assets/people/olayiwola-balogun.jpg",
       "verification": "Text fields checked against biography; standalone portrait visually compared with the embedded photograph.",
       "embeddedImageSha256": "8fbe5824108729629521e5ee70b4322840acbe6c1f40184bd790b72525e2d4be",
-      "publicationStatus": "in-review",
-      "notes": []
+      "publicationStatus": "requester-authorized",
+      "notes": [],
+      "profileNarrative": "Prompt 8: composed only from the source-checked role, practice list and year of call."
     },
     {
       "name": "Mustapha Opemipo Rofiat",
@@ -79,8 +85,9 @@
       "portrait": "/assets/people/opemipo-mustapha.jpg",
       "verification": "Text fields checked against biography; standalone portrait visually compared with the embedded photograph.",
       "embeddedImageSha256": "8eee1c5db428ce82adbd03e3c610d80e8765809422a42fa35239fc3258bef8d4",
-      "publicationStatus": "in-review",
-      "notes": []
+      "publicationStatus": "requester-authorized",
+      "notes": [],
+      "profileNarrative": "Prompt 8: composed only from the source-checked role, practice list and year of call."
     },
     {
       "name": "Peace Amarachi Ogbu",
@@ -90,8 +97,9 @@
       "portrait": "/assets/people/peace-ogbu.jpg",
       "verification": "Text fields checked against biography; standalone portrait visually compared with the embedded photograph.",
       "embeddedImageSha256": "8fb62622e08d73a8bd665c6e5d1b45fcfc8eb687dd0e57754a2dff9adb779b6a",
-      "publicationStatus": "in-review",
-      "notes": []
+      "publicationStatus": "requester-authorized",
+      "notes": [],
+      "profileNarrative": "Prompt 8: composed only from the source-checked role, practice list and year of call."
     }
   ],
   "notes": [
