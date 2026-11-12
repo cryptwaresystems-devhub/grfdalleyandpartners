@@ -1,0 +1,48 @@
+{
+  "license": {
+    "name": "Unsplash License",
+    "url": "https://unsplash.com/license",
+    "checked": "2026-11-12",
+    "usage": "Commercial website use permitted by the published licence. Photos are illustrative architecture, not the firm offices or clients."
+  },
+  "photography": [
+    {
+      "files": [
+        "public/assets/architecture/towers-1920.webp",
+        "public/assets/architecture/towers-960.webp"
+      ],
+      "photographer": "Sean Pollock",
+      "source": "https://unsplash.com/photos/low-angle-photo-of-city-high-rise-buildings-during-daytime-PhYq704ffdA",
+      "imageSource": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab",
+      "use": "Hero; 1920x1080 desktop and 960x1080 mobile crops"
+    },
+    {
+      "files": [
+        "public/assets/architecture/facade-960.webp"
+      ],
+      "photographer": "Ishaan Brar",
+      "source": "https://unsplash.com/photos/modern-building-facade-with-reflections-in-glass-panels-MYzaOHvnZGY",
+      "imageSource": "https://images.unsplash.com/photo-1772423428165-b74621be7028",
+      "use": "Industry section; 960px width"
+    }
+  ],
+  "portraits": [
+    {
+      "file": "public/assets/people/aderemi-dalley.jpg",
+      "sourceId": "1AeRKKOPiLOV4IPc-B933m7iVJqVx8rBr",
+      "name": "Aderemi Dalley"
+    },
+    {
+      "file": "public/assets/people/ajibola-dalley.jpg",
+      "sourceId": "1nLa6TuKnDEyESIy7eE6XXdKk-D2aIMK1",
+      "name": "Ajibola Dalley"
+    },
+    {
+      "file": "public/assets/people/wande-esan.jpg",
+      "sourceId": "14ERJodQYphESYjzRo-ZOsiVCqSxhBpL0",
+      "name": "Wande Esan",
+      "processing": "Resized supplied PNG to 600px JPEG; preserved original outside public output"
+    }
+  ],
+  "portraitApproval": "Firm-supplied management previews; not marked approved. Final public-use approval and biography review remain required."
+}

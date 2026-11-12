@@ -1,0 +1,33 @@
+import { Link } from 'react-router-dom';
+import { ExternalLink } from 'lucide-react';
+import type { Lawyer } from '../../types/content';
+import { PageHeader } from '../PageHeader';
+import { Container } from '../Container';
+import { ButtonLink } from '../Button';
+import { PreviewNotice } from '../PreviewNotice';
+import { isPublished } from '../../lib/publication';
+import { getExpertiseCategories, safeExternalUrl } from '../../lib/expertise';
+import { getVisibleInsights, insightDateLabel } from '../../lib/insights';
+
+export function LawyerProfileTemplate({ person }: { person: Lawyer }) {
+  const practices = getExpertiseCategories('practice').filter(item => person.practiceIds.includes(item.id));
+  const writing = getVisibleInsights('management-preview').filter(item => item.authorIds.includes(person.id));
+  const linkedin = safeExternalUrl(person.linkedin ?? undefined);
+  return <><PageHeader title={person.name} eyebrow="Our people" description={person.role} breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'People', to: '/people' }, { label: person.name }]} /><Container>
+    {!isPublished(person) && <PreviewNotice>Details are drawn from the supplied biography and remain subject to final publication approval. Affiliations and credentials are shown as supplied.</PreviewNotice>}
+    <div className="lawyer-profile-layout section-space"><aside className="lawyer-profile-aside" aria-label="Portrait and professional contact">{person.portrait && <img className="lawyer-profile-portrait" src={person.portrait} alt={`Portrait of ${person.name}`} width="600" height="750" />}
+      <dl className="profile-key-details">{person.yearOfCall !== null && <div><dt>Year of call</dt><dd>{person.yearOfCall}</dd></div>}{person.officeId && <div><dt>Office</dt><dd>{person.officeId === 'abuja' ? 'Abuja' : person.officeId === 'port-harcourt' ? 'Port Harcourt' : 'Lagos'}</dd></div>}</dl>
+      <ButtonLink to="/contact" arrow>Contact the Firm</ButtonLink>{linkedin && <a className="profile-linkedin" href={linkedin} target="_blank" rel="noopener noreferrer">LinkedIn <ExternalLink size={14} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a>}
+      {person.email && <a href={`mailto:${person.email}`}>{person.email}</a>}
+    </aside><div className="lawyer-profile-main">
+      {person.biography && isPublished(person) && <section className="profile-section" aria-labelledby="biography-heading"><h2 id="biography-heading">Profile</h2><p>{person.biography}</p></section>}
+      {!!person.practiceNames?.length && <section className="profile-section" aria-labelledby="profile-practices"><p className="eyebrow">Professional focus</p><h2 id="profile-practices">Practices</h2><ul className="profile-tag-list">{person.practiceNames.map(name => <li key={name}>{name}</li>)}</ul>{practices.length > 0 && <div className="profile-related-practices"><p>Explore related practice areas</p>{practices.map(item => <Link key={item.id} to={`/practices/${item.slug}`}>{item.name}</Link>)}</div>}</section>}
+      {person.education.length > 0 && <section className="profile-section" aria-labelledby="education-heading"><h2 id="education-heading">Education</h2><ul className="profile-text-list">{person.education.map(item => <li key={item}>{item}</li>)}</ul></section>}
+      {person.memberships.length > 0 && <section className="profile-section" aria-labelledby="memberships-heading"><h2 id="memberships-heading">Professional memberships</h2><ul className="profile-text-list">{person.memberships.map(item => <li key={item}>{item}</li>)}</ul></section>}
+      {!!person.certifications?.length && <section className="profile-section" aria-labelledby="certifications-heading"><h2 id="certifications-heading">Certifications</h2><ul className="profile-text-list">{person.certifications.map(item => <li key={item}>{item}</li>)}</ul></section>}
+      {writing.length > 0 && <section className="profile-section" aria-labelledby="writing-heading"><p className="eyebrow">Verified archive</p><h2 id="writing-heading">Published perspectives</h2><ul className="profile-writing-list">{writing.map(item => <li key={item.id}><span>{item.publisher} · {insightDateLabel(item)}</span><Link to={`/insights/${item.slug}`}>{item.name}</Link></li>)}</ul></section>}
+      {!!person.suppliedPublications?.length && <section className="profile-section" aria-labelledby="bibliography-heading"><h2 id="bibliography-heading">Selected bibliography</h2><p className="profile-section-note">Historical entries supplied in the biography; publication details await final review.</p><ul className="profile-writing-list">{person.suppliedPublications.map((item, index) => <li key={`${item.title}-${index}`}><span>{item.year}</span><p>{item.title}</p></li>)}</ul></section>}
+      <Link className="detail-back" to="/people">Return to all people</Link>
+    </div></div>
+  </Container></>;
+}

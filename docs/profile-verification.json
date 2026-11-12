@@ -1,0 +1,104 @@
+{
+  "checkedOn": "2026-11-12",
+  "records": [
+    {
+      "name": "Rasheed Goriola Aderemi Dalley",
+      "role": "Founding Partner",
+      "biographyFileId": "1iWUm2wNAu675MgNLrKTpKrqxpDPFLDVj",
+      "portraitFileId": "1AeRKKOPiLOV4IPc-B933m7iVJqVx8rBr",
+      "portrait": "/assets/people/aderemi-dalley.jpg",
+      "verification": "Text fields checked against biography; standalone portrait visually compared with the embedded photograph.",
+      "embeddedImageSha256": "0c5130758e396426d137a3a276b3ee82b43478ee4ef39e879b302fbf8b9bf3f2",
+      "publicationStatus": "in-review",
+      "notes": []
+    },
+    {
+      "name": "Fatai Ajibola Dalley SAN, FCIArb (UK)",
+      "role": "Co-founding Partner",
+      "biographyFileId": "1o9kZlIbpFGjJ14s0oDqvq6hXXU1Mwp54",
+      "portraitFileId": "1nLa6TuKnDEyESIy7eE6XXdKk-D2aIMK1",
+      "portrait": "/assets/people/ajibola-dalley.jpg",
+      "verification": "Text fields checked against biography; standalone portrait visually compared with the embedded photograph.",
+      "embeddedImageSha256": "da5738bc55eb68d1f1233ab705a39d3b2ba06c34b00cbfb0dfd7092373180628",
+      "publicationStatus": "in-review",
+      "notes": []
+    },
+    {
+      "name": "Wande Adenike Esan",
+      "role": "Partner (Non-equity)",
+      "biographyFileId": "11mJvlmbkBXXqeb4S5rF7ib3OuIbo-OkI",
+      "portraitFileId": "14ERJodQYphESYjzRo-ZOsiVCqSxhBpL0",
+      "portrait": "/assets/people/wande-esan.jpg",
+      "verification": "Text fields checked against biography; standalone portrait visually compared with the embedded photograph.",
+      "embeddedImageSha256": "5c7efaba344660a490a1960ecfbb43299abc8d8e955036dec522d5be5fb9b578",
+      "publicationStatus": "in-review",
+      "notes": []
+    },
+    {
+      "name": "Obinna E. Omeh",
+      "role": "Associate",
+      "biographyFileId": "1fdw6nh1mPIGueLjz47V8kdmL_YQ0TBlT",
+      "portraitFileId": "1UI0fuLYeBY-uRAjm5FX1OvDJ-z0MxvL7",
+      "portrait": "/assets/people/obinna-omeh.jpg",
+      "verification": "Text fields checked against biography; standalone portrait visually compared with the embedded photograph.",
+      "embeddedImageSha256": "19caebb6ad20da257196ab940163c20789e8efdfc1039c8c0026529942cc9241",
+      "publicationStatus": "in-review",
+      "notes": [
+        "Year of call, LL.B. details and LinkedIn were not supplied."
+      ]
+    },
+    {
+      "name": "Faith Izegboya Adebo",
+      "role": "Associate",
+      "biographyFileId": "1JXnVNok8Uh0VKKxBrLGz3DxiTQ5OOGiC",
+      "portraitFileId": "1jHAW0eQjVKiRtqJOxBoVMDzYaZ9e0hi3",
+      "portrait": "/assets/people/faith-adebo.jpg",
+      "verification": "Text fields checked against biography; standalone portrait visually compared with the embedded photograph.",
+      "embeddedImageSha256": "2d40d10a561a6ec1e2d27560384fa6029fe38cd1e0c3067cada510cff01cf746",
+      "publicationStatus": "in-review",
+      "notes": [
+        "Biography body spells the name Izegboya; the filename uses Izuegboya. The biography spelling is used pending confirmation."
+      ]
+    },
+    {
+      "name": "Olayiwola Balogun",
+      "role": "Associate",
+      "biographyFileId": "1c3GlL1_kS4oBPQYPoWAugms_rKO1gfZS",
+      "portraitFileId": "1rLDpDSxe4XjrzP0rskwEOeJCTqlJzoIG",
+      "portrait": "/assets/people/olayiwola-balogun.jpg",
+      "verification": "Text fields checked against biography; standalone portrait visually compared with the embedded photograph.",
+      "embeddedImageSha256": "8fbe5824108729629521e5ee70b4322840acbe6c1f40184bd790b72525e2d4be",
+      "publicationStatus": "in-review",
+      "notes": []
+    },
+    {
+      "name": "Mustapha Opemipo Rofiat",
+      "role": "Associate",
+      "biographyFileId": "11ZKroLfD6UD7K9onJqDfo_hTcSm6vTM4",
+      "portraitFileId": "1_CxHuo2xx_2rWbxCp7RP8Ds0PyjqYf_w",
+      "portrait": "/assets/people/opemipo-mustapha.jpg",
+      "verification": "Text fields checked against biography; standalone portrait visually compared with the embedded photograph.",
+      "embeddedImageSha256": "8eee1c5db428ce82adbd03e3c610d80e8765809422a42fa35239fc3258bef8d4",
+      "publicationStatus": "in-review",
+      "notes": []
+    },
+    {
+      "name": "Peace Amarachi Ogbu",
+      "role": "Associate",
+      "biographyFileId": "1gPugeFws1C48dEV4QiOqcpCC_Wpz083k",
+      "portraitFileId": "1B0KKuL49yinygMnTU0kDM91Z8RpWRekw",
+      "portrait": "/assets/people/peace-ogbu.jpg",
+      "verification": "Text fields checked against biography; standalone portrait visually compared with the embedded photograph.",
+      "embeddedImageSha256": "8fb62622e08d73a8bd665c6e5d1b45fcfc8eb687dd0e57754a2dff9adb779b6a",
+      "publicationStatus": "in-review",
+      "notes": []
+    }
+  ],
+  "notes": [
+    "All eight portrait pairs were visually inspected together in an internal comparison sheet.",
+    "Biographies and original portraits are retained only in ignored tmp review folders, not public assets.",
+    "Source-checking does not constitute final publication approval.",
+    "No individual email addresses were supplied.",
+    "Memberships and historic bibliography entries are presented as supplied; current standing and publication approval still require confirmation."
+  ]
+}
