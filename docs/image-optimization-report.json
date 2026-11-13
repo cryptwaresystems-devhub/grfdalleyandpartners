@@ -1,0 +1,188 @@
+[
+  {
+    "source": "public/assets/people/aderemi-dalley.jpg",
+    "originalBytes": 41565,
+    "variants": [
+      {
+        "path": "/assets/optimized/aderemi-dalley-320.webp",
+        "width": 320,
+        "bytes": 3634
+      },
+      {
+        "path": "/assets/optimized/aderemi-dalley-600.webp",
+        "width": 600,
+        "bytes": 7978
+      }
+    ]
+  },
+  {
+    "source": "public/assets/people/ajibola-dalley.jpg",
+    "originalBytes": 32049,
+    "variants": [
+      {
+        "path": "/assets/optimized/ajibola-dalley-320.webp",
+        "width": 320,
+        "bytes": 5338
+      },
+      {
+        "path": "/assets/optimized/ajibola-dalley-600.webp",
+        "width": 600,
+        "bytes": 11660
+      }
+    ]
+  },
+  {
+    "source": "public/assets/people/faith-adebo.jpg",
+    "originalBytes": 44072,
+    "variants": [
+      {
+        "path": "/assets/optimized/faith-adebo-320.webp",
+        "width": 320,
+        "bytes": 4860
+      },
+      {
+        "path": "/assets/optimized/faith-adebo-600.webp",
+        "width": 600,
+        "bytes": 10796
+      }
+    ]
+  },
+  {
+    "source": "public/assets/people/obinna-omeh.jpg",
+    "originalBytes": 68644,
+    "variants": [
+      {
+        "path": "/assets/optimized/obinna-omeh-320.webp",
+        "width": 320,
+        "bytes": 7716
+      },
+      {
+        "path": "/assets/optimized/obinna-omeh-600.webp",
+        "width": 600,
+        "bytes": 17994
+      }
+    ]
+  },
+  {
+    "source": "public/assets/people/olayiwola-balogun.jpg",
+    "originalBytes": 64653,
+    "variants": [
+      {
+        "path": "/assets/optimized/olayiwola-balogun-320.webp",
+        "width": 320,
+        "bytes": 5578
+      },
+      {
+        "path": "/assets/optimized/olayiwola-balogun-600.webp",
+        "width": 600,
+        "bytes": 13674
+      }
+    ]
+  },
+  {
+    "source": "public/assets/people/opemipo-mustapha.jpg",
+    "originalBytes": 74690,
+    "variants": [
+      {
+        "path": "/assets/optimized/opemipo-mustapha-320.webp",
+        "width": 320,
+        "bytes": 7692
+      },
+      {
+        "path": "/assets/optimized/opemipo-mustapha-600.webp",
+        "width": 600,
+        "bytes": 19372
+      }
+    ]
+  },
+  {
+    "source": "public/assets/people/peace-ogbu.jpg",
+    "originalBytes": 73646,
+    "variants": [
+      {
+        "path": "/assets/optimized/peace-ogbu-320.webp",
+        "width": 320,
+        "bytes": 6632
+      },
+      {
+        "path": "/assets/optimized/peace-ogbu-600.webp",
+        "width": 600,
+        "bytes": 17614
+      }
+    ]
+  },
+  {
+    "source": "public/assets/people/wande-esan.jpg",
+    "originalBytes": 79918,
+    "variants": [
+      {
+        "path": "/assets/optimized/wande-esan-320.webp",
+        "width": 320,
+        "bytes": 8712
+      },
+      {
+        "path": "/assets/optimized/wande-esan-600.webp",
+        "width": 600,
+        "bytes": 21162
+      }
+    ]
+  },
+  {
+    "source": "public/assets/architecture/facade-960.webp",
+    "originalBytes": 233136,
+    "variants": [
+      {
+        "path": "/assets/optimized/facade-960-640.webp",
+        "width": 640,
+        "bytes": 49208
+      },
+      {
+        "path": "/assets/optimized/facade-960-960.webp",
+        "width": 960,
+        "bytes": 95046
+      }
+    ]
+  },
+  {
+    "source": "public/assets/architecture/towers-1920.webp",
+    "originalBytes": 397822,
+    "variants": [
+      {
+        "path": "/assets/optimized/towers-1920-640.webp",
+        "width": 640,
+        "bytes": 36544
+      },
+      {
+        "path": "/assets/optimized/towers-1920-960.webp",
+        "width": 960,
+        "bytes": 72822
+      },
+      {
+        "path": "/assets/optimized/towers-1920-1280.webp",
+        "width": 1280,
+        "bytes": 104124
+      },
+      {
+        "path": "/assets/optimized/towers-1920-1920.webp",
+        "width": 1920,
+        "bytes": 197344
+      }
+    ]
+  },
+  {
+    "source": "public/assets/architecture/towers-960.webp",
+    "originalBytes": 228524,
+    "variants": [
+      {
+        "path": "/assets/optimized/towers-960-640.webp",
+        "width": 640,
+        "bytes": 57628
+      },
+      {
+        "path": "/assets/optimized/towers-960-960.webp",
+        "width": 960,
+        "bytes": 114464
+      }
+    ]
+  }
+]

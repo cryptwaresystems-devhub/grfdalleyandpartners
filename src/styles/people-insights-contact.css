@@ -202,3 +202,7 @@
 .spam-check { margin-block: 1.5rem; max-width: 100%; }
 .calendly-frame { width: 100%; min-width: 0; height: 660px; border: 0; margin-top: 1.5rem; background: white; }
 .contact-offices .text-link { display: inline-block; margin-block: 1rem; }
+
+.directory-person__image picture, .person-preview__image picture { display: contents; }
+.lawyer-profile-aside > picture { display: block; }
+.form-field input, .form-field select, .form-field textarea { scroll-margin-top: calc(var(--header-height) + 1.5rem); }

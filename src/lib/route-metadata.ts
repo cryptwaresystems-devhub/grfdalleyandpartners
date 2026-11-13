@@ -40,5 +40,5 @@ export function getRouteMetadata(pathname: string, mode: PresentationMode = site
     : mode === 'management-preview' ? `${label} — G.R.F. Dalley & Partners. View this management-review preview; detailed content and publication approval may be pending.`
       : `${label} — G.R.F. Dalley & Partners. Contact the firm for further information. Detailed information is displayed following publication approval.`);
   const conciseDescription = description.replace(/\s+/g, ' ').trim();
-  return { title: `${label} | G.R.F. Dalley & Partners`, description: conciseDescription.length > 200 ? `${conciseDescription.slice(0, 197).trimEnd()}...` : conciseDescription };
+  return { title: `${label === 'Home' ? 'Home - Nigerian Commercial Legal Services' : label} | G.R.F. Dalley & Partners`, description: conciseDescription.length > 200 ? `${conciseDescription.slice(0, 197).trimEnd()}...` : conciseDescription };
 }

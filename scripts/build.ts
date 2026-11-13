@@ -1,0 +1,11 @@
+import { spawnSync } from 'node:child_process';
+import { resolve } from 'node:path';
+import { build } from 'vite';
+const typecheck = spawnSync(process.execPath, [resolve('node_modules/typescript/bin/tsc'), '-b'], { stdio: 'inherit' });
+if (typecheck.status !== 0) process.exit(typecheck.status ?? 1);
+const modeIndex = process.argv.indexOf('--mode');
+const mode = modeIndex >= 0 ? process.argv[modeIndex + 1] : 'production';
+if (!mode) throw new Error('A Vite mode must follow --mode.');
+await build({ mode });
+process.env.GRF_BUILD_MODE = mode;
+await import('./prerender');

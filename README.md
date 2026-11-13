@@ -54,11 +54,11 @@ People search and practice filters, Insights search and category/author/practice
 
 ## Staging on Vercel
 
-Use a staging-only Vercel project or a Preview deployment, with this repository root as the root directory. Install `npm ci`, build `npm run build`, output `dist`. `vercel.json` supplies SPA fallback and noindex headers. The website can be previewed without environment variables; online email delivery and Calendly require the server settings documented in [contact setup](docs/contact-services-setup.md).
+Use a staging-only Vercel project or a Preview deployment, with this repository root as the root directory. Install `npm ci`, build `npm run build`, output `dist`. `vercel.json` uses clean static HTML URLs and legacy redirects; generated metadata and robots.txt protect staging from indexing. The website can be previewed without environment variables; online email delivery and Calendly require the server settings documented in [contact setup](docs/contact-services-setup.md).
 
 For a manual preview from a linked staging project, run `npx vercel` and use the generated preview URL. Do not use `--prod`, attach the firm's production domain, or change DNS. Check the target project before linking; pushes to a configured production branch can trigger production deployments. A push to GitHub is not evidence that staging has been deployed or verified.
 
-HTML and response headers deliberately prevent search indexing. Metadata updates per route in the browser; prerendering, production canonical URLs and final search/social indexing remain later work. Direct SPA unknown URLs retain HTTP 200 with an in-app not-found page.
+Staging HTML and robots.txt deliberately prevent search indexing. Every real route is prerendered to its own HTML document, with metadata refreshed during navigation. Canonical/social URLs require VITE_SITE_URL. Unknown direct routes use a custom 404 page; the built-site preview verifies HTTP 404 instead of an SPA soft 404. Actual Vercel behavior still needs staging verification.
 
 ## Content and assets
 
@@ -89,3 +89,12 @@ The static React site now has one minimal Vercel serverless function, `/api/cont
 `/privacy` is a dedicated route with a clearly labelled pending notice until the firm supplies approved legal text. The footer opens persistent, accessible cookie preferences. Analytics and media default off; declining optional cookies prevents the Google loader. GA4 is prepared through public environment settings, but remains disabled pending legal approval and real stream configuration. See [privacy and analytics setup](docs/privacy-analytics-setup.md).
 
 **Production is intentionally blocked** until the legal records in `src/data/privacy.ts` are genuinely approved and populated. `npm.cmd run launch:check` and `npm.cmd run build:production` currently fail for that reason; Vercel production builds enforce the same guard. Normal staging builds remain available. The site now has 55 destinations including Privacy Policy. No DNS or production deployment changes were made.
+
+
+## SEO, performance and accessibility (Prompt 11)
+
+`npm.cmd run build` now typechecks, builds Vite assets and prerenders all 55 routes plus `404.html`. `npm.cmd run preview` serves those HTML files with static routing and genuine local HTTP 404s. Run `npm.cmd test`, `npm.cmd run lint`, and after building `npm.cmd run test:built`.
+
+Set the approved HTTPS origin in `VITE_SITE_URL` for canonical URLs, social image URLs, structured data and sitemap locations. Staging defaults to noindex. `VITE_PUBLIC_INDEXING=true` only enables indexing when the legal launch gates are satisfied and public content mode is selected. No domain/DNS changes were made. Full setup, measured results and remaining browser/Lighthouse checks: [Prompt 11 report](docs/prompt-11-report.md).
+
+Original images remain intact. `npm.cmd run images:optimize` regenerates the responsive WebP files, image manifest, branded social card and size report using build-only Sharp. No external font downloads or new runtime animation library are needed.

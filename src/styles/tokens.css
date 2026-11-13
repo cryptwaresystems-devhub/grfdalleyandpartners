@@ -172,3 +172,10 @@ button:disabled { cursor: not-allowed; opacity: 0.55; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* Keep keyboard focus clear against the dark footer. */
+.site-footer :focus-visible { outline-color: var(--color-gold); }
+.footer-privacy button { min-height: 2.75rem; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+html { scrollbar-gutter: stable; }

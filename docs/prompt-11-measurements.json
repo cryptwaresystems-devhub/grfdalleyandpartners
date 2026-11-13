@@ -1,0 +1,431 @@
+{
+  "measuredAt": "2026-11-13T04:31:30.776Z",
+  "method": "Local generated-file byte sizes and Node gzip; not browser timing measurements.",
+  "routes": 55,
+  "canonicalOrigin": null,
+  "publicIndexing": false,
+  "bundles": [
+    {
+      "file": "index-CCZCG2zs.css",
+      "bytes": 59392,
+      "gzipBytes": 11683
+    },
+    {
+      "file": "index-dMCXywxQ.js",
+      "bytes": 214816,
+      "gzipBytes": 41898
+    },
+    {
+      "file": "vendor-1sBgzIuo.js",
+      "bytes": 321161,
+      "gzipBytes": 102855
+    }
+  ],
+  "html": [
+    {
+      "path": "/",
+      "title": "Home - Nigerian Commercial Legal Services | G.R.F. Dalley & Partners",
+      "description": "G.R.F. Dalley & Partners, established in 1962. Explore the firm, confirmed practice and industry categories, and contact information.",
+      "robots": "noindex,nofollow",
+      "bytes": 28001
+    },
+    {
+      "path": "/about",
+      "title": "About Us | G.R.F. Dalley & Partners",
+      "description": "A Nigerian legal practice with a long perspective and a commercial focus.",
+      "robots": "noindex,nofollow",
+      "bytes": 18656
+    },
+    {
+      "path": "/industries",
+      "title": "Industry | G.R.F. Dalley & Partners",
+      "description": "Explore the 15 confirmed industry categories of G.R.F. Dalley & Partners. Read sector overviews and explore connected practice areas.",
+      "robots": "noindex,nofollow",
+      "bytes": 21400
+    },
+    {
+      "path": "/practices",
+      "title": "Practice | G.R.F. Dalley & Partners",
+      "description": "Explore the 21 confirmed practice areas of G.R.F. Dalley & Partners. Read practice introductions and explore connected industries.",
+      "robots": "noindex,nofollow",
+      "bytes": 25814
+    },
+    {
+      "path": "/people",
+      "title": "People | G.R.F. Dalley & Partners",
+      "description": "Find professional profiles at G.R.F. Dalley & Partners. Explore supplied biographies, professional backgrounds and practice connections.",
+      "robots": "noindex,nofollow",
+      "bytes": 22452
+    },
+    {
+      "path": "/insights",
+      "title": "Insights | G.R.F. Dalley & Partners",
+      "description": "Explore verified publication references, authors and connected expertise at G.R.F. Dalley & Partners.",
+      "robots": "noindex,nofollow",
+      "bytes": 19810
+    },
+    {
+      "path": "/contact",
+      "title": "Contact | G.R.F. Dalley & Partners",
+      "description": "Contact G.R.F. Dalley & Partners in Lagos and Port Harcourt. Find office details and prepare an enquiry for your email app.",
+      "robots": "noindex,nofollow",
+      "bytes": 22352
+    },
+    {
+      "path": "/privacy",
+      "title": "Privacy Policy | G.R.F. Dalley & Partners",
+      "description": "Privacy Policy for G.R.F. Dalley & Partners. Firm-approved legal text is pending; the website remains a design preview.",
+      "robots": "noindex,nofollow",
+      "bytes": 13541
+    },
+    {
+      "path": "/industries/agri-business-and-food",
+      "title": "Agri-business and Food | G.R.F. Dalley & Partners",
+      "description": "From primary production to processing and distribution, food businesses depend on clear arrangements across land, investment, supply and routes to market.",
+      "robots": "noindex,nofollow",
+      "bytes": 18684
+    },
+    {
+      "path": "/industries/artificial-intelligence",
+      "title": "Artificial Intelligence | G.R.F. Dalley & Partners",
+      "description": "Artificial intelligence creates commercial opportunities alongside questions about data, ownership, accountability and the allocation of responsibility between businesses.",
+      "robots": "noindex,nofollow",
+      "bytes": 19242
+    },
+    {
+      "path": "/industries/automotive-and-mobility",
+      "title": "Automotive and Mobility | G.R.F. Dalley & Partners",
+      "description": "Vehicle distribution, fleet operations and new mobility services bring together financing, technology, consumer relationships and a network of commercial agreements.",
+      "robots": "noindex,nofollow",
+      "bytes": 19161
+    },
+    {
+      "path": "/industries/aviation-and-airlines",
+      "title": "Aviation and Airlines | G.R.F. Dalley & Partners",
+      "description": "Airline operations connect aircraft, people, infrastructure and cross-border commercial relationships. Legal planning needs to account for both the transaction and the operation it supports.",
+      "robots": "noindex,nofollow",
+      "bytes": 20575
+    },
+    {
+      "path": "/industries/banking-payments-and-fintech",
+      "title": "Banking, Payments and Fintech | G.R.F. Dalley & Partners",
+      "description": "Financial services businesses operate at the meeting point of capital, customer relationships and technology. Their legal arrangements need to work across all three.",
+      "robots": "noindex,nofollow",
+      "bytes": 19678
+    },
+    {
+      "path": "/industries/blockchain-data-centers-and-digital-infrastructure",
+      "title": "Blockchain, Data Centers and Digital Infrastructure | G.R.F. Dalley & Partners",
+      "description": "Digital infrastructure projects depend on dependable arrangements for technology, premises, power, finance and the use of information.",
+      "robots": "noindex,nofollow",
+      "bytes": 19581
+    },
+    {
+      "path": "/industries/derivatives",
+      "title": "Derivatives | G.R.F. Dalley & Partners",
+      "description": "Transactions linked to underlying assets, rates or market movements call for a careful understanding of the agreement, the counterparties and the commercial exposure involved.",
+      "robots": "noindex,nofollow",
+      "bytes": 19149
+    },
+    {
+      "path": "/industries/energy",
+      "title": "Energy | G.R.F. Dalley & Partners",
+      "description": "Energy projects connect long-term investment with construction, supply and operational commitments. Clear legal arrangements help the parties understand how those commitments fit together.",
+      "robots": "noindex,nofollow",
+      "bytes": 19763
+    },
+    {
+      "path": "/industries/financial-institutions",
+      "title": "Financial Institutions | G.R.F. Dalley & Partners",
+      "description": "Banks, lenders and other financial institutions need legal arrangements that reflect their products, transactions, assets and ongoing commercial relationships.",
+      "robots": "noindex,nofollow",
+      "bytes": 19822
+    },
+    {
+      "path": "/industries/food-drug-and-healthcare",
+      "title": "Food, Drug and Healthcare | G.R.F. Dalley & Partners",
+      "description": "Healthcare providers and businesses supplying food, medicines and related products manage relationships across facilities, people, technology, brands and distribution.",
+      "robots": "noindex,nofollow",
+      "bytes": 19097
+    },
+    {
+      "path": "/industries/insurance",
+      "title": "Insurance | G.R.F. Dalley & Partners",
+      "description": "Insurance relationships depend on the terms of cover, the underlying risk and the responsibilities of the parties when a claim or disagreement arises.",
+      "robots": "noindex,nofollow",
+      "bytes": 18909
+    },
+    {
+      "path": "/industries/rail",
+      "title": "Rail | G.R.F. Dalley & Partners",
+      "description": "Rail projects bring together infrastructure, equipment, land, financing and long-term operating arrangements, often involving several commercial participants.",
+      "robots": "noindex,nofollow",
+      "bytes": 18856
+    },
+    {
+      "path": "/industries/real-estate",
+      "title": "Real Estate | G.R.F. Dalley & Partners",
+      "description": "Property decisions are commercial decisions about the use, ownership and long-term value of an asset. The legal arrangements need to reflect that purpose.",
+      "robots": "noindex,nofollow",
+      "bytes": 19376
+    },
+    {
+      "path": "/industries/technology-telecom-and-internet-competition",
+      "title": "Technology, Telecom and Internet Competition | G.R.F. Dalley & Partners",
+      "description": "Technology and communications businesses depend on agreements that connect platforms, networks, intellectual assets and the people who use them.",
+      "robots": "noindex,nofollow",
+      "bytes": 19517
+    },
+    {
+      "path": "/industries/transportation",
+      "title": "Transportation | G.R.F. Dalley & Partners",
+      "description": "The movement of people and goods relies on connected agreements for assets, services, finance and delivery. Legal questions often arise where those responsibilities meet.",
+      "robots": "noindex,nofollow",
+      "bytes": 18720
+    },
+    {
+      "path": "/practices/arbitration-mediation",
+      "title": "Arbitration & Mediation | G.R.F. Dalley & Partners",
+      "description": "Commercial disagreements need a response shaped by the contract, the relationship and the outcome the parties are seeking. Arbitration and mediation offer different ways to approach resolution.",
+      "robots": "noindex,nofollow",
+      "bytes": 20108
+    },
+    {
+      "path": "/practices/aviation-transportation",
+      "title": "Aviation & Transportation | G.R.F. Dalley & Partners",
+      "description": "Aviation and transportation matters connect operational demands with financing, commercial agreements and the resolution of claims.",
+      "robots": "noindex,nofollow",
+      "bytes": 21202
+    },
+    {
+      "path": "/practices/banking-financial-services",
+      "title": "Banking & Financial Services | G.R.F. Dalley & Partners",
+      "description": "Financing arrangements work best when the legal documentation reflects the purpose of the transaction and the responsibilities of the parties.",
+      "robots": "noindex,nofollow",
+      "bytes": 22778
+    },
+    {
+      "path": "/practices/commercial-litigation",
+      "title": "Commercial Litigation | G.R.F. Dalley & Partners",
+      "description": "A commercial dispute is a business issue as well as a legal one. Its handling should account for the evidence, the contractual position and the wider relationship at stake.",
+      "robots": "noindex,nofollow",
+      "bytes": 20349
+    },
+    {
+      "path": "/practices/construction",
+      "title": "Construction | G.R.F. Dalley & Partners",
+      "description": "Construction projects rely on a clear allocation of work, payment, delivery responsibilities and the consequences of change.",
+      "robots": "noindex,nofollow",
+      "bytes": 18771
+    },
+    {
+      "path": "/practices/corporate-and-commercial",
+      "title": "Corporate and Commercial | G.R.F. Dalley & Partners",
+      "description": "Clear commercial arrangements give a business a framework for its transactions, relationships and plans for growth.",
+      "robots": "noindex,nofollow",
+      "bytes": 22012
+    },
+    {
+      "path": "/practices/criminal",
+      "title": "Criminal | G.R.F. Dalley & Partners",
+      "description": "Questions involving criminal liability require careful attention to the facts, the stage of the matter and the rights and responsibilities of those involved.",
+      "robots": "noindex,nofollow",
+      "bytes": 17747
+    },
+    {
+      "path": "/practices/employment-labour",
+      "title": "Employment & Labour | G.R.F. Dalley & Partners",
+      "description": "Employment relationships benefit from clear expectations about duties, workplace arrangements and the handling of change or disagreement.",
+      "robots": "noindex,nofollow",
+      "bytes": 18890
+    },
+    {
+      "path": "/practices/energy-utilities",
+      "title": "Energy & Utilities | G.R.F. Dalley & Partners",
+      "description": "Energy and utility arrangements need to connect the commercial structure of a project with the assets, supply commitments and operating relationships behind it.",
+      "robots": "noindex,nofollow",
+      "bytes": 18217
+    },
+    {
+      "path": "/practices/health-care",
+      "title": "Health Care | G.R.F. Dalley & Partners",
+      "description": "Healthcare businesses bring together facilities, professionals, suppliers and technology. Their legal arrangements should reflect how those parts work together.",
+      "robots": "noindex,nofollow",
+      "bytes": 17738
+    },
+    {
+      "path": "/practices/human-rights",
+      "title": "Human Rights | G.R.F. Dalley & Partners",
+      "description": "Matters concerning fundamental rights place the circumstances of the individual and the actions being challenged at the centre of the enquiry.",
+      "robots": "noindex,nofollow",
+      "bytes": 17716
+    },
+    {
+      "path": "/practices/insolvency-restructuring",
+      "title": "Insolvency & Restructuring | G.R.F. Dalley & Partners",
+      "description": "When a business or financing arrangement comes under pressure, legal decisions need to be considered alongside the commercial options available.",
+      "robots": "noindex,nofollow",
+      "bytes": 19380
+    },
+    {
+      "path": "/practices/international-cross-border",
+      "title": "International/Cross Border | G.R.F. Dalley & Partners",
+      "description": "Cross-border transactions bring together businesses, assets and agreements with connections to more than one jurisdiction.",
+      "robots": "noindex,nofollow",
+      "bytes": 19773
+    },
+    {
+      "path": "/practices/litigation-dispute-resolution",
+      "title": "Litigation & Dispute Resolution | G.R.F. Dalley & Partners",
+      "description": "Resolving a dispute starts with understanding what happened, what is at stake and what a workable outcome would look like.",
+      "robots": "noindex,nofollow",
+      "bytes": 20934
+    },
+    {
+      "path": "/practices/mergers-acquisitions",
+      "title": "Mergers & Acquisitions | G.R.F. Dalley & Partners",
+      "description": "An acquisition or business combination calls for an understanding of the target, the transaction structure and the commitments that will continue after completion.",
+      "robots": "noindex,nofollow",
+      "bytes": 18322
+    },
+    {
+      "path": "/practices/mining",
+      "title": "Mining | G.R.F. Dalley & Partners",
+      "description": "Mining projects connect rights to resources with land, investment, equipment and the agreements needed to develop and operate a project.",
+      "robots": "noindex,nofollow",
+      "bytes": 17572
+    },
+    {
+      "path": "/practices/oil-and-gas",
+      "title": "Oil and Gas | G.R.F. Dalley & Partners",
+      "description": "Oil and gas work involves interconnected agreements for investment, development, supply and operations, often across a long project lifecycle.",
+      "robots": "noindex,nofollow",
+      "bytes": 17624
+    },
+    {
+      "path": "/practices/real-property",
+      "title": "Real Property | G.R.F. Dalley & Partners",
+      "description": "Property matters call for a clear view of the asset, the interests involved and the purpose of the proposed transaction or dispute.",
+      "robots": "noindex,nofollow",
+      "bytes": 19236
+    },
+    {
+      "path": "/practices/recovery",
+      "title": "Recovery | G.R.F. Dalley & Partners",
+      "description": "Recovery matters require a practical understanding of the obligation, the supporting evidence and the relationship between the parties.",
+      "robots": "noindex,nofollow",
+      "bytes": 17667
+    },
+    {
+      "path": "/practices/technology-intellectual-property",
+      "title": "Technology & Intellectual Property | G.R.F. Dalley & Partners",
+      "description": "Technology and intellectual property arrangements define how ideas, brands, software and other intellectual assets may be owned, used and commercialised.",
+      "robots": "noindex,nofollow",
+      "bytes": 21470
+    },
+    {
+      "path": "/practices/wills-trusts-estates",
+      "title": "Wills, Trusts & Estates | G.R.F. Dalley & Partners",
+      "description": "Planning for the ownership and transfer of personal assets calls for clear documents and an understanding of the wishes and relationships involved.",
+      "robots": "noindex,nofollow",
+      "bytes": 17377
+    },
+    {
+      "path": "/people/rasheed-goriola-aderemi-dalley",
+      "title": "Rasheed Goriola Aderemi Dalley | G.R.F. Dalley & Partners",
+      "description": "Rasheed Goriola Aderemi Dalley is a founding partner at G.R.F. Dalley & Partners. They were called to the Nigerian Bar in 1999. Areas of practice include Asset Based Financing, Aviation, Banking an...",
+      "robots": "noindex,nofollow",
+      "bytes": 18776
+    },
+    {
+      "path": "/people/fatai-ajibola-dalley-san-fciarb-uk",
+      "title": "Fatai Ajibola Dalley SAN, FCIArb (UK) | G.R.F. Dalley & Partners",
+      "description": "Fatai Ajibola Dalley SAN, FCIArb (UK) is a co-founding partner at G.R.F. Dalley & Partners. They were called to the Nigerian Bar in 2001. Areas of practice include Arbitration, Aviation, Banking, C...",
+      "robots": "noindex,nofollow",
+      "bytes": 19531
+    },
+    {
+      "path": "/people/wande-adenike-esan",
+      "title": "Wande Adenike Esan | G.R.F. Dalley & Partners",
+      "description": "Wande Adenike Esan is a partner (non-equity) at G.R.F. Dalley & Partners. They were called to the Nigerian Bar in 2012. Areas of practice include Commercial/Corporate Litigation.",
+      "robots": "noindex,nofollow",
+      "bytes": 16151
+    },
+    {
+      "path": "/people/obinna-e-omeh",
+      "title": "Obinna E. Omeh | G.R.F. Dalley & Partners",
+      "description": "Obinna E. Omeh is an associate at G.R.F. Dalley & Partners. Areas of practice include Litigation, Intellectual Property, Corporate and Commercial Law and Banking & Finance.",
+      "robots": "noindex,nofollow",
+      "bytes": 15910
+    },
+    {
+      "path": "/people/faith-izegboya-adebo",
+      "title": "Faith Izegboya Adebo | G.R.F. Dalley & Partners",
+      "description": "Faith Izegboya Adebo is an associate at G.R.F. Dalley & Partners. They were called to the Nigerian Bar in 2013. Areas of practice include Corporate, Family Law and Commercial Law.",
+      "robots": "noindex,nofollow",
+      "bytes": 16654
+    },
+    {
+      "path": "/people/olayiwola-balogun",
+      "title": "Olayiwola Balogun | G.R.F. Dalley & Partners",
+      "description": "Olayiwola Balogun is an associate at G.R.F. Dalley & Partners. They were called to the Nigerian Bar in 2024. Areas of practice include Capital Markets, Commercial Dispute Resolution and Litigation.",
+      "robots": "noindex,nofollow",
+      "bytes": 16592
+    },
+    {
+      "path": "/people/mustapha-opemipo-rofiat",
+      "title": "Mustapha Opemipo Rofiat | G.R.F. Dalley & Partners",
+      "description": "Mustapha Opemipo Rofiat is an associate at G.R.F. Dalley & Partners. They were called to the Nigerian Bar in 2025. Areas of practice include Corporate and Commercial Law.",
+      "robots": "noindex,nofollow",
+      "bytes": 16175
+    },
+    {
+      "path": "/people/peace-amarachi-ogbu",
+      "title": "Peace Amarachi Ogbu | G.R.F. Dalley & Partners",
+      "description": "Peace Amarachi Ogbu is an associate at G.R.F. Dalley & Partners. They were called to the Nigerian Bar in 2025. Areas of practice include Commercial/Corporate Litigation and Alternative Dispute Reso...",
+      "robots": "noindex,nofollow",
+      "bytes": 16623
+    },
+    {
+      "path": "/insights/non-interventionist-principle",
+      "title": "The Non-Interventionist Principle | G.R.F. Dalley & Partners",
+      "description": "The Non-Interventionist Principle. The Gravitas Review · December 2019. Explore its author and connected expertise.",
+      "robots": "noindex,nofollow",
+      "bytes": 15239
+    },
+    {
+      "path": "/insights/continental-free-trade",
+      "title": "Continental free trade agreement renews hope for Africa’s prosperity | G.R.F. Dalley & Partners",
+      "description": "Continental free trade agreement renews hope for Africa’s prosperity. The Guardian · 3 September 2019. Explore its author and connected expertise.",
+      "robots": "noindex,nofollow",
+      "bytes": 15430
+    },
+    {
+      "path": "/insights/warsaw-convention-exclusivity",
+      "title": "The Exclusivity of the Warsaw Convention Regime vis-à-vis Actions and Remedies in International Carriage by Air under Nigerian Law | G.R.F. Dalley & Partners",
+      "description": "The Exclusivity of the Warsaw Convention Regime vis-à-vis Actions and Remedies in International Carriage by Air under Nigerian Law. Kluwer Law Online · 2006. Explore its author and connected expert...",
+      "robots": "noindex,nofollow",
+      "bytes": 16207
+    },
+    {
+      "path": "/404",
+      "title": "Page not found | G.R.F. Dalley & Partners",
+      "description": "The requested page could not be found. Explore G.R.F. Dalley & Partners using the website navigation.",
+      "robots": "noindex,nofollow",
+      "bytes": 13017
+    }
+  ],
+  "images": {
+    "originals": 11,
+    "originalBytes": 1338719,
+    "largestServedVariantBytes": 527104,
+    "reductionPercent": 60.6
+  },
+  "lighthouse": {
+    "status": "not-run",
+    "reason": "Browser plugin runtime unavailable; no scores measured."
+  },
+  "webVitals": {
+    "status": "not-measured"
+  }
+}

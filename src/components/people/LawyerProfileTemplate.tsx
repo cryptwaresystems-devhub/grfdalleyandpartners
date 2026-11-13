@@ -1,3 +1,4 @@
+import { ResponsiveImage } from '../ResponsiveImage';
 import { linkedinProfileUrl, professionalEmailHref } from '../../lib/people';
 import { usePresentationMode } from '../../lib/presentation';
 import { Link } from 'react-router-dom';
@@ -20,7 +21,7 @@ export function LawyerProfileTemplate({ person }: { person: Lawyer }) {
   const bibliography = person.suppliedPublications?.filter(item => !item.insightId || !writing.some(insight => insight.id === item.insightId)) ?? [];
   return <><PageHeader title={person.name} eyebrow="Our people" description={person.role} breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'People', to: '/people' }, { label: person.name }]} /><Container>
     {!isPublished(person) && <PreviewNotice>Details are drawn from the supplied biography and remain subject to final publication approval. Affiliations and credentials are shown as supplied.</PreviewNotice>}
-    <div className="lawyer-profile-layout section-space"><aside className="lawyer-profile-aside" aria-label="Portrait and professional contact">{person.portrait && <img className="lawyer-profile-portrait" src={person.portrait} alt={`Portrait of ${person.name}`} width="600" height="750" decoding="async" />}
+    <div className="lawyer-profile-layout section-space"><aside className="lawyer-profile-aside" aria-label="Portrait and professional contact">{person.portrait && <ResponsiveImage className="lawyer-profile-portrait" src={person.portrait} alt={`Portrait of ${person.name}`} width="600" height="750" decoding="async" sizes="(min-width: 768px) 380px, 100vw" />}
       <dl className="profile-key-details">{person.yearOfCall !== null && <div><dt>Year of call</dt><dd>{person.yearOfCall}</dd></div>}{person.officeId && <div><dt>Office</dt><dd>{person.officeId === 'abuja' ? 'Abuja' : person.officeId === 'port-harcourt' ? 'Port Harcourt' : 'Lagos'}</dd></div>}</dl>
       <ButtonLink to="/contact" arrow>Contact the Firm</ButtonLink>{linkedin && <a className="profile-linkedin" href={linkedin} target="_blank" rel="noopener noreferrer">LinkedIn <ExternalLink size={14} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a>}
       {emailHref && <a className="profile-email" href={emailHref}>{person.email}</a>}

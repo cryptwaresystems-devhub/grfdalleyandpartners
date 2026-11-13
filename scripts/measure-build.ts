@@ -1,0 +1,10 @@
+import { readdir, readFile, writeFile } from 'node:fs/promises';
+import { gzipSync } from 'node:zlib';
+const files = (await readdir('dist/assets')).filter(file => /\.(js|css)$/.test(file));
+const bundles = await Promise.all(files.map(async file => { const buffer = await readFile(`dist/assets/${file}`); return { file, bytes: buffer.length, gzipBytes: gzipSync(buffer).length }; }));
+const images = JSON.parse(await readFile('docs/image-optimization-report.json', 'utf8')) as { originalBytes: number; variants: { bytes: number }[] }[];
+const originalBytes = images.reduce((sum, image) => sum + image.originalBytes, 0);
+const optimizedBytes = images.reduce((sum, image) => sum + image.variants.at(-1)!.bytes, 0);
+const manifest = JSON.parse(await readFile('dist/prerender-manifest.json', 'utf8')) as { paths: string[]; origin: string | null; indexing: boolean; pages: { path: string; bytes: number }[] };
+await writeFile('docs/prompt-11-measurements.json', JSON.stringify({ measuredAt: new Date().toISOString(), method: 'Local generated-file byte sizes and Node gzip; not browser timing measurements.', routes: manifest.paths.length, canonicalOrigin: manifest.origin, publicIndexing: manifest.indexing, bundles, html: manifest.pages, images: { originals: images.length, originalBytes, largestServedVariantBytes: optimizedBytes, reductionPercent: Number(((1 - optimizedBytes / originalBytes) * 100).toFixed(1)) }, lighthouse: { status: 'not-run', reason: 'Browser plugin runtime unavailable; no scores measured.' }, webVitals: { status: 'not-measured' } }, null, 2) + '\n');
+console.log('Recorded generated asset/gzip sizes; Lighthouse and Web Vitals remain unmeasured.');

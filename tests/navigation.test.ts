@@ -11,8 +11,8 @@ Object.assign(globalThis, {
   requestAnimationFrame: (callback: FrameRequestCallback) => setTimeout(() => callback(0), 0),
 });
 const { createElement: h, act } = await import('react');
-const { createRoot } = await import('react-dom/client');
-const { MemoryRouter, Routes, Route, createMemoryRouter, RouterProvider, Outlet } = await import('react-router-dom');
+const { createRoot, hydrateRoot } = await import('react-dom/client');
+const { MemoryRouter, Routes, Route, createMemoryRouter, createBrowserRouter, RouterProvider, Outlet } = await import('react-router-dom');
 const { SiteHeader } = await import('../src/components/SiteHeader');
 const { SiteFooter } = await import('../src/components/SiteFooter');
 const { RouteEffects } = await import('../src/components/RouteEffects');
@@ -544,4 +544,33 @@ test('blocked preference storage keeps optional services off and exposes a usabl
     assert.equal(required<HTMLInputElement>('#cookie-analytics').checked, false);
     await escape();
   } finally { router.dispose(); if (descriptor) Object.defineProperty(window, 'localStorage', descriptor); else Reflect.deleteProperty(window, 'localStorage'); }
+});
+
+
+test('prerendered data-router markup hydrates representative routes without recoverable errors', async () => {
+  const { renderToString } = await import('react-dom/server');
+  for (const path of ['/', '/people', '/contact', '/privacy', `/practices/${practices[0].slug}`]) {
+    const serverRouter = createMemoryRouter(appRoutes, { initialEntries: [path] });
+    const markup = renderToString(h(RouterProvider, { router: serverRouter })); serverRouter.dispose();
+    document.body.innerHTML = `<div id="app">${markup}</div>`;
+    window.history.replaceState(null, '', path);
+    const router = createBrowserRouter(appRoutes);
+    const errors: unknown[] = [];
+    await act(async () => { root = hydrateRoot(document.getElementById('app')!, h(RouterProvider, { router }), { onRecoverableError: error => errors.push(error) }); });
+    assert.deepEqual(errors, [], path); assert.equal(document.querySelectorAll('main h1').length, 1);
+    await act(async () => root!.unmount()); root = undefined; router.dispose(); window.localStorage.clear(); window.history.replaceState(null, '', '/');
+  }
+});
+
+
+test('directory query updates preserve keyboard focus and mark parameterized views noindex', async () => {
+  document.body.innerHTML = '<div id="app"></div>'; root = createRoot(document.getElementById('app')!);
+  const router = createMemoryRouter(appRoutes, { initialEntries: ['/people'] });
+  try {
+    await act(async () => root!.render(h(RouterProvider, { router })));
+    const input = required<HTMLInputElement>('#people-search'); input.focus();
+    await searchValue('people-search', 'Faith');
+    assert.equal(document.activeElement, input);
+    assert.ok(document.head.querySelector('meta[name="robots"]')?.getAttribute('content')?.startsWith('noindex'));
+  } finally { router.dispose(); }
 });

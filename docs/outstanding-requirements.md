@@ -28,3 +28,11 @@ No production deployment, account login, email sending or DNS modification is in
 - Real GA4 property/web stream ID, authorized access, disabled Enhanced Measurement and authorized Realtime/DebugView verification remain pending. No real analytics traffic was verified.
 - Confirm contact and third-party processor notices, retention/access arrangements and any applicable transfer requirements. No general legal-compliance certification is claimed.
 - Implemented: saved consent, rejection, revisit controls, consent-gated manual route analytics adapter, optional embed permissions/withdrawal and automated regression checks. See privacy-analytics-setup.md.
+
+
+## Prompt 11 remaining launch checks
+
+- Configure the exact client-approved HTTPS origin in `VITE_SITE_URL`. No canonical hostname was guessed. Sitemap locations, absolute social metadata and structured data become available when configured.
+- Keep `VITE_PUBLIC_INDEXING=false` for previews. Public indexing requires legal readiness, approved-only mode and explicit release opt-in.
+- Lighthouse, real-device visual/layout QA, live Vercel 404/redirect/function verification, Search Console and rich-result verification remain outstanding. Browser automation was unavailable; no Lighthouse scores are claimed.
+- Static generation, responsive image derivatives, unique metadata, publication-aware sitemap/robots generation, custom 404, JSON-LD and keyboard-focus checks are implemented. See prompt-11-report.md.

@@ -15,7 +15,7 @@ Production checks:
 - `npm.cmd run launch:check` reports missing legal dependencies and currently exits with code 1, intentionally.
 - `npm.cmd run build:production` performs that check before building.
 - Normal Vite builds also enforce the check when `VERCEL_ENV=production`, `SITE_DEPLOYMENT_TARGET=production`, or Vite mode is `production-release`. Vercel's production environment cannot be overridden by a staging target flag.
-- `npm.cmd run build` remains available for staging; noindex HTML and Vercel headers remain intact. A production bundle is not approval to launch. Any other hosting pipeline must use the production command/target check.
+- `npm.cmd run build` remains available for staging; noindex HTML and generated robots.txt remain in place. Prompt 11 replaces the blanket noindex response header with per-page metadata so an approved release can eventually be indexed. A production bundle is not approval to launch. Any other hosting pipeline must use the production command/target check.
 - Do not bypass the guard, remove noindex, change DNS or manually publish production while legal dependencies remain open. The guard checks recorded content approval, not legal accuracy or full production acceptance.
 
 ## Consent behavior

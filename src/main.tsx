@@ -7,4 +7,9 @@ import './styles/privacy.css';
 import './styles/home.css';
 import './styles/supporting.css';
 import './styles/people-insights-contact.css';
-ReactDOM.createRoot(document.getElementById('root')!).render(<React.StrictMode><RouterProvider router={router}/></React.StrictMode>);
+const root = document.getElementById('root')!;
+const app = <React.StrictMode><RouterProvider router={router}/></React.StrictMode>;
+// Parameterized directory views are rendered afresh to avoid hydrating a
+// default static listing with different client-side filter results.
+if (root.dataset.prerenderPath === (window.location.pathname.replace(/\/+$/, '') || '/') && !window.location.search) ReactDOM.hydrateRoot(root, app);
+else ReactDOM.createRoot(root).render(app);

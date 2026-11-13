@@ -1,0 +1,32 @@
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { dirname, resolve } from 'node:path';
+import { createElement } from 'react';
+import { renderToString } from 'react-dom/server';
+import { createMemoryRouter, RouterProvider } from 'react-router-dom';
+import { loadEnv } from 'vite';
+import { createAppRoutes } from '../src/app/routes';
+import { realRoutes, robots, routeSeo, seoConfiguration, sitemap } from '../src/lib/seo';
+import { resolvePresentationMode } from '../src/lib/presentation';
+const env = { ...loadEnv(process.env.GRF_BUILD_MODE ?? 'production', process.cwd(), ''), ...process.env };
+const mode = resolvePresentationMode(env.VITE_CONTENT_MODE);
+const config = seoConfiguration(env);
+const template = await readFile('dist/index.html', 'utf8');
+const escape = (value: string) => value.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
+const paths = realRoutes(mode);
+const metadataRecords: { path: string; title: string; description: string; robots: string; bytes: number }[] = [];
+for (const path of [...paths, '/404']) {
+  const seo = routeSeo(path, config, mode);
+  const router = createMemoryRouter(createAppRoutes(mode), { initialEntries: [path] });
+  const markup = renderToString(createElement(RouterProvider, { router }));
+  router.dispose();
+  const tags = [['name', 'description', seo.description], ['name', 'robots', seo.robots], ['property', 'og:title', seo.title], ['property', 'og:description', seo.description], ['property', 'og:type', 'website'], ['property', 'og:site_name', 'G.R.F. Dalley & Partners'], ['property', 'og:locale', 'en_NG'], ['name', 'twitter:card', 'summary_large_image'], ['name', 'twitter:title', seo.title], ['name', 'twitter:description', seo.description], ...seo.canonical ? [['property', 'og:url', seo.canonical]] : [], ...seo.image ? [['property', 'og:image', seo.image], ['name', 'twitter:image', seo.image], ['property', 'og:image:alt', 'G.R.F. Dalley & Partners - established 1962']] : []].map(([attribute, key, value]) => `<meta ${attribute}="${key}" content="${escape(value)}"/>`).join('');
+  const head = `<title>${escape(seo.title)}</title>${tags}${seo.canonical ? `<link rel="canonical" href="${escape(seo.canonical)}"/>` : ''}${seo.structuredData ? `<script id="route-structured-data" type="application/ld+json">${JSON.stringify(seo.structuredData).replaceAll('<', '\\u003c')}</script>` : ''}`;
+  const html = template.replace(/<title>.*?<\/title>/, '').replace(/<meta name="(?:description|robots)"[^>]*>/g, '').replace('</head>', `${head}</head>`).replace('<div id="root"></div>', `<div id="root" data-prerender-path="${path}">${markup}</div>`);
+  const file = resolve('dist', path === '/' ? 'index.html' : `${path.slice(1)}.html`);
+  await mkdir(dirname(file), { recursive: true }); await writeFile(file, html);
+  metadataRecords.push({ path, title: seo.title, description: seo.description, robots: seo.robots, bytes: Buffer.byteLength(html) });
+}
+await writeFile('dist/sitemap.xml', sitemap(config));
+await writeFile('dist/robots.txt', robots(config));
+await writeFile('dist/prerender-manifest.json', JSON.stringify({ paths, mode, indexing: config.publicIndexing, origin: config.origin, pages: metadataRecords }, null, 2));
+console.log(`Prerendered ${paths.length} real routes plus a custom 404; indexing ${config.publicIndexing ? 'enabled' : 'disabled'}. Canonical origin: ${config.origin ?? 'pending configuration'}.`);
