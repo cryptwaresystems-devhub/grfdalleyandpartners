@@ -1,3 +1,5 @@
+import { isPrivacyPolicyApproved } from '../../lib/privacy';
+import { Link } from 'react-router-dom';
 import { useRef, useState, type FormEvent } from 'react';
 import { enquiryMailto, type EnquiryDraft } from '../../lib/contact';
 
@@ -54,7 +56,7 @@ export function EnquiryForm({ consultation = false }: { consultation?: boolean }
     {consultation && <div className="form-field form-field--wide"><label htmlFor="consultation-preference">Preferred time or meeting format (optional)</label><input id="consultation-preference" aria-invalid={Boolean(errors.preference)} aria-describedby={errors.preference ? "consultation-preference-error" : undefined} maxLength={200} value={preference} onChange={event => { setPreference(event.target.value); requestId.current = ''; setFeedback(''); }} />{errors.preference && <p id="consultation-preference-error" className="field-error">{errors.preference}</p>}<p className="directory-note">A preference is a request, subject to confirmation by the firm.</p></div>}
       <div className="contact-honeypot" aria-hidden="true"><label htmlFor={`${prefix}-website`}>Leave this field empty</label><input id={`${prefix}-website`} name="website" tabIndex={-1} autoComplete="off" /></div>
     </div></fieldset>
-    <p id={`${prefix}-privacy-note`} className="directory-note">Sending online shares your details with the firm and its delivery provider. The email-draft option opens your own email app. Please avoid including confidential documents or sensitive case details.</p>
+    <p id={`${prefix}-privacy-note`} className="directory-note">Sending online shares your details with the firm and its delivery provider. The email-draft option opens your own email app. Please avoid including confidential documents or sensitive case details. <Link to="/privacy">Privacy Policy</Link> {!isPrivacyPolicyApproved() && ' (firm-approved legal text pending)' }.</p>
     {services.deliveryConfigured && services.turnstileSiteKey && <SpamCheck key={challenge} siteKey={services.turnstileSiteKey} onToken={setToken} />}
     {feedback && <p role="status" className="form-service-note">{feedback}</p>}
     <div className="form-actions"><button type="submit" disabled={busy} className="button button--primary">{busy ? 'Sending...' : services.deliveryConfigured ? consultation ? 'Send consultation request' : 'Send enquiry' : 'Prepare email draft'}</button><button type="button" disabled={busy} className="form-clear" onClick={() => { setDraft(consultation ? { ...emptyDraft, nature: 'Consultation request' } : emptyDraft); setMailto(null); setErrors({}); setFeedback(''); setPreference(''); setToken(''); setChallenge(value => value + 1); requestId.current = ''; }}>Clear form</button></div>

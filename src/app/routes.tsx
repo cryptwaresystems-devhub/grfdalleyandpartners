@@ -1,3 +1,4 @@
+import { PrivacyPage } from '../pages/PrivacyPage';
 import { Navigate, useLocation, useParams, type RouteObject } from 'react-router-dom';
 import { FoundationLayout } from './FoundationLayout';
 import { HomePage } from '../pages/HomePage';
@@ -34,6 +35,7 @@ export function createAppRoutes(mode: PresentationMode = sitePresentationMode): 
   { path: '/insights', element: <InsightsPage /> },
   { path: '/insights/:slug', element: <InsightDetailPage /> },
   { path: '/contact', element: <ContactPage /> },
+  { path: '/privacy', element: <PrivacyPage /> },
   { path: '*', element: <NotFoundPage /> },
 ] }]; }
 export const routes = createAppRoutes();

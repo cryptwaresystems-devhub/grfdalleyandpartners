@@ -6,6 +6,7 @@ import { getVisibleInsights } from './insights';
 
 export function getRouteTitle(pathname: string, mode: PresentationMode = sitePresentationMode): string {
   const path = (pathname.replace(/\/+$/, '') || '/').replace(/^\/industry(?=\/|$)/, '/industries').replace(/^\/practice(?=\/|$)/, '/practices');
+  if (path === '/privacy') return 'Privacy Policy';
   const known = navigation.find(item => item.path === path);
   if (known) return known.label;
   const contentMatch = /^\/(people|insights)\/([^/]+)$/.exec(path);

@@ -25,7 +25,7 @@ A 202 response means Resend accepted the message; it does not prove inbox arriva
 
 ## Calendly
 
-The optional iframe loads only after a visitor clicks Load Calendly calendar and only for a validated configured URL. An external booking link remains available. Frame loading is not treated as a completed booking. Calendly owns appointment selection, confirmation and its own notices; this app does not independently verify bookings or ingest webhooks. Slow/error states direct the visitor to the genuine booking link. No URL is currently configured.
+The optional iframe requires global optional-media consent (Prompt 10) and loads only after a visitor clicks Load Calendly calendar and only for a validated configured URL. An external booking link remains available. Frame loading is not treated as a completed booking. Calendly owns appointment selection, confirmation and its own notices; this app does not independently verify bookings or ingest webhooks. Slow/error states direct the visitor to the genuine booking link. No URL is currently configured.
 
 ## Local and staging verification
 

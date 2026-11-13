@@ -36,7 +36,7 @@ export function renderContentReport(review: ContentReview, now = new Date()) {
     '- Reconfirm professional titles and current memberships; all displayed details remain as supplied.',
     '- Confirm Abuja address, telephone availability and provide a higher-resolution logo.',
     '- Any future representative matters, client names, amounts, awards or rankings require specific sourced content. None was invented to fill a page.',
-    '- Prompt 8 People/Insights search, filters, pagination and source relationships are implemented. Additional news, event, case-review and video records remain dependent on real supplied material. Prompt 9 adds secure email delivery and Calendly adapters; live delivery credentials, a verified sender, Turnstile configuration and the approved booking URL remain pending. Analytics and production deployment remain later work.', '',
+    '- Prompt 8 People/Insights search, filters, pagination and source relationships are implemented. Additional news, event, case-review and video records remain dependent on real supplied material. Prompt 9 adds secure email delivery and Calendly adapters; live delivery credentials, a verified sender, Turnstile configuration and the approved booking URL remain pending. Prompt 10 adds consent controls and a gated GA4 adapter; approved Privacy Policy/consent records and real GA4 stream verification remain pending. Production deployment is blocked pending legal approval.', '',
     'No credentials or private source documents were added to public assets. Run `npm run content:report` to regenerate this inventory.', '');
   return lines.join('\n');
 }

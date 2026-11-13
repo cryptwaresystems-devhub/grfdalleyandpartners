@@ -48,7 +48,7 @@ npm.cmd run build
 
 Current People/Insights functionality, source limits and test results are recorded in the [Prompt 8 report](docs/prompt-8-report.md). Use the [content guide](docs/people-insights-content-guide.md) for adding approved records and media.
 
-Home `/`, About `/about`, Industry `/industries` (15 detail routes), Practice `/practices` (21 detail routes), People `/people`, Insights `/insights`, Contact `/contact`. The management preview retains eight profiles and three historic publication details, giving 54 destinations. The normal build now exposes all 54 destinations, with populated expertise pages and supplied profiles. Unauthorised records still show not-found content. Singular `/industry` and `/practice` URLs redirect.
+Home `/`, About `/about`, Industry `/industries` (15 detail routes), Practice `/practices` (21 detail routes), People `/people`, Insights `/insights`, Contact `/contact`. The management preview retains eight profiles and three historic publication details, giving 54 content destinations. The Privacy Policy route adds a 55th destination. The normal build now exposes all 55 destinations, with populated expertise pages and supplied profiles. Unauthorised records still show not-found content. Singular `/industry` and `/practice` URLs redirect.
 
 People search and practice filters, Insights search and category/author/practice/industry filters, pagination, accessible mobile navigation and the About dropdown work locally. Directory selections use shareable URL parameters. Insights pagination uses six records per page; the current three references fit on one page. Contact provides enquiry and consultation-request forms, shared validation, accessible feedback and a secure Vercel delivery adapter. Without configuration it prepares an email draft and sends nothing. Calendly remains pending until the approved URL is configured. See [contact setup](docs/contact-services-setup.md).
 
@@ -82,3 +82,10 @@ The publication gate accepts either named firm approval or explicit requester au
 ## Contact services (Prompt 9)
 
 The static React site now has one minimal Vercel serverless function, `/api/contact`, solely for secure contact delivery. No database or CMS was added. Read [configuration and verification](docs/contact-services-setup.md) before enabling delivery. `npm.cmd run dev` and `npm.cmd run preview` only serve the frontend; an unavailable endpoint leaves the email-draft fallback active. Use `npx vercel dev` for local full-stack verification or a staging Preview deployment with server environment variables. Never use `--prod` for a staging check.
+
+
+## Privacy and analytics (Prompt 10)
+
+`/privacy` is a dedicated route with a clearly labelled pending notice until the firm supplies approved legal text. The footer opens persistent, accessible cookie preferences. Analytics and media default off; declining optional cookies prevents the Google loader. GA4 is prepared through public environment settings, but remains disabled pending legal approval and real stream configuration. See [privacy and analytics setup](docs/privacy-analytics-setup.md).
+
+**Production is intentionally blocked** until the legal records in `src/data/privacy.ts` are genuinely approved and populated. `npm.cmd run launch:check` and `npm.cmd run build:production` currently fail for that reason; Vercel production builds enforce the same guard. Normal staging builds remain available. The site now has 55 destinations including Privacy Policy. No DNS or production deployment changes were made.

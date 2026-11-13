@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
 import { router } from './app/router';
 import './styles/tokens.css';
+import './styles/privacy.css';
 import './styles/home.css';
 import './styles/supporting.css';
 import './styles/people-insights-contact.css';

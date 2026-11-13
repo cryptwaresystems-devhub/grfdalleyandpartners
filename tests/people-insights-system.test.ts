@@ -106,7 +106,7 @@ test('video embeds require independent publication permission, validated provide
   assert.equal(approvedVideoUrl({ ...video, editorial: { status: 'draft', source: 'fixture' } }), null);
   assert.equal(approvedVideoUrl({ ...video, editorial: { ...approved, publishedAt: '2099-01-01' } }), null);
   const markup = html(h(ApprovedVideo, { insight: { ...insights[0], video } }));
-  assert.ok(markup.includes('Load video from YouTube'));
+  assert.ok(markup.includes('Choose preferences to enable video'));
   assert.ok(!markup.includes('<iframe'));
   assert.equal(html(h(ApprovedVideo, { insight: { ...insights[0], editorial: { status: 'draft', source: 'fixture' }, video } })), '');
 });

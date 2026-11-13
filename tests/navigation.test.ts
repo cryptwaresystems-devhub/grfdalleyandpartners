@@ -12,7 +12,7 @@ Object.assign(globalThis, {
 });
 const { createElement: h, act } = await import('react');
 const { createRoot } = await import('react-dom/client');
-const { MemoryRouter, Routes, Route, createMemoryRouter, RouterProvider } = await import('react-router-dom');
+const { MemoryRouter, Routes, Route, createMemoryRouter, RouterProvider, Outlet } = await import('react-router-dom');
 const { SiteHeader } = await import('../src/components/SiteHeader');
 const { SiteFooter } = await import('../src/components/SiteFooter');
 const { RouteEffects } = await import('../src/components/RouteEffects');
@@ -25,6 +25,7 @@ const { practices } = await import('../src/data/practices');
 const { lawyers } = await import('../src/data/lawyers');
 const { insights } = await import('../src/data/insights');
 const { InsightsPage } = await import('../src/pages/InsightsPage');
+const { CookieConsentProvider, useCookieConsent } = await import('../src/components/privacy/CookieConsent');
 const { ApprovedVideo } = await import('../src/components/insights/ApprovedVideo');
 const { getRouteMetadata } = await import('../src/lib/route-metadata');
 let root: ReturnType<typeof createRoot> | undefined;
@@ -44,7 +45,7 @@ function required<T extends Element>(selector: string): T {
 }
 async function click(node: Element) { await act(async () => { node.dispatchEvent(new MouseEvent('click', { bubbles: true, button: 0 })); }); }
 async function escape() { await act(async () => { document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true })); }); }
-afterEach(async () => { if (root) await act(async () => root!.unmount()); root = undefined; });
+afterEach(async () => { if (root) await act(async () => root!.unmount()); root = undefined; window.localStorage.clear(); });
 after(() => dom.happyDOM.close());
 
 async function selectValue(id: string, value: string) {
@@ -389,14 +390,15 @@ test('approved video loads an allowlisted iframe only after a click and disappea
   root = createRoot(document.getElementById('app')!);
   const editorial = { status: 'approved' as const, source: 'TEST FIXTURE ONLY', approvedBy: 'Test reviewer', approvedAt: '2026-11-01', publishedAt: '2026-11-02' };
   const video = { provider: 'youtube' as const, id: 'TESTvideo01', title: 'TEST VIDEO FIXTURE', editorial };
-  await act(async () => root!.render(h(ApprovedVideo, { insight: { ...insights[0], video } })));
+  window.localStorage.setItem('grf-cookie-preferences', JSON.stringify({ version: 1, savedAt: Date.now(), analytics: false, media: true }));
+  await act(async () => root!.render(h(MemoryRouter, null, h(CookieConsentProvider, null, h(ApprovedVideo, { insight: { ...insights[0], video } })))));
   assert.equal(document.querySelector('iframe'), null);
   await click(required('.insight-video button'));
   const iframe = required<HTMLIFrameElement>('iframe');
   assert.equal(iframe.getAttribute('src'), 'https://www.youtube-nocookie.com/embed/TESTvideo01');
   assert.equal(iframe.title, 'TEST VIDEO FIXTURE');
   assert.equal(iframe.getAttribute('loading'), 'lazy');
-  await act(async () => root!.render(h(ApprovedVideo, { insight: { ...insights[0], video: { ...video, editorial: { status: 'draft', source: 'TEST FIXTURE' } } } })));
+  await act(async () => root!.render(h(MemoryRouter, null, h(CookieConsentProvider, null, h(ApprovedVideo, { insight: { ...insights[0], video: { ...video, editorial: { status: 'draft', source: 'TEST FIXTURE' } } } })))));
   assert.equal(document.querySelector('iframe'), null);
   assert.equal(document.querySelector('.insight-video'), null);
 });
@@ -445,10 +447,101 @@ test('Calendly is click-to-load and loading the frame never confirms a booking',
   const { ConsultationBooking } = await import('../src/components/contact/ConsultationBooking');
   document.body.innerHTML = '<div id="app"></div>';
   root = createRoot(document.getElementById('app')!);
-  await act(async () => root!.render(h(ConsultationBooking, { bookingUrl: 'https://calendly.com/test-fixture/consultation' })));
+  window.localStorage.setItem('grf-cookie-preferences', JSON.stringify({ version: 1, savedAt: Date.now(), analytics: false, media: true }));
+  await act(async () => root!.render(h(MemoryRouter, null, h(CookieConsentProvider, null, h(ConsultationBooking, { bookingUrl: 'https://calendly.com/test-fixture/consultation' })))));
   assert.equal(document.querySelector('iframe'), null);
   await click(required('button'));
   assert.equal(required('iframe').getAttribute('src'), 'https://calendly.com/test-fixture/consultation');
   await act(async () => required('iframe').dispatchEvent(new Event('load')));
   assert.ok(!document.body.textContent?.includes('Your booking is confirmed'));
+});
+
+
+function PreferencesTestShell() {
+  const { openPreferences } = useCookieConsent();
+  return h('div', { id: 'site-content' }, h('button', { id: 'test-preferences', onClick: openPreferences }, 'Cookie preferences'), h(Outlet));
+}
+test('cookie rejection blocks GA4; preferences support focus, route views, persistence and withdrawal', async () => {
+  const { AnalyticsBridge } = await import('../src/components/AnalyticsBridge');
+  dom.happyDOM.settings.disableJavaScriptFileLoading = true;
+  delete window.dataLayer; delete window.gtag;
+  const append = document.head.append.bind(document.head);
+  document.head.append = (...nodes) => { for (const node of nodes) if (typeof node !== 'string' && node.nodeName === 'SCRIPT') (node as HTMLScriptElement).type = 'application/x-test-fixture'; append(...nodes); };
+  const config = { measurementId: 'G-TEST123456', approvedPolicy: true, approvedNotice: true, manualPageViewsConfirmed: true };
+  document.body.innerHTML = '<div id="app"></div>'; root = createRoot(document.getElementById('app')!);
+  const router = createMemoryRouter([{ element: h(CookieConsentProvider, null, h(AnalyticsBridge, { config }), h(PreferencesTestShell)), children: ['/', '/people', '/contact', '*'].map(path => ({ path, element: h('h1', null, path) })) }], { initialEntries: ['/'] });
+  const events = () => (window.dataLayer ?? []).map(value => Array.from(value as ArrayLike<unknown>)).filter(command => command[0] === 'event');
+  try {
+    await act(async () => root!.render(h(RouterProvider, { router })));
+    const reject = () => Array.from(document.querySelectorAll<HTMLButtonElement>('.cookie-banner button, .cookie-dialog button')).find(button => button.textContent === 'Reject optional cookies')!;
+    assert.equal(document.querySelector('script[data-grf-analytics]'), null);
+    await click(reject());
+    assert.equal(JSON.parse(window.localStorage.getItem('grf-cookie-preferences')!).analytics, false);
+    assert.equal(document.querySelector('script[data-grf-analytics]'), null);
+    await act(async () => root!.unmount()); root = createRoot(document.getElementById('app')!);
+    await act(async () => root!.render(h(RouterProvider, { router })));
+    assert.equal(document.querySelector('.cookie-banner'), null);
+    assert.equal(document.querySelector('script[data-grf-analytics]'), null);
+    const trigger = required<HTMLButtonElement>('#test-preferences'); trigger.focus(); await click(trigger);
+    assert.ok(required('.cookie-dialog')); assert.equal(required<HTMLElement>('#site-content').inert, true);
+    const first = required<HTMLButtonElement>('.cookie-close');
+    const last = required<HTMLButtonElement>('.cookie-dialog .button--primary');
+    last.focus(); await act(async () => document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Tab', bubbles: true })));
+    assert.equal(document.activeElement, first);
+    await escape(); assert.equal(document.querySelector('.cookie-dialog'), null); assert.equal(document.activeElement, trigger);
+    await click(trigger); await click(required('#cookie-analytics')); await click(required('.cookie-dialog .button--primary'));
+    assert.equal(JSON.parse(window.localStorage.getItem('grf-cookie-preferences')!).analytics, true);
+    assert.equal(document.querySelectorAll('script[data-grf-analytics]').length, 1);
+    await act(async () => required('script[data-grf-analytics]').dispatchEvent(new Event('load')));
+    assert.equal(events().length, 1);
+    await act(async () => { await router.navigate('/people?q=private@example.test#private'); });
+    assert.equal(events().length, 2);
+    await act(async () => { await router.navigate('/people?q=other-private'); });
+    assert.equal(events().length, 2);
+    await act(async () => { await router.navigate('/contact'); });
+    assert.equal(events().length, 3);
+    await act(async () => { await router.navigate('/unknown/private@example.test'); });
+    assert.equal(events().length, 4);
+    assert.equal((events()[3][2] as Record<string, unknown>).page_location, 'http://localhost:5173/not-found');
+    assert.ok(!JSON.stringify(events()).includes('private'));
+    await click(trigger); await click(reject());
+    await act(async () => { await router.navigate('/'); });
+    assert.equal(document.querySelector('script[data-grf-analytics]'), null); assert.equal(events().length, 4);
+  } finally { router.dispose(); document.head.append = append; delete window.dataLayer; delete window.gtag; }
+});
+
+test('optional calendar stays blocked after rejection and is removed when media permission is withdrawn', async () => {
+  const { ConsultationBooking } = await import('../src/components/contact/ConsultationBooking');
+  window.localStorage.setItem('grf-cookie-preferences', JSON.stringify({ version: 1, savedAt: Date.now(), analytics: false, media: false }));
+  document.body.innerHTML = '<div id="app"></div>'; root = createRoot(document.getElementById('app')!);
+  const router = createMemoryRouter([{ element: h(CookieConsentProvider, null, h(PreferencesTestShell)), children: [{ path: '/', element: h(ConsultationBooking, { bookingUrl: 'https://calendly.com/test-fixture/consultation' }) }] }]);
+  try {
+    await act(async () => root!.render(h(RouterProvider, { router })));
+    assert.equal(document.querySelector('iframe'), null);
+    await click(required('.consultation-preview button')); assert.ok(required('.cookie-dialog'));
+    await click(required('#cookie-media')); await click(required('.cookie-dialog .button--primary'));
+    await click(required('.consultation-preview button')); assert.ok(required('iframe'));
+    await click(required('#test-preferences'));
+    await click(Array.from(document.querySelectorAll('.cookie-dialog button')).find(button => button.textContent === 'Reject optional cookies')!);
+    assert.equal(document.querySelector('iframe'), null);
+  } finally { router.dispose(); }
+});
+
+
+test('blocked preference storage keeps optional services off and exposes a usable warning', async () => {
+  const descriptor = Object.getOwnPropertyDescriptor(window, 'localStorage');
+  Object.defineProperty(window, 'localStorage', { configurable: true, value: { getItem() { throw new Error('Storage blocked'); }, setItem() { throw new Error('Storage blocked'); } } });
+  document.body.innerHTML = '<div id="app"></div>'; root = createRoot(document.getElementById('app')!);
+  const router = createMemoryRouter(appRoutes, { initialEntries: ['/privacy'] });
+  try {
+    await act(async () => root!.render(h(RouterProvider, { router })));
+    assert.ok(required('.cookie-storage-note').textContent?.includes('could not save'));
+    assert.equal(document.querySelector('script[data-grf-analytics]'), null);
+    await click(Array.from(document.querySelectorAll('.cookie-banner button')).find(button => button.textContent === 'Reject optional cookies')!);
+    assert.equal(document.querySelector('.cookie-banner'), null);
+    assert.ok(document.body.textContent?.includes('not a Privacy Policy'));
+    await click(required('.footer-privacy button')); assert.ok(required('.cookie-dialog'));
+    assert.equal(required<HTMLInputElement>('#cookie-analytics').checked, false);
+    await escape();
+  } finally { router.dispose(); if (descriptor) Object.defineProperty(window, 'localStorage', descriptor); else Reflect.deleteProperty(window, 'localStorage'); }
 });

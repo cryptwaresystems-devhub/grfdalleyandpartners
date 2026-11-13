@@ -1,3 +1,4 @@
+import { isPrivacyPolicyApproved } from './privacy';
 import { sitePresentationMode, type PresentationMode } from './presentation';
 import { getRouteTitle } from './route-title';
 import { getExpertiseDetail } from './expertise';
@@ -13,6 +14,7 @@ const descriptions: Record<string, string> = {
   '/practices': 'Explore the 21 confirmed practice areas of G.R.F. Dalley & Partners. Read practice introductions and explore connected industries.',
   '/people': 'Meet the professionals of G.R.F. Dalley & Partners. Search supplied professional profiles by name and practice area.',
   '/insights': 'Browse verified historic publication references from G.R.F. Dalley & Partners, with links to their original publishers.',
+  '/privacy': isPrivacyPolicyApproved() ? 'Read the firm-approved Privacy Policy for G.R.F. Dalley & Partners.' : 'Privacy Policy for G.R.F. Dalley & Partners. Firm-approved legal text is pending; the website remains a design preview.',
   '/contact': 'Contact G.R.F. Dalley & Partners in Lagos and Port Harcourt. Find office details and prepare an enquiry for your email app.',
 };
 

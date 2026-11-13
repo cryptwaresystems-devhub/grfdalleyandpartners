@@ -14,14 +14,14 @@ import { getVisibleInsights } from '../src/lib/insights';
 import { getRouteMetadata } from '../src/lib/route-metadata';
 import { getRouteTitle } from '../src/lib/route-title';
 
-const paths = ['/', '/about', '/industries', '/practices', '/people', '/insights', '/contact',
+const paths = ['/', '/about', '/industries', '/practices', '/people', '/insights', '/contact', '/privacy',
   ...industries.map(item => `/industries/${item.slug}`), ...practices.map(item => `/practices/${item.slug}`),
   ...getVisibleLawyers('management-preview').map(item => `/people/${item.slug}`),
   ...getVisibleInsights('management-preview').map(item => `/insights/${item.slug}`)];
 function App() { return useRoutes(routes); }
 
-test('all 54 website routes render landmarks, unique IDs, valid links, labels and local images', () => {
-  assert.equal(paths.length, 54);
+test('all 55 website routes render landmarks, unique IDs, valid links, labels and local images', () => {
+  assert.equal(paths.length, 55);
   const dom = new Window();
   try {
     for (const path of paths) {

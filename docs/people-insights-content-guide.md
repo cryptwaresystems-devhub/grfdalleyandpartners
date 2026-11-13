@@ -26,7 +26,7 @@ Use `datePrecision: 'year' | 'month' | 'day'` with the corresponding `YYYY`, `YY
 
 For a real approved video, add `video: { provider, id, title, editorial }`. Providers are `youtube` (11-character video ID) and `vimeo` (numeric video ID). Supply the real video identifier and its own permission record. Raw iframe markup and arbitrary embed URLs are not accepted.
 
-No provider request is made until the visitor clicks Load video. YouTube uses the `youtube-nocookie.com` embed host; Vimeo uses `player.vimeo.com`. The iframe has a title, constrained permissions and no forced autoplay. Withdrawing video or parent permission removes the embed. This is a click-to-load media control, not the complete cookie-consent system reserved for later work. No real video is currently configured.
+No provider request is made until the visitor clicks Load video. YouTube uses the `youtube-nocookie.com` embed host; Vimeo uses `player.vimeo.com`. The iframe has a title, constrained permissions and no forced autoplay. Withdrawing video or parent permission removes the embed. Prompt 10 additionally requires optional-media consent from the global cookie preferences; the Load action alone cannot override a rejection. Withdrawing media permission removes the iframe. No real video is currently configured.
 
 Optional event details use `event: { startsAt, endsAt?, location?, registrationUrl? }`. Use an actual date or an ISO timestamp with a timezone. Date-only inputs do not acquire an invented time; timestamp displays explicitly use UTC. Registration links appear only when supplied and valid. Do not invent event dates or locations.
 

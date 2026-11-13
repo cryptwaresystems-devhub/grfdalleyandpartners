@@ -19,3 +19,12 @@ No production deployment, account login, email sending or DNS modification is in
 - Prompt 4 complete: About narrative remains visibly provisional; all 15 industry and 21 practice names have detail routes with clean pending states. Populate only approved summaries/relationships. People, Insights and Contact are next; real-browser visual QA remains outstanding.
 
 - Prompt 5 complete: eight biography/portrait-matched professional previews, two verified historic Insight entries, and Contact preview are implemented. Final public-use/profile approval remains required. Obinna call year and LL.B. details are absent; Faith filename spelling differs from biography. Personal email addresses were not supplied. Configure actual form delivery, approved privacy text and a valid Calendly URL in the full implementation.
+
+
+## Prompt 10 legal and analytics launch dependencies
+
+- Firm-approved full Privacy Policy and recorded approval/effective date are missing. `/privacy` explicitly flags this; production builds are gated.
+- Cookie notice wording, category/retention choices and acceptance of the first-party consent approach (or an approved third-party CMP) require client/legal approval.
+- Real GA4 property/web stream ID, authorized access, disabled Enhanced Measurement and authorized Realtime/DebugView verification remain pending. No real analytics traffic was verified.
+- Confirm contact and third-party processor notices, retention/access arrangements and any applicable transfer requirements. No general legal-compliance certification is claimed.
+- Implemented: saved consent, rejection, revisit controls, consent-gated manual route analytics adapter, optional embed permissions/withdrawal and automated regression checks. See privacy-analytics-setup.md.
