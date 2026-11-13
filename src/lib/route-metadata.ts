@@ -1,3 +1,5 @@
+import { pageSeoOverrides } from '../data/page-seo';
+import { publishedSeo, recordSeo } from './seo-fields';
 import { isPrivacyPolicyApproved } from './privacy';
 import { sitePresentationMode, type PresentationMode } from './presentation';
 import { getRouteTitle } from './route-title';
@@ -28,17 +30,20 @@ export function getRouteMetadata(pathname: string, mode: PresentationMode = site
     '/insights': 'Explore verified publication references, authors and connected expertise at G.R.F. Dalley & Partners.',
   };
   const expertiseMatch = /^\/(industries|practices)\/([^/]+)$/.exec(path);
+  let expertiseRecord: ReturnType<typeof getExpertiseDetail> = null;
   let approvedSummary: string | null = null;
   const person = getVisibleLawyers(mode).find(item => path === `/people/${item.slug}`);
   const insight = getVisibleInsights(mode).find(item => path === `/insights/${item.slug}`);
   const recordDescription = person?.biography ?? (insight ? `${insight.name}. ${insight.publisher ?? 'G.R.F. Dalley & Partners'} · ${insightDateLabel(insight)}. Explore its author and connected expertise.` : null);
   if (expertiseMatch && label !== 'Page not found') {
-    try { approvedSummary = getExpertiseDetail(expertiseMatch[1] === 'industries' ? 'industry' : 'practice', decodeURIComponent(expertiseMatch[2]))?.summary ?? null; } catch { /* Unknown slugs use not-found metadata. */ }
+    try { expertiseRecord = getExpertiseDetail(expertiseMatch[1] === 'industries' ? 'industry' : 'practice', decodeURIComponent(expertiseMatch[2])); approvedSummary = expertiseRecord?.summary ?? null; } catch { /* Unknown slugs use not-found metadata. */ }
   }
   const description = recordDescription ?? approvedSummary ?? (mode === 'approved-only' ? publicDescriptions[path] : undefined) ?? descriptions[path] ?? (label === 'Page not found'
     ? 'The requested page could not be found. Explore G.R.F. Dalley & Partners using the website navigation.'
     : mode === 'management-preview' ? `${label} — G.R.F. Dalley & Partners. View this management-review preview; detailed content and publication approval may be pending.`
       : `${label} — G.R.F. Dalley & Partners. Contact the firm for further information. Detailed information is displayed following publication approval.`);
-  const conciseDescription = description.replace(/\s+/g, ' ').trim();
-  return { title: `${label === 'Home' ? 'Home - Nigerian Commercial Legal Services' : label} | G.R.F. Dalley & Partners`, description: conciseDescription.length > 200 ? `${conciseDescription.slice(0, 197).trimEnd()}...` : conciseDescription };
+  const record = person ?? insight ?? expertiseRecord?.record ?? (path === '/about' ? about : undefined);
+  const override = label === 'Page not found' || (path === '/privacy' && !isPrivacyPolicyApproved()) ? null : (record ? recordSeo(record) : publishedSeo(pageSeoOverrides[path]));
+  const conciseDescription = (override?.description ?? description).replace(/\s+/g, ' ').trim();
+  return { title: override?.title ?? `${label === 'Home' ? 'Home - Nigerian Commercial Legal Services' : label} | G.R.F. Dalley & Partners`, description: conciseDescription.length > 200 ? `${conciseDescription.slice(0, 197).trimEnd()}...` : conciseDescription };
 }

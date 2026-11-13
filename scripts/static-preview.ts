@@ -1,5 +1,5 @@
-import { existsSync, readFileSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { existsSync, readFileSync, statSync } from 'node:fs';
+import { resolve, sep } from 'node:path';
 import type { Plugin } from 'vite';
 export function staticPreview(): Plugin {
   return { name: 'prerendered-static-preview', configurePreviewServer(server) {
@@ -11,7 +11,13 @@ export function staticPreview(): Plugin {
       if (/^\/api(?:\/|$)/.test(path)) { res.statusCode = 404; res.setHeader('Content-Type', 'application/json'); res.end(JSON.stringify({ message: 'Use Vercel dev or staging to run serverless functions.' })); return; }
       const alias = path.replace(/^\/industry(?=\/|$)/, '/industries').replace(/^\/practice(?=\/|$)/, '/practices');
       if (alias !== path) { res.statusCode = 308; res.setHeader('Location', alias + url.search); res.end(); return; }
-      if (/^\/assets\//.test(path) || ['/robots.txt', '/sitemap.xml', '/prerender-manifest.json'].includes(path)) { next(); return; }
+      if (/^\/assets\//.test(path)) {
+        let asset = '';
+        try { asset = resolve(dist, '.' + decodeURIComponent(path)); } catch { /* Invalid encoded paths are missing assets. */ }
+        if (!asset.startsWith(resolve(dist, 'assets') + sep) || !existsSync(asset) || !statSync(asset).isFile()) { res.statusCode = 404; res.setHeader('Content-Type', 'text/plain; charset=utf-8'); res.end('Asset not found.'); return; }
+        next(); return;
+      }
+      if ( ['/robots.txt', '/sitemap.xml', '/prerender-manifest.json'].includes(path)) { next(); return; }
       const known = manifest.paths.includes(path);
       const file = resolve(dist, known ? path === '/' ? 'index.html' : `${path.slice(1)}.html` : '404.html');
       if (!existsSync(file)) { next(); return; }

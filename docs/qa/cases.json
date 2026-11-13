@@ -1,0 +1,230 @@
+[
+  {
+    "id": "QA-01",
+    "test": "Seven main sections - local routing/rendering",
+    "status": "PASS",
+    "evidence": "All seven primary routes render. This checks software delivery, not final content approval."
+  },
+  {
+    "id": "QA-02",
+    "test": "15 industry route templates",
+    "status": "PASS",
+    "evidence": "All 15 category routes, breadcrumbs and local links checked; final copy approval is QA-29."
+  },
+  {
+    "id": "QA-03",
+    "test": "21 practice route templates",
+    "status": "PASS",
+    "evidence": "All 21 category routes and related-industry navigation checked."
+  },
+  {
+    "id": "QA-04",
+    "test": "Eight professional profile templates",
+    "status": "PASS",
+    "evidence": "Source-checked portraits and available fields render; final roster/credential approval is QA-29."
+  },
+  {
+    "id": "QA-05",
+    "test": "Insights listing and three historical reference details",
+    "status": "PASS",
+    "evidence": "Routing, metadata and original historical date precision checked; missing article bodies are not fabricated."
+  },
+  {
+    "id": "QA-06",
+    "test": "Profile/insight and industry/practice ID relationships",
+    "status": "PASS",
+    "evidence": "Identifiers resolve; actual author/profile links and reciprocal browsing links tested. Firm relationship sign-off remains blocked."
+  },
+  {
+    "id": "QA-07",
+    "test": "Search/filter/pagination and URL state",
+    "status": "PASS",
+    "evidence": "Combined supported filters, empty states, reset, focus and URL/back-navigation tests pass."
+  },
+  {
+    "id": "QA-08",
+    "test": "Internal navigation/assets/fragments",
+    "status": "PASS",
+    "evidence": "55 HTTP page checks, 2,430 internal link references and 38 assets; zero local issues."
+  },
+  {
+    "id": "QA-09",
+    "test": "General-enquiry UI and mock adapter",
+    "status": "PASS",
+    "evidence": "Labels, validation, challenge, duplicate sends, errors and mocked acceptance checked; no real delivery is claimed."
+  },
+  {
+    "id": "QA-10",
+    "test": "Real enquiry delivery/inbox receipt",
+    "status": "BLOCKED",
+    "evidence": "No authorized Resend sender/key, Turnstile settings or origin allowlist. No live mail sent."
+  },
+  {
+    "id": "QA-11",
+    "test": "Consultation form and editable draft fallback",
+    "status": "PASS",
+    "evidence": "Consultation fields and honest request feedback tested; stale-preference draft defect fixed."
+  },
+  {
+    "id": "QA-12",
+    "test": "Live consultation email delivery",
+    "status": "BLOCKED",
+    "evidence": "Same delivery configuration dependency as QA-10."
+  },
+  {
+    "id": "QA-13",
+    "test": "Actual Calendly availability and booking",
+    "status": "BLOCKED",
+    "evidence": "Approved Calendly URL missing. Fixture embeds are tested, but no real appointment was booked."
+  },
+  {
+    "id": "QA-14",
+    "test": "Consent technical behavior",
+    "status": "PASS",
+    "evidence": "Default rejection, saved preferences, invalid/expired storage, revisit, focus handling and media withdrawal tested."
+  },
+  {
+    "id": "QA-15",
+    "test": "Cookie notice/CMP legal acceptance",
+    "status": "BLOCKED",
+    "evidence": "Firm wording/retention/category approval and first-party controls acceptance remain missing."
+  },
+  {
+    "id": "QA-16",
+    "test": "GA4 adapter and React Router event behavior",
+    "status": "PASS",
+    "evidence": "Fixture-only tests verify no pre-consent loader, deduplication, URL redaction and withdrawal; no live property receipt implied."
+  },
+  {
+    "id": "QA-17",
+    "test": "GA4 live tracking/property settings",
+    "status": "BLOCKED",
+    "evidence": "Actual ID/account configuration, stream settings and authorized Realtime/DebugView verification unavailable."
+  },
+  {
+    "id": "QA-18",
+    "test": "Privacy route and missing-policy state",
+    "status": "PASS",
+    "evidence": "Dedicated route links work and no invented policy is rendered. This is a status-page test."
+  },
+  {
+    "id": "QA-19",
+    "test": "Approved Privacy Policy publication",
+    "status": "BLOCKED",
+    "evidence": "Firm-approved full legal text and approval record not supplied."
+  },
+  {
+    "id": "QA-20",
+    "test": "SEO fields/static generation/metadata mechanics",
+    "status": "PASS",
+    "evidence": "Unique route titles/descriptions, approved overrides, alt fields, draft suppression and generated HTML checks pass."
+  },
+  {
+    "id": "QA-21",
+    "test": "Live canonical/social/sitemap/indexing acceptance",
+    "status": "BLOCKED",
+    "evidence": "Approved HTTPS VITE_SITE_URL missing; public indexing intentionally disabled. Live search/social tool verification pending."
+  },
+  {
+    "id": "QA-22",
+    "test": "Mobile-menu DOM/keyboard controls",
+    "status": "PASS",
+    "evidence": "Disclosure, Escape, focus return and route navigation tested in Happy DOM."
+  },
+  {
+    "id": "QA-23",
+    "test": "Responsive CSS behavior",
+    "status": "PASS",
+    "evidence": "320/390/768/1024/1440px fixture checks. This is not a visual/device or cross-browser result."
+  },
+  {
+    "id": "QA-24",
+    "test": "Real browser/device responsiveness",
+    "status": "NOT TESTED",
+    "evidence": "Supported browser runtime and actual mobile devices unavailable."
+  },
+  {
+    "id": "QA-25",
+    "test": "Automated accessibility checks",
+    "status": "PASS",
+    "evidence": "Headings, labels/errors, alternatives, landmarks, keyboard focus, reduced motion and tested AA palette pairs pass."
+  },
+  {
+    "id": "QA-26",
+    "test": "Screen reader, zoom and visual contrast/layout",
+    "status": "NOT TESTED",
+    "evidence": "No real browser/assistive-technology session. No WCAG certification or photo-overlay contrast claim."
+  },
+  {
+    "id": "QA-27",
+    "test": "404/API-error/asset error handling",
+    "status": "PASS",
+    "evidence": "Missing pages and assets return 404; malformed requests/provider failures never report fake success."
+  },
+  {
+    "id": "QA-28",
+    "test": "TypeScript/lint/production bundle/static HTML",
+    "status": "PASS",
+    "evidence": "Build passes; 98 source/DOM tests plus 2 artifact tests pass. No production release is implied."
+  },
+  {
+    "id": "QA-29",
+    "test": "Final approved content/assets/relationships",
+    "status": "BLOCKED",
+    "evidence": "Requester-authorized copy is distinct from final firm sign-off. Current roles/roster, Abuja, telephone, high-res logo and full content/media approvals remain open."
+  },
+  {
+    "id": "QA-30",
+    "test": "Production release guard",
+    "status": "PASS",
+    "evidence": "Explicit production-release build rejects missing legal approvals as intended; release acceptance remains blocked."
+  },
+  {
+    "id": "QA-31",
+    "test": "Chrome latest",
+    "status": "NOT TESTED",
+    "evidence": "Browser runtime unavailable."
+  },
+  {
+    "id": "QA-32",
+    "test": "Firefox latest",
+    "status": "NOT TESTED",
+    "evidence": "Browser runtime unavailable."
+  },
+  {
+    "id": "QA-33",
+    "test": "Safari latest",
+    "status": "NOT TESTED",
+    "evidence": "No supported Safari/macOS environment."
+  },
+  {
+    "id": "QA-34",
+    "test": "Edge latest",
+    "status": "NOT TESTED",
+    "evidence": "Browser runtime unavailable."
+  },
+  {
+    "id": "QA-35",
+    "test": "iOS/Android real phone/tablet",
+    "status": "NOT TESTED",
+    "evidence": "No supported device sessions."
+  },
+  {
+    "id": "QA-36",
+    "test": "Lighthouse >90 targets",
+    "status": "NOT TESTED",
+    "evidence": "No supported audit browser; no scores measured."
+  },
+  {
+    "id": "QA-37",
+    "test": "Approved video live playback",
+    "status": "BLOCKED",
+    "evidence": "No actual approved video asset configured; allowlist/permission/consent fixtures tested."
+  },
+  {
+    "id": "QA-38",
+    "test": "External HTTP reachability and provider access",
+    "status": "BLOCKED",
+    "evidence": "12 supplied URLs checked: 5 returned HTTP 200; 2 returned 403 and 5 returned nonstandard 999. Refused URLs require browser verification, not removal or a passed result."
+  }
+]

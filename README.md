@@ -98,3 +98,10 @@ The static React site now has one minimal Vercel serverless function, `/api/cont
 Set the approved HTTPS origin in `VITE_SITE_URL` for canonical URLs, social image URLs, structured data and sitemap locations. Staging defaults to noindex. `VITE_PUBLIC_INDEXING=true` only enables indexing when the legal launch gates are satisfied and public content mode is selected. No domain/DNS changes were made. Full setup, measured results and remaining browser/Lighthouse checks: [Prompt 11 report](docs/prompt-11-report.md).
 
 Original images remain intact. `npm.cmd run images:optimize` regenerates the responsive WebP files, image manifest, branded social card and size report using build-only Sharp. No external font downloads or new runtime animation library are needed.
+
+
+## Quality assurance (Prompt 12)
+
+See the [formal QA report](docs/qa-report.md), [FR-01-FR-12 traceability checklist](docs/requirements-traceability.md), [browser matrix](docs/qa/browser-matrix.md) and [raw HTTP evidence](docs/qa/http-results.json). Software checks are distinct from missing legal/content approval and live service verification. Browser/Lighthouse tests were not performed; this is not a production acceptance sign-off.
+
+For a built local preview on port 4174, `npm.cmd run qa:http -- --external` checks route, fragment, asset and external HTTP reachability and writes its evidence to docs/qa. It never sends email or creates bookings. Provider refusals are reported BLOCKED. Source-editable metadata uses optional reviewed `seo` fields on content records and `src/data/page-seo.ts` for static pages; slugs remain in existing structured records. SEO title, description and portrait-alt drafts are independently gated.

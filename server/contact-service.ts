@@ -19,7 +19,7 @@ export async function submitContact(body: unknown, origin: string | undefined, e
   const draft = input as unknown as ContactRequest;
   const errors = validateContact(draft);
   if (Object.keys(errors).length) return { status: 400, body: { message: 'Please check the highlighted fields.', errors } };
-  if (draft.website || !/^[a-f0-9-]{36}$/i.test(draft.requestId) || !draft.token || draft.token.length > 2048) return reply(400, 'Please complete the spam check and try again.');
+  if (draft.website || !/^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/i.test(draft.requestId) || !draft.token || draft.token.length > 2048) return reply(400, 'Please complete the spam check and try again.');
   try {
     const verification = await fetcher('https://challenges.cloudflare.com/turnstile/v0/siteverify', { method: 'POST', body: new URLSearchParams({ secret: env.TURNSTILE_SECRET_KEY!, response: draft.token }), signal: AbortSignal.timeout(8000) });
     const check = await verification.json() as { success?: boolean; hostname?: string; action?: string };

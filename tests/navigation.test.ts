@@ -574,3 +574,19 @@ test('directory query updates preserve keyboard focus and mark parameterized vie
     assert.ok(document.head.querySelector('meta[name="robots"]')?.getAttribute('content')?.startsWith('noindex'));
   } finally { router.dispose(); }
 });
+
+
+test('editing a consultation preference invalidates the previous mailto draft', async () => {
+  document.body.innerHTML = '<div id="app"></div>'; root = createRoot(document.getElementById('app')!);
+  const router = createMemoryRouter(appRoutes, { initialEntries: ['/contact'] });
+  try {
+    await act(async () => root!.render(h(RouterProvider, { router })));
+    await searchValue('consultation-name', 'QA Fixture'); await searchValue('consultation-email', 'qa@example.test');
+    await searchValue('consultation-preference', 'Tuesday afternoon');
+    const form = required<HTMLInputElement>('#consultation-name').closest('form')!;
+    await act(async () => form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true })));
+    assert.ok(form.querySelector('.email-draft-result'));
+    await searchValue('consultation-preference', 'Thursday morning');
+    assert.equal(Boolean(form.querySelector('.email-draft-result')), false);
+  } finally { router.dispose(); }
+});

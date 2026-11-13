@@ -1,0 +1,572 @@
+{
+  "testedAt": "2026-11-13T12:19:36.700Z",
+  "base": "http://127.0.0.1:4174",
+  "pages": [
+    {
+      "path": "/",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/about",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/industries",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/practices",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/people",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/insights",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/contact",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/privacy",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/industries/agri-business-and-food",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/industries/artificial-intelligence",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/industries/automotive-and-mobility",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/industries/aviation-and-airlines",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/industries/banking-payments-and-fintech",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/industries/blockchain-data-centers-and-digital-infrastructure",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/industries/derivatives",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/industries/energy",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/industries/financial-institutions",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/industries/food-drug-and-healthcare",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/industries/insurance",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/industries/rail",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/industries/real-estate",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/industries/technology-telecom-and-internet-competition",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/industries/transportation",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/practices/arbitration-mediation",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/practices/aviation-transportation",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/practices/banking-financial-services",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/practices/commercial-litigation",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/practices/construction",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/practices/corporate-and-commercial",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/practices/criminal",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/practices/employment-labour",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/practices/energy-utilities",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/practices/health-care",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/practices/human-rights",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/practices/insolvency-restructuring",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/practices/international-cross-border",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/practices/litigation-dispute-resolution",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/practices/mergers-acquisitions",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/practices/mining",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/practices/oil-and-gas",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/practices/real-property",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/practices/recovery",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/practices/technology-intellectual-property",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/practices/wills-trusts-estates",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/people/rasheed-goriola-aderemi-dalley",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/people/fatai-ajibola-dalley-san-fciarb-uk",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/people/wande-adenike-esan",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/people/obinna-e-omeh",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/people/faith-izegboya-adebo",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/people/olayiwola-balogun",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/people/mustapha-opemipo-rofiat",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/people/peace-amarachi-ogbu",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/insights/non-interventionist-principle",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/insights/continental-free-trade",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/insights/warsaw-convention-exclusivity",
+      "status": 200,
+      "result": "PASS"
+    }
+  ],
+  "internalLinkReferences": 2430,
+  "assets": [
+    {
+      "path": "/assets/grf-logo.jpg",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/index-DT3xBwvD.js",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/vendor-1sBgzIuo.js",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/index-CCZCG2zs.css",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/architecture/towers-1920.webp",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/architecture/facade-960.webp",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/people/aderemi-dalley.jpg",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/people/ajibola-dalley.jpg",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/people/wande-esan.jpg",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/optimized/towers-960-640.webp",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/optimized/towers-960-960.webp",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/optimized/towers-1920-640.webp",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/optimized/towers-1920-960.webp",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/optimized/towers-1920-1280.webp",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/optimized/towers-1920-1920.webp",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/optimized/facade-960-640.webp",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/optimized/facade-960-960.webp",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/optimized/aderemi-dalley-320.webp",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/optimized/aderemi-dalley-600.webp",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/optimized/ajibola-dalley-320.webp",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/optimized/ajibola-dalley-600.webp",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/optimized/wande-esan-320.webp",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/optimized/wande-esan-600.webp",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/people/obinna-omeh.jpg",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/people/faith-adebo.jpg",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/people/olayiwola-balogun.jpg",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/people/opemipo-mustapha.jpg",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/people/peace-ogbu.jpg",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/optimized/obinna-omeh-320.webp",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/optimized/obinna-omeh-600.webp",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/optimized/faith-adebo-320.webp",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/optimized/faith-adebo-600.webp",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/optimized/olayiwola-balogun-320.webp",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/optimized/olayiwola-balogun-600.webp",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/optimized/opemipo-mustapha-320.webp",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/optimized/opemipo-mustapha-600.webp",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/optimized/peace-ogbu-320.webp",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/optimized/peace-ogbu-600.webp",
+      "status": 200,
+      "result": "PASS"
+    }
+  ],
+  "errors": [
+    {
+      "path": "/qa-not-found",
+      "status": 404,
+      "result": "PASS"
+    },
+    {
+      "path": "/people/qa-not-found",
+      "status": 404,
+      "result": "PASS"
+    },
+    {
+      "path": "/assets/qa-missing.webp",
+      "status": 404,
+      "result": "PASS"
+    }
+  ],
+  "redirect": {
+    "status": 308,
+    "location": "/industries?qa=1"
+  },
+  "externalLinks": [
+    {
+      "url": "https://gravitasreview.com.ng/product/non-interventionist-principle-sections-30-and-34/",
+      "status": 200,
+      "result": "PASS",
+      "scope": "HTTP reachability only; no browser, content-rights or login validation."
+    },
+    {
+      "url": "https://guardian.ng/features/continental-free-trade-agreement-renews-hope-for-africas-prosperity/",
+      "status": 403,
+      "result": "BLOCKED",
+      "scope": "HTTP reachability only; no browser, content-rights or login validation."
+    },
+    {
+      "url": "https://www.google.com/maps/search/?api=1&query=Gabsdall%20House%2C%202nd%E2%80%934th%20Floor%2C%2026%20Igbosere%20Road%2C%20Lagos%20State%2C%20Nigeria",
+      "status": 200,
+      "result": "PASS",
+      "scope": "HTTP reachability only; no browser, content-rights or login validation."
+    },
+    {
+      "url": "https://www.google.com/maps/search/?api=1&query=13%20Finima%20Street%2C%20Old%20G.R.A%2C%20Port%20Harcourt%2C%20Rivers%20State%2C%20Nigeria",
+      "status": 200,
+      "result": "PASS",
+      "scope": "HTTP reachability only; no browser, content-rights or login validation."
+    },
+    {
+      "url": "https://www.linkedin.com/in/remi-dalley-06749454",
+      "status": 999,
+      "result": "BLOCKED",
+      "scope": "HTTP reachability only; no browser, content-rights or login validation."
+    },
+    {
+      "url": "https://www.linkedin.com/in/ajibola-dalley-san-fciarb-42b786a2",
+      "status": 999,
+      "result": "BLOCKED",
+      "scope": "HTTP reachability only; no browser, content-rights or login validation."
+    },
+    {
+      "url": "https://linkedin.com/in/wande-esan-916b478a",
+      "status": 200,
+      "result": "PASS",
+      "scope": "HTTP reachability only; no browser, content-rights or login validation."
+    },
+    {
+      "url": "https://www.linkedin.com/in/faith-izezy-adebo-b80a19291",
+      "status": 999,
+      "result": "BLOCKED",
+      "scope": "HTTP reachability only; no browser, content-rights or login validation."
+    },
+    {
+      "url": "https://www.linkedin.com/in/olayiwola-balogun-090547169",
+      "status": 999,
+      "result": "BLOCKED",
+      "scope": "HTTP reachability only; no browser, content-rights or login validation."
+    },
+    {
+      "url": "https://www.linkedin.com/in/opemipo-mustapha-13a56b1a5",
+      "status": 999,
+      "result": "BLOCKED",
+      "scope": "HTTP reachability only; no browser, content-rights or login validation."
+    },
+    {
+      "url": "https://linkedin.com/in/peace-amarachi-4a2933193",
+      "status": 200,
+      "result": "PASS",
+      "scope": "HTTP reachability only; no browser, content-rights or login validation."
+    },
+    {
+      "url": "https://kluwerlawonline.com/journalarticle/Air%2Band%2BSpace%2BLaw/31.3/AILA2006019",
+      "status": 403,
+      "result": "BLOCKED",
+      "scope": "HTTP reachability only; no browser, content-rights or login validation."
+    }
+  ],
+  "issues": [],
+  "sentEmails": 0,
+  "bookingsMade": 0
+}

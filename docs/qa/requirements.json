@@ -1,0 +1,107 @@
+{
+  "source": {
+    "filename": "G.R.F. Dalley & Partners - Website Requirements Specification (2).docx",
+    "sha256": "993aa87410a917c753ed8a5f4d753aa46a583d1fe6f0a0ad435c431524382eab",
+    "section": "7. Functional Requirements",
+    "reviewDate": "2026-11-13",
+    "scopeSource": "Scope of Work (1), sections 4.5 and 8.2-8.3"
+  },
+  "requirements": [
+    {
+      "id": "FR-01",
+      "requirement": "Content updates",
+      "acceptance": "Cryptware will update website content on request using materials supplied by the Firm",
+      "status": "PASS",
+      "evidence": "docs/people-insights-content-guide.md; docs/expertise-content-guide.md",
+      "assessment": "Structured content files and documented Cryptware update workflow; no CMS required. Future support response times/costs are outside this test."
+    },
+    {
+      "id": "FR-02",
+      "requirement": "Linked insights and profiles",
+      "acceptance": "An insight can be assigned an author; published insights appear in the Insights section and on the author's profile",
+      "status": "BLOCKED",
+      "evidence": "tests/qa-regressions.test.ts; tests/people-insights-system.test.ts",
+      "assessment": "Author/profile links work for all three historical references. Final firm approval and complete supplied publication content/relationships remain outstanding."
+    },
+    {
+      "id": "FR-03",
+      "requirement": "Industry and practice relationships",
+      "acceptance": "Content can be associated with relevant industries and practice areas; relationships appear as links on relevant pages",
+      "status": "BLOCKED",
+      "evidence": "tests/content-completion.test.ts; tests/qa-regressions.test.ts",
+      "assessment": "Stable IDs resolve and reciprocal editorial links render. The firm must approve final relationship/content choices; editorial browsing connections are not claims of past matters."
+    },
+    {
+      "id": "FR-04",
+      "requirement": "People directory",
+      "acceptance": "Profiles use a consistent template and display only the fields supplied and approved for each person",
+      "status": "BLOCKED",
+      "evidence": "tests/people-insights-contact.test.ts; docs/profile-verification.json",
+      "assessment": "Eight source-checked profiles/portraits render and search works. Current roster, roles, credentials and final firm publication approval remain unconfirmed."
+    },
+    {
+      "id": "FR-05",
+      "requirement": "Insights listing and detail",
+      "acceptance": "Visitors can open individual insights from a listing; each detail page displays metadata, content, author, practice and industry",
+      "status": "BLOCKED",
+      "evidence": "tests/people-insights-system.test.ts; docs/prompt-8-sources.json",
+      "assessment": "Listing/detail templates, historical dates, authors and supported relationships work. Only three verified external references are supplied; missing legal article bodies/media must not be fabricated."
+    },
+    {
+      "id": "FR-06",
+      "requirement": "Contact enquiry",
+      "acceptance": "Visitors can submit an enquiry through a validated form and receive on-screen confirmation; submissions route to the Firm's designated recipient",
+      "status": "BLOCKED",
+      "evidence": "tests/contact-delivery.test.ts; tests/navigation.test.ts; docs/contact-services-setup.md",
+      "assessment": "Validation, errors, mailto fallback and mocked secure adapter pass. No authorized delivery credentials or inbox-receipt test; real delivery is not passed."
+    },
+    {
+      "id": "FR-07",
+      "requirement": "Consultation scheduling",
+      "acceptance": "Visitors can request a consultation through a form or book directly through an online calendar (Calendly); submissions route to the Firm's designated recipient",
+      "status": "BLOCKED",
+      "evidence": "tests/navigation.test.ts; docs/contact-services-setup.md",
+      "assessment": "Consultation form and consent-gated calendar adapter are tested with fixtures. Real mail delivery and approved Calendly URL are missing; no appointment was booked."
+    },
+    {
+      "id": "FR-08",
+      "requirement": "Responsive navigation",
+      "acceptance": "Navigation, forms, content and key actions remain usable on mobile, tablet and desktop viewports",
+      "status": "NOT TESTED",
+      "evidence": "tests/navigation.test.ts; tests/homepage.test.ts; docs/qa/browser-matrix.md",
+      "assessment": "DOM mobile-menu/keyboard and responsive CSS checks pass at tested widths. No Chrome/Firefox/Safari/Edge or real mobile layout session was available."
+    },
+    {
+      "id": "FR-09",
+      "requirement": "Search and filters",
+      "acceptance": "Confirmed: visitors can filter or search People and Insights listings by category, practice area and author",
+      "status": "PASS",
+      "evidence": "tests/navigation.test.ts; tests/people-insights-system.test.ts",
+      "assessment": "People name/practice search and Insights category/author/industry/practice filters, combined queries, pagination, URL persistence and empty states pass local tests."
+    },
+    {
+      "id": "FR-10",
+      "requirement": "Content status",
+      "acceptance": "Only approved and published content is publicly visible on the website",
+      "status": "BLOCKED",
+      "evidence": "tests/content.test.ts; tests/content-completion.test.ts; docs/requester-content-authorization.json",
+      "assessment": "Publication gates hide drafts and production launch is blocked. Current requester-authorized copy is not final firm approval; full strict contractual acceptance awaits firm sign-off."
+    },
+    {
+      "id": "FR-11",
+      "requirement": "SEO fields",
+      "acceptance": "Agreed page and content types support editable page titles, meta descriptions, URL slugs and image alt text",
+      "status": "BLOCKED",
+      "evidence": "tests/seo.test.ts; tests/qa-regressions.test.ts; src/data/page-seo.ts",
+      "assessment": "Independently reviewed title/description/portrait-alt fields, editable slugs and static-page overrides now exist. Local metadata tests pass; approved canonical origin and live release SEO checks remain missing."
+    },
+    {
+      "id": "FR-12",
+      "requirement": "External links and embeds",
+      "acceptance": "LinkedIn, external publication and video links can be added to relevant content and profiles",
+      "status": "BLOCKED",
+      "evidence": "tests/people-insights-system.test.ts; docs/qa/http-results.json",
+      "assessment": "Seven supplied LinkedIn URLs, three external publications and two maps are present. HTTP reachability was checked, but provider refusals block some browser verification. Approved video assets and the actual Calendly URL are still missing; fixture embed tests are not end-to-end acceptance."
+    }
+  ]
+}

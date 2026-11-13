@@ -1,0 +1,30 @@
+[
+  {
+    "id": "QA-D01",
+    "severity": "medium",
+    "summary": "Stale consultation preference in prepared email draft",
+    "status": "CLOSED",
+    "verification": "tests/navigation.test.ts: editing a consultation preference invalidates previous mailto draft"
+  },
+  {
+    "id": "QA-D02",
+    "severity": "medium",
+    "summary": "Missing preview assets returned soft 404/HTML 200",
+    "status": "CLOSED",
+    "verification": "docs/qa/http-results.json: missing-asset 404 and 38 successful actual assets"
+  },
+  {
+    "id": "QA-D03",
+    "severity": "low",
+    "summary": "Malformed idempotency IDs reached provider validation",
+    "status": "CLOSED",
+    "verification": "tests/contact-delivery.test.ts: malformed UUIDs rejected before provider call"
+  },
+  {
+    "id": "QA-D04",
+    "severity": "medium",
+    "summary": "FR-11 lacked independently reviewed source-editable SEO fields",
+    "status": "CLOSED",
+    "verification": "tests/qa-regressions.test.ts: metadata/alt overrides and publication gating"
+  }
+]

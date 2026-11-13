@@ -1,6 +1,7 @@
 export type ApprovalStatus = 'draft' | 'in-review' | 'authorized' | 'approved' | 'archived';
 export interface Editorial { status: ApprovalStatus; source: string; approvedBy?: string; approvedAt?: string; authorizedBy?: string; authorizedAt?: string; publishedAt?: string; }
-export interface ContentRecord { id: string; slug: string; name: string; editorial: Editorial; }
+export interface SeoFields { title?: string; description?: string; imageAlt?: string; editorial: Editorial }
+export interface ContentRecord { seo?: SeoFields; id: string; slug: string; name: string; editorial: Editorial; }
 export interface Firm extends ContentRecord { email: string; telephone: string; foundedYear: number; domain: string; }
 export interface Office extends ContentRecord { address: string | null; telephone: string | null; email: string | null; hours: string | null; }
 export type ExpertiseKind = 'industry' | 'practice';

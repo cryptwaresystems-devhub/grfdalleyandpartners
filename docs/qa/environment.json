@@ -1,0 +1,23 @@
+{
+  "testedAt": "2026-11-13T12:18:58.443Z",
+  "node": "v24.16.0",
+  "platform": "win32",
+  "architecture": "x64",
+  "configurationPresent": {
+    "RESEND_API_KEY": false,
+    "CONTACT_FROM_EMAIL": false,
+    "TURNSTILE_SITE_KEY": false,
+    "TURNSTILE_SECRET_KEY": false,
+    "CONTACT_ALLOWED_ORIGINS": false,
+    "CALENDLY_URL": false,
+    "VITE_GA4_MEASUREMENT_ID": false,
+    "VITE_SITE_URL": false
+  },
+  "environmentFiles": [
+    ".env.example only"
+  ],
+  "liveCredentialsUsed": false,
+  "realEmailsSent": 0,
+  "bookingsMade": 0,
+  "realGA4EventsVerified": false
+}

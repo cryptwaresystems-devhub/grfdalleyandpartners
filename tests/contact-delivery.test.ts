@@ -94,3 +94,12 @@ test('Vercel HTTP adapter serves safe status and rejects unsupported, oversized 
   assert.equal((await request('POST', { message: 'x'.repeat(17000) })).status, 413);
   assert.equal((await request('POST', '{bad json')).status, 400);
 });
+
+
+test('malformed request identifiers are rejected before any provider call', async () => {
+  for (const requestId of ['-'.repeat(36), 'a'.repeat(36), '12345678-1234-1234-1234-123456789012']) {
+    let calls = 0;
+    const result = await submitContact({ ...draft, requestId }, origin, env, async () => { calls++; return json(verified); });
+    assert.equal(result.status, 400); assert.equal(calls, 0);
+  }
+});

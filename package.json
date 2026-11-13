@@ -11,6 +11,7 @@
     "images:optimize": "tsx scripts/optimize-images.ts",
     "preview": "vite preview",
     "typecheck": "tsc -b",
+    "qa:http": "tsx scripts/qa-http.ts",
     "audit:build": "tsx scripts/measure-build.ts",
     "test:built": "tsx --test tests/built-site.check.ts",
     "test": "tsx --test tests/*.test.ts",
