@@ -2,7 +2,7 @@
 
 Status on 13 November 2026: implementation prepared; approved Privacy Policy, consent wording/implementation approval and real GA4 property configuration remain pending. This document records technical behavior, not legal advice or an approved Privacy Policy.
 
-## Legal content and production guard
+## Legal content and indexing safeguards
 
 The WRS and Scope of Work require the Firm to supply its legal text. No approved policy was present in the reviewed project materials. `/privacy` displays an explicit pending notice instead of fabricated legal text. Requester-authorized marketing content cannot satisfy this legal approval gate.
 
@@ -10,13 +10,12 @@ Populate `src/data/privacy.ts` only from the firm's approved legal text. Record 
 
 Record approval of the cookie notice, purpose categories and implementation in `cookieNoticeApproval`. The present controls are first-party, with no hosted CMP account or third-party consent script. The SOW mentions a third-party cookie consent mechanism: obtain client acceptance of these controls or select and integrate an approved CMP before launch. Do not record an approval that was not supplied.
 
-Production checks:
+Build and launch checks:
 
-- `npm.cmd run launch:check` reports missing legal dependencies and currently exits with code 1, intentionally.
-- `npm.cmd run build:production` performs that check before building.
-- Normal Vite builds also enforce the check when `VERCEL_ENV=production`, `SITE_DEPLOYMENT_TARGET=production`, or Vite mode is `production-release`. Vercel's production environment cannot be overridden by a staging target flag.
-- `npm.cmd run build` remains available for staging; noindex HTML and generated robots.txt remain in place. Prompt 11 replaces the blanket noindex response header with per-page metadata so an approved release can eventually be indexed. A production bundle is not approval to launch. Any other hosting pipeline must use the production command/target check.
-- Do not bypass the guard, remove noindex, change DNS or manually publish production while legal dependencies remain open. The guard checks recorded content approval, not legal accuracy or full production acceptance.
+- `npm.cmd run build` and `npm.cmd run build:production` both build the site without blocking deployment on missing legal approvals or optional site metadata.
+- `npm.cmd run launch:check` reports outstanding privacy, consent, origin and preview-mode configuration as warnings; it does not block a build.
+- Production and Preview builds keep the privacy policy's pending notice visible. Missing legal approvals, an unconfigured approved origin, management-preview content, or missing explicit indexing opt-in keep search indexing disabled.
+- `VITE_PUBLIC_INDEXING=true` cannot enable indexing by itself: the legal approval records, approved HTTPS origin, and approved-only content mode are also required. A successful build is not approval to launch or a legal-compliance certification.
 
 ## Consent behavior
 

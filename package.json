@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsx scripts/build.ts",
-    "build:production": "tsx scripts/assert-production-ready.ts && npm run build",
-    "launch:check": "tsx scripts/assert-production-ready.ts",
+    "build:production": "npm run build -- --mode production",
+    "launch:check": "tsx scripts/report-production-readiness.ts",
     "images:optimize": "tsx scripts/optimize-images.ts",
     "preview": "vite preview",
     "typecheck": "tsc -b",

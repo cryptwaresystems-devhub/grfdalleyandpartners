@@ -48,9 +48,13 @@ Automated palette checks meet WCAG AA 4.5:1 for the tested small-text foreground
 2. `npm.cmd test` and `npm.cmd run lint`.
 3. `npm.cmd run build`, `npm.cmd run test:built`, then `npm.cmd run preview -- --host 127.0.0.1 --port 4173` to inspect real static documents and 404 responses. Preview does not execute Vercel functions; use an authorized staging deployment or Vercel dev for contact delivery.
 4. Populate real approved legal records and configure the approved `VITE_SITE_URL`. Confirm final content, service settings and client acceptance. Keep indexing disabled for previews.
-5. For an authorized public release only, opt in with `VITE_PUBLIC_INDEXING=true` and use `npm.cmd run build:production` / the production target. The build rejects missing legal records, missing/invalid origin and management-preview mode. Rebuild whenever content approvals, scheduled publication dates, URL or environment settings change.
+5. Production builds can be created with `npm.cmd run build:production`; `npm.cmd run launch:check` reports outstanding launch items without blocking deployment. Public indexing still requires legal readiness, an approved origin, approved-only content mode, and `VITE_PUBLIC_INDEXING=true`. Rebuild whenever content approvals, scheduled publication dates, URL or environment settings change.
 6. On staging, check direct deep links, Vercel custom 404/redirect/API behavior, social previews and Google structured-data tools. Run mobile and desktop Lighthouse against built pages (Home, directory, profile, expertise, Contact), record actual scores and address failures. No 90+ score has been claimed.
 
 Primary references: [Vite prerendering](https://vite.dev/guide/ssr), [React hydration](https://react.dev/reference/react-dom/client/hydrateRoot), [Google JavaScript SEO](https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics), [Vercel static URL configuration](https://vercel.com/docs/project-configuration/vercel-json).
+
+## Deployment build follow-up
+
+The production-build guard described in the original implementation was removed so pending legal copy or site-origin configuration cannot prevent deployment. The privacy page still identifies its pending status, and SEO configuration continues to keep the site noindex until all legal and indexing requirements are met. Builds do not imply legal approval or public-launch acceptance.
 
 Prompt 12 has not been started.

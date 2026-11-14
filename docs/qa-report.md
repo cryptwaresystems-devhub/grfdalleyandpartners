@@ -48,7 +48,7 @@ See [FR-01-FR-12 checklist](requirements-traceability.md): **2 PASS, 0 unresolve
 | QA-27 | 404/API-error/asset error handling | **PASS** | Missing pages and assets return 404; malformed requests/provider failures never report fake success. |
 | QA-28 | TypeScript/lint/production bundle/static HTML | **PASS** | Build passes; 98 source/DOM tests plus 2 artifact tests pass. No production release is implied. |
 | QA-29 | Final approved content/assets/relationships | **BLOCKED** | Requester-authorized copy is distinct from final firm sign-off. Current roles/roster, Abuja, telephone, high-res logo and full content/media approvals remain open. |
-| QA-30 | Production release guard | **PASS** | Explicit production-release build rejects missing legal approvals as intended; release acceptance remains blocked. |
+| QA-30 | Deployment readiness safeguards | **PASS** | Production-mode build succeeds without legal approval records or `VITE_SITE_URL`; `launch:check` reports outstanding items without failing. Indexing remains disabled. |
 | QA-31 | Chrome latest | **NOT TESTED** | Browser runtime unavailable. |
 | QA-32 | Firefox latest | **NOT TESTED** | Browser runtime unavailable. |
 | QA-33 | Safari latest | **NOT TESTED** | No supported Safari/macOS environment. |

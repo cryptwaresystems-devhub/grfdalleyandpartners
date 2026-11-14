@@ -175,9 +175,9 @@
   },
   {
     "id": "QA-30",
-    "test": "Production release guard",
+    "test": "Deployment readiness safeguards",
     "status": "PASS",
-    "evidence": "Explicit production-release build rejects missing legal approvals as intended; release acceptance remains blocked."
+    "evidence": "Production-mode build succeeds without legal approval records or VITE_SITE_URL; launch:check reports outstanding items without failing. Indexing remains disabled."
   },
   {
     "id": "QA-31",

@@ -23,7 +23,7 @@ No production deployment, account login, email sending or DNS modification is in
 
 ## Prompt 10 legal and analytics launch dependencies
 
-- Firm-approved full Privacy Policy and recorded approval/effective date are missing. `/privacy` explicitly flags this; production builds are gated.
+- Firm-approved full Privacy Policy and recorded approval/effective date are missing. `/privacy` explicitly flags this; the site remains deployable, but search indexing stays disabled until legal approval is recorded.
 - Cookie notice wording, category/retention choices and acceptance of the first-party consent approach (or an approved third-party CMP) require client/legal approval.
 - Real GA4 property/web stream ID, authorized access, disabled Enhanced Measurement and authorized Realtime/DebugView verification remain pending. No real analytics traffic was verified.
 - Confirm contact and third-party processor notices, retention/access arrangements and any applicable transfer requirements. No general legal-compliance certification is claimed.
@@ -33,6 +33,6 @@ No production deployment, account login, email sending or DNS modification is in
 ## Prompt 11 remaining launch checks
 
 - Configure the exact client-approved HTTPS origin in `VITE_SITE_URL`. No canonical hostname was guessed. Sitemap locations, absolute social metadata and structured data become available when configured.
-- Keep `VITE_PUBLIC_INDEXING=false` for previews. Public indexing requires legal readiness, approved-only mode and explicit release opt-in.
+- Keep `VITE_PUBLIC_INDEXING=false` for previews. Public indexing requires legal readiness, an approved origin, approved-only mode and explicit release opt-in. Builds no longer fail when these launch items are pending.
 - Lighthouse, real-device visual/layout QA, live Vercel 404/redirect/function verification, Search Console and rich-result verification remain outstanding. Browser automation was unavailable; no Lighthouse scores are claimed.
 - Static generation, responsive image derivatives, unique metadata, publication-aware sitemap/robots generation, custom 404, JSON-LD and keyboard-focus checks are implemented. See prompt-11-report.md.

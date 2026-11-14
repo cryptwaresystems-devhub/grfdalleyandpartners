@@ -11,7 +11,7 @@
 - Withdrawal blocks subsequent application events, removes the loader, discards pending views and clears accessible first-party GA cookies. Regrant does not configure an already initialized tag twice. Prior requests cannot be recalled and already executed JavaScript cannot be unloaded.
 - Video and Calendly embeds require optional-media permission AND a load action. Revoking permission removes mounted iframes. External links and essential enquiry spam protection remain separate.
 - Contact forms link to the policy status and retain minimal collection, memory-only drafts and existing server-side protections.
-- Production release guard: `launch:check`, `build:production`, explicit `production-release` Vite mode, `SITE_DEPLOYMENT_TARGET=production` and Vercel production builds reject missing legal approvals. Normal staging builds remain available, with existing noindex protections.
+- Initially added a production release guard for missing legal approvals; a later deployment-readiness follow-up removed the build failure while retaining the pending-policy notice and noindex safeguards. `launch:check` now reports missing launch items without failing.
 
 ## Verification
 
@@ -19,7 +19,7 @@
 - Tested: rejecting optional analytics creates no Google loader/events; persisted rejection survives remount; granular opt-in enables exactly one loader; route changes send intended views and omit private query/hash/unknown path content; withdrawal stops subsequent views; late script callbacks after opt-out stay silent; blocked scripts do not report success; cookies clear without deleting essential cookies; corrupt/expired records fail closed; unavailable storage remains usable; keyboard focus and media withdrawal work.
 - Test fixtures intercept external script loading and use fake IDs; no real Google request, enquiry, booking or analytics account/property operation was performed.
 - TypeScript, lint with zero warnings and normal production-bundle build passed. Frontend application approximately 208.4 kB (40.1 kB gzip), vendor 321.8 kB (103.0 kB gzip), CSS 58.4 kB (11.5 kB gzip).
-- `npm.cmd run launch:check` and `npm.cmd run build -- --mode production-release` intentionally failed with the missing-policy/consent-approval message, verifying the launch block.
+- At the time of this report, `npm.cmd run launch:check` and an explicit production-release build failed with the missing-policy/consent-approval message. That historical gate has since been removed so production-mode deployment builds can complete.
 - Live browser visual/network QA was unavailable: the browser plugin could not load its required runtime. No screenshot, device QA or GA4 Realtime receipt is claimed.
 
 ## Outstanding client/legal dependencies

@@ -85,7 +85,7 @@
       "acceptance": "Only approved and published content is publicly visible on the website",
       "status": "BLOCKED",
       "evidence": "tests/content.test.ts; tests/content-completion.test.ts; docs/requester-content-authorization.json",
-      "assessment": "Publication gates hide drafts and production launch is blocked. Current requester-authorized copy is not final firm approval; full strict contractual acceptance awaits firm sign-off."
+      "assessment": "Publication gates hide drafts; public-content approval and launch acceptance remain pending, while deployment builds are allowed and indexing stays disabled. Current requester-authorized copy is not final firm approval; full strict contractual acceptance awaits firm sign-off."
     },
     {
       "id": "FR-11",

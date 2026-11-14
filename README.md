@@ -88,14 +88,14 @@ The static React site now has one minimal Vercel serverless function, `/api/cont
 
 `/privacy` is a dedicated route with a clearly labelled pending notice until the firm supplies approved legal text. The footer opens persistent, accessible cookie preferences. Analytics and media default off; declining optional cookies prevents the Google loader. GA4 is prepared through public environment settings, but remains disabled pending legal approval and real stream configuration. See [privacy and analytics setup](docs/privacy-analytics-setup.md).
 
-**Production is intentionally blocked** until the legal records in `src/data/privacy.ts` are genuinely approved and populated. `npm.cmd run launch:check` and `npm.cmd run build:production` currently fail for that reason; Vercel production builds enforce the same guard. Normal staging builds remain available. The site now has 55 destinations including Privacy Policy. No DNS or production deployment changes were made.
+Production and Preview builds use the same deployable build pipeline. Missing legal approvals or an approved site origin no longer fail the build; `npm.cmd run launch:check` reports these as outstanding launch items. The `/privacy` page continues to show its pending notice, and indexing remains disabled until legal approval, approved-only content, an approved HTTPS origin, and explicit indexing opt-in are all present. A successful build is not legal or launch approval.
 
 
 ## SEO, performance and accessibility (Prompt 11)
 
 `npm.cmd run build` now typechecks, builds Vite assets and prerenders all 55 routes plus `404.html`. `npm.cmd run preview` serves those HTML files with static routing and genuine local HTTP 404s. Run `npm.cmd test`, `npm.cmd run lint`, and after building `npm.cmd run test:built`.
 
-Set the approved HTTPS origin in `VITE_SITE_URL` for canonical URLs, social image URLs, structured data and sitemap locations. Staging defaults to noindex. `VITE_PUBLIC_INDEXING=true` only enables indexing when the legal launch gates are satisfied and public content mode is selected. No domain/DNS changes were made. Full setup, measured results and remaining browser/Lighthouse checks: [Prompt 11 report](docs/prompt-11-report.md).
+Set the approved HTTPS origin in `VITE_SITE_URL` for canonical URLs, social image URLs, structured data and sitemap locations. Builds without it still deploy, with those absolute URLs omitted. Staging defaults to noindex. `VITE_PUBLIC_INDEXING=true` only enables indexing when the legal launch gates are satisfied and public content mode is selected. No domain/DNS changes were made. Full setup, measured results and remaining browser/Lighthouse checks: [Prompt 11 report](docs/prompt-11-report.md).
 
 Original images remain intact. `npm.cmd run images:optimize` regenerates the responsive WebP files, image manifest, branded social card and size report using build-only Sharp. No external font downloads or new runtime animation library are needed.
 
